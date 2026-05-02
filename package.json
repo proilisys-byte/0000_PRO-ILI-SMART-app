@@ -1,0 +1,14 @@
+{
+  "name": "pro-ili-smart-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:generate": "prisma generate"
+  },
+  "devDependencies": {
+    "prisma": "^6.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0"
+  }
+}

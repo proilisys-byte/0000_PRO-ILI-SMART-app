@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// Phase 2 Multi-tenancy 대응 뼈대
+model Tenant {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users User[]
+  sites Site[]
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Tenant (SaaS 고객사)
+  tenantId String?
+  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+
+  // 사용자가 접근 가능한 현장(Site) 목록 - 다대다 관계
+  sites Site[] @relation("UserSites")
+}
+
+model Site {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  location    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Tenant (SaaS 고객사)
+  tenantId String?
+  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+
+  // 현장에 소속되거나 접근 가능한 사용자 목록
+  users User[] @relation("UserSites")
+}
