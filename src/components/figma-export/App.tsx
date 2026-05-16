@@ -1,6 +1,6 @@
 "use client";
 import './styles/fonts.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
@@ -23,21 +23,6 @@ type PageType = 'home' | 'consultation' | 'dashboard' | 'login' | 'ncr' | 'rootc
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
-  const [zoom, setZoom] = useState(1);
-
-  // 화면 크기에 따라 한눈에 볼 수 있도록 자동 비율 조정 (기준 해상도: 1440px)
-  useEffect(() => {
-    const updateZoom = () => {
-      const width = window.innerWidth;
-      // 1440px보다 작으면 그 비율만큼 축소하여 한눈에 보이게 만듦
-      const newZoom = width < 1440 ? width / 1440 : 1;
-      setZoom(newZoom);
-    };
-
-    updateZoom();
-    window.addEventListener('resize', updateZoom);
-    return () => window.removeEventListener('resize', updateZoom);
-  }, []);
 
   const renderPage = () => {
     if (currentPage === 'login') return <LoginPage onBackClick={() => setCurrentPage('home')} />;
@@ -65,7 +50,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ zoom: zoom, width: zoom < 1 ? '1440px' : '100%', margin: '0 auto', overflowX: 'hidden' }}>
+    <div className="w-full mx-auto overflow-x-hidden">
       {renderPage()}
     </div>
   );
