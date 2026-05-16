@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "node .cursor/hooks/pro-ili-after-file-edit.mjs",
+        "matcher": "Write",
+        "timeout": 120,
+        "failClosed": false
+      }
+    ],
+    "stop": [
+      {
+        "command": "node .cursor/hooks/pro-ili-agent-stop-quality.mjs",
+        "timeout": 600,
+        "failClosed": false
+      }
+    ]
+  }
+}

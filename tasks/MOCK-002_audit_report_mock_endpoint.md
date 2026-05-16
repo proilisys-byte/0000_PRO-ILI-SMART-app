@@ -1,7 +1,7 @@
-# MOCK-002_audit_report_mock_endpoint.md
+﻿# MOCK-002_audit_report_mock_endpoint.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼의 Smart Audit F1 라인 관련 UI 개발 및 QA 테스트의 병렬 진행을 위한 Mock Endpoint(응답 시뮬레이터) 기준을 정의한다. 실제 백엔드 비즈니스 로직(Route Handler)이 완성되기 이전에 프론트엔드와 QA가 `API-003_audit_report_dto.md`와 `API-001_common_error_schema.md`에 명시된 데이터 규격 및 상태 전이를 테스트할 수 있도록 예측 가능한 가짜 응답(Mock Response) 구조와 시나리오 트리거 방식을 제공한다.
+본 문서는 PRO ALI SMART 플랫폼의 Smart Audit F1 라인 관련 UI 개발 및 QA 테스트의 병렬 진행을 위한 Mock Endpoint(응답 시뮬레이터) 기준을 정의한다. 실제 백엔드 비즈니스 로직(Route Handler)이 완성되기 이전에 프론트엔드와 QA가 `API-003_audit_report_dto.md`와 `API-001_common_error_schema.md`에 명시된 데이터 규격 및 상태 전이를 테스트할 수 있도록 예측 가능한 가짜 응답(Mock Response) 구조와 시나리오 트리거 방식을 제공한다.
 
 ## 2. Mock 설계 원칙
 **표 1. Mock 설계 원칙**

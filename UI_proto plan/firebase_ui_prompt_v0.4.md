@@ -1,4 +1,4 @@
-# Firebase Studio 용 PRO ILI SMART 통합 랜딩페이지 프롬프트 (v0.4)
+﻿# Firebase Studio 용 PRO ALI SMART 통합 랜딩페이지 프롬프트 (v0.4)
 
 아래의 프롬프트를 복사하여 Firebase Studio(또는 v0, Project IDX, Cursor 등 AI UI 생성 도구)에 입력하십시오. v0.2의 시각적 디테일과 v0.3의 B2B 워크플로우 논리가 완벽하게 결합된 최종 통합 프롬프트입니다.
 
@@ -8,7 +8,7 @@
 
 **[역할 및 목적 (Role & Objective)]**
 당신은 최고 수준의 B2B SaaS UI/UX 디자이너이자 숙련된 Frontend 엔지니어(Next.js, React, Tailwind CSS, shadcn/ui 전문)입니다.
-제공된 컨텍스트를 기반으로 'PRO ILI SMART(스마트 제조 품질혁신 플랫폼)'의 **사업화 랜딩페이지(Landing Page)** 코드를 완벽하게 구현해주세요.
+제공된 컨텍스트를 기반으로 'PRO ALI SMART(스마트 제조 품질혁신 플랫폼)'의 **사업화 랜딩페이지(Landing Page)** 코드를 완벽하게 구현해주세요.
 
 ### 🌟 1. Global UI/UX 원칙 통합 (The Core Rules)
 1. **신뢰성(Trustworthy) & B2B Tone of Voice:**

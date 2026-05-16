@@ -23,7 +23,7 @@ const NAV_LINKS = [
   { href: "/#workflow", label: "?뚰겕?뚮줈?? },
   { href: "/#capabilities", label: "?듭떖湲곕뒫" },
   { href: "/#security", label: "蹂댁븞" },
-  { href: "/Trae_PROILISMART_landing", label: "Trae v0.4" },
+  { href: "/Trae_PROALISMART_landing", label: "Trae v0.4" },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -125,7 +125,7 @@ export const Nav = () => {
 // ---------------------------------------------------------------------------
 
 const FOOTER_LINKS = [
-  { href: "/Trae_PROILISMART_landing", label: "Trae v0.4" },
+  { href: "/Trae_PROALISMART_landing", label: "Trae v0.4" },
   { href: "#", label: "媛쒖씤?뺣낫泥섎━諛⑹묠" },
   { href: "#", label: "?댁슜?쎄?" },
   { href: "#", label: "臾몄쓽?섍린" },

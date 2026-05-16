@@ -1,7 +1,7 @@
-# 공통 인증/권한 설계 명세서 (COM-AUTH) v1.0
+﻿# 공통 인증/권한 설계 명세서 (COM-AUTH) v1.0
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 프로젝트의 사용자 인증(Authentication) 및 권한 부여(Authorization) 아키텍처를 정의하는 공통 설계 문서이다. 멀티테넌시(Multi-tenancy) 환경에서 데이터 격리를 보장하고, 규제 준수(Compliance)를 위한 감사(Audit) 추적성을 확보하며, 향후 확장 가능한 RBAC(Role-Based Access Control) 구조의 베이스라인을 제공하는 것을 목적으로 한다. 이 문서는 향후 API 엔드포인트 보안, UI 라우트 보호, 관리자 콘솔 설계, 그리고 모든 보안 테스트 시나리오의 상위 기준점이 된다.
+본 문서는 PRO ALI SMART 프로젝트의 사용자 인증(Authentication) 및 권한 부여(Authorization) 아키텍처를 정의하는 공통 설계 문서이다. 멀티테넌시(Multi-tenancy) 환경에서 데이터 격리를 보장하고, 규제 준수(Compliance)를 위한 감사(Audit) 추적성을 확보하며, 향후 확장 가능한 RBAC(Role-Based Access Control) 구조의 베이스라인을 제공하는 것을 목적으로 한다. 이 문서는 향후 API 엔드포인트 보안, UI 라우트 보호, 관리자 콘솔 설계, 그리고 모든 보안 테스트 시나리오의 상위 기준점이 된다.
 
 ---
 
@@ -19,7 +19,7 @@
 ---
 
 ## 3. 인증 범위와 적용 대상
-본 설계는 PRO ILI SMART 플랫폼에 접속하는 모든 내부/외부 사용자를 대상으로 한다. 모바일 환경(STT/Vision 캡처) 및 웹 대시보드(관리자/오딧 리뷰) 모두 동일한 인증 파이프라인(Supabase Auth 기반)을 통과해야 하며, 모든 API 요청에는 유효한 세션 토큰(JWT)이 포함되어야 한다.
+본 설계는 PRO ALI SMART 플랫폼에 접속하는 모든 내부/외부 사용자를 대상으로 한다. 모바일 환경(STT/Vision 캡처) 및 웹 대시보드(관리자/오딧 리뷰) 모두 동일한 인증 파이프라인(Supabase Auth 기반)을 통과해야 하며, 모든 API 요청에는 유효한 세션 토큰(JWT)이 포함되어야 한다.
 
 ---
 
@@ -31,7 +31,7 @@
 | **Tenant Admin** | 고객사 내 최고 관리자 | 사용자 초대/권한 변경, Bulk Import 실행, 전체 Site Audit 리포트 열람 | 타 Tenant 접근 불가. 특정 고위험 기능은 MFA 요구. |
 | **Site Operator**<br>*(Standard User)* | 특정 공장(Site) 소속의 현장 작업자 | STT/Vision 데이터 입력, 자신에게 할당된 NC 시정 조치 수행 | 배정된 Site 외 접근 불가. 권한 변경 등 관리자 기능 불가. |
 | **Auditor / Reviewer**<br>*(확장 가능)* | 현장 작업을 점검하고 승인하는 품질 심사원 | 생성된 Audit Report 승인/반려, Lean/COPQ 지표 열람 | 초기 세팅(Bulk Import) 권한 없음. 직접 입력(STT)은 권장 안함. |
-| **Super Admin**<br>*(System)* | 플랫폼 운영사(PRO ILI) 관리자 | 신규 Tenant 프로비저닝, 글로벌 구독 관리, 글로벌 감사 로그 조회 | 개별 Tenant의 민감 데이터(음성, 사진 등) 원본 직접 열람 제한 (동의 필요). |
+| **Super Admin**<br>*(System)* | 플랫폼 운영사(PRO ALI) 관리자 | 신규 Tenant 프로비저닝, 글로벌 구독 관리, 글로벌 감사 로그 조회 | 개별 Tenant의 민감 데이터(음성, 사진 등) 원본 직접 열람 제한 (동의 필요). |
 
 ---
 
@@ -43,7 +43,7 @@
 | `TENANT_ADMIN` | Tenant | 고객사 관리자 (최소 1명 필수) | Y | 모든 Site에 대한 포괄적 권한 |
 | `SITE_USER` | Site | 일반 현장 작업자 | Y | 할당받은 Site 내 데이터만 처리 |
 | `SITE_AUDITOR` | Site | 현장 품질 검토자 | 확장 대기 | Sprint 2/3 이후 활성화 |
-| `SYSTEM_ADMIN` | System | PRO ILI 시스템 오퍼레이터 | Y | Tenant 생성 전용 |
+| `SYSTEM_ADMIN` | System | PRO ALI 시스템 오퍼레이터 | Y | Tenant 생성 전용 |
 
 ### 표 4. 권한(Permission) 매트릭스
 | 기능/자원 | Admin | Standard User | Auditor/Reviewer | 비고 |

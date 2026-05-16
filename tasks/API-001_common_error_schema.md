@@ -1,8 +1,8 @@
-# API-001_common_error_schema: 공통 에러 스키마 명세
+﻿# API-001_common_error_schema: 공통 에러 스키마 명세
 
 ## 1. 문서 목적
 
-* **필요성**: PRO ILI SMART 플랫폼에서 발생하는 모든 API, Server Action, 비동기 작업의 에러 응답을 표준화하여, 프론트엔드, 백엔드, QA, 운영팀이 동일한 언어와 구조로 오류를 해석하고 대응할 수 있도록 한다.
+* **필요성**: PRO ALI SMART 플랫폼에서 발생하는 모든 API, Server Action, 비동기 작업의 에러 응답을 표준화하여, 프론트엔드, 백엔드, QA, 운영팀이 동일한 언어와 구조로 오류를 해석하고 대응할 수 있도록 한다.
 * **Sprint 1 선행 필요성**: Auth, RBAC, Bulk Import, STT, Audit 등 핵심 모듈이 동시다발적으로 개발되는 Sprint 1에서 에러 규격이 파편화되면 디버깅과 프론트엔드 연동에 막대한 병목이 발생하므로 최우선으로 확정해야 한다.
 * **후속 문서 기준**: 본 문서는 향후 작성될 모든 개별 API 명세서(`API-AUDIT_REPORT`, `API-BULK_IMPORT`, `API-STT_CAPTURE` 등)의 에러 응답 스펙 상위 기준으로 작용한다.
 
@@ -36,7 +36,7 @@
 
 ## 4. 공통 에러 응답 구조 및 스키마
 
-PRO ILI SMART 플랫폼의 모든 백엔드 응답(Route Handler 및 Server Actions)은 예측 가능성과 클라이언트 측의 일관된 에러 처리를 보장하기 위해 아래의 Response Envelope 규격을 따릅니다.
+PRO ALI SMART 플랫폼의 모든 백엔드 응답(Route Handler 및 Server Actions)은 예측 가능성과 클라이언트 측의 일관된 에러 처리를 보장하기 위해 아래의 Response Envelope 규격을 따릅니다.
 
 ### 4.1. 공통 에러 응답 필드 정의
 

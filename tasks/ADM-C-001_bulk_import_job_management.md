@@ -1,7 +1,7 @@
-# [ADM-C-001] Bulk Import Job Management Workflow
+﻿# [ADM-C-001] Bulk Import Job Management Workflow
 
 ## 1. 문서 목적
-본 문서는 **PRO ILI SMART** 프로젝트에서 관리자가 대량의 데이터를 업로드하고 처리하는 **Bulk Import Job**의 운영 처리(Management/Command) 흐름을 정의하는 명세서이다.
+본 문서는 **PRO ALI SMART** 프로젝트에서 관리자가 대량의 데이터를 업로드하고 처리하는 **Bulk Import Job**의 운영 처리(Management/Command) 흐름을 정의하는 명세서이다.
 
 단순한 파일 업로드 기능이 아니라, 업로드 이후 검증, 저장, 실패 처리, 재시도, 취소에 이르는 전체 생명주기를 다룬다. 본 문서는 부분 성공을 정상적인 운영 시나리오로 편입시키고, 상태 전이의 기준을 제공하여 후속 조회(ADM-Q), UI, 테스트 문서가 공통된 운영 정책을 따르도록 가이드한다.
 

@@ -1,8 +1,8 @@
-# ADM-063_smart_audit_operations_dashboard.md
+﻿# ADM-063_smart_audit_operations_dashboard.md
 # ADM-063: Smart Audit Operations Dashboard Specification
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼 운영자가 Smart Audit(F1) 라인의 상태, 병목 현상, 보안/권한 위반 및 예외 상황을 모니터링하고 대응하기 위한 통합 대시보드(Operations Dashboard)의 화면 구조와 데이터 표시 기준을 정의한다.
+본 문서는 PRO ALI SMART 플랫폼 운영자가 Smart Audit(F1) 라인의 상태, 병목 현상, 보안/권한 위반 및 예외 상황을 모니터링하고 대응하기 위한 통합 대시보드(Operations Dashboard)의 화면 구조와 데이터 표시 기준을 정의한다.
 
 ## 2. 운영 대시보드 설계 원칙
 | 원칙 | 설명 |

@@ -1,8 +1,8 @@
-# TEST-S1_ACCEPTANCE_v1: Sprint 1 합격 기준 및 데모 통과 명세
+﻿# TEST-S1_ACCEPTANCE_v1: Sprint 1 합격 기준 및 데모 통과 명세
 
 ## 1. 문서 목적
 
-* **문서 필요성**: PRO ILI SMART 프로젝트의 Sprint 1에서 개발된 핵심 코어 기능(Auth, RBAC, Bulk Import, STT Zero-UI, Smart Audit, Audit Log)이 단순히 코드 작성을 넘어 "실제 시연 및 다음 Sprint 확장"이 가능한 품질에 도달했는지 명확한 판정 기준을 제시한다.
+* **문서 필요성**: PRO ALI SMART 프로젝트의 Sprint 1에서 개발된 핵심 코어 기능(Auth, RBAC, Bulk Import, STT Zero-UI, Smart Audit, Audit Log)이 단순히 코드 작성을 넘어 "실제 시연 및 다음 Sprint 확장"이 가능한 품질에 도달했는지 명확한 판정 기준을 제시한다.
 * **Sprint 1에서의 중요성**: 기반 공사와 데이터 흐름의 뼈대가 완성되는 Sprint 1의 통과 여부를 결정짓는 게이트웨이 문서이다.
 * **다른 문서와의 관계**: 본 문서는 기능/운영 명세서(`00_PRD_v1`, `F1-AUDIT_v1`, `ADM-BULK_v1` 등)의 요구사항을 검증 관점으로 번역한 최상위 테스트 기준서이며, 향후 작성될 세부 QA 테스트 명세(`TEST-F1-AUDIT_v1`, `TEST-BULK_IMPORT_v1` 등)의 상위 지침이 된다.
 

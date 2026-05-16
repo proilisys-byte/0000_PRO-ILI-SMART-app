@@ -1,7 +1,7 @@
-# UI-010_audit_workspace_page.md
+﻿# UI-010_audit_workspace_page.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼의 Smart Audit F1 라인에 대한 통합 작업 공간(Workspace) UI 설계 기준을 정의한다. 감사 세션(Session)의 전체 수명 주기(Draft ~ Closed/Cancelled)와 감사 리포트(Report)의 생성 및 이력 조회를 단일 흐름으로 연결하여, 사용자가 직관적으로 업무를 수행할 수 있는 실무 화면 구조를 제시한다.
+본 문서는 PRO ALI SMART 플랫폼의 Smart Audit F1 라인에 대한 통합 작업 공간(Workspace) UI 설계 기준을 정의한다. 감사 세션(Session)의 전체 수명 주기(Draft ~ Closed/Cancelled)와 감사 리포트(Report)의 생성 및 이력 조회를 단일 흐름으로 연결하여, 사용자가 직관적으로 업무를 수행할 수 있는 실무 화면 구조를 제시한다.
 
 ## 2. UI 설계 원칙
 **표 1. UI 설계 원칙**

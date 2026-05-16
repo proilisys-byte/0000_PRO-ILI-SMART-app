@@ -1,7 +1,7 @@
-# API-003_audit_report_dto.md
+﻿# API-003_audit_report_dto.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART의 Audit Session 및 Report 생명주기 관리에서 사용되는 데이터 전송 객체(DTO)의 구조, 타입, 제약조건을 정의한다. `F1-RH-001`에서 정의된 라우트 핸들러가 실제로 주고받을 입출력 페이로드의 공식 계약(Contract)을 수립하는 것이 목적이다.
+본 문서는 PRO ALI SMART의 Audit Session 및 Report 생명주기 관리에서 사용되는 데이터 전송 객체(DTO)의 구조, 타입, 제약조건을 정의한다. `F1-RH-001`에서 정의된 라우트 핸들러가 실제로 주고받을 입출력 페이로드의 공식 계약(Contract)을 수립하는 것이 목적이다.
 
 ## 2. DTO 설계 원칙
 **표 1. DTO 설계 원칙**

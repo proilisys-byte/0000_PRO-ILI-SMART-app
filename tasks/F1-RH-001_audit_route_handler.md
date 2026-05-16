@@ -1,7 +1,7 @@
-# F1-RH-001_audit_route_handler.md
+﻿# F1-RH-001_audit_route_handler.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼의 Smart Audit Core(F1)에서 세션 및 리포트 관련 요청을 처리하는 서버 진입점(Route Handler)의 설계 기준과 명세를 정의한다. 클라이언트의 요청을 가장 먼저 받아 인증, 인가, 데이터 검증을 수행하고 도메인 로직으로 위임하는 책임을 규정한다.
+본 문서는 PRO ALI SMART 플랫폼의 Smart Audit Core(F1)에서 세션 및 리포트 관련 요청을 처리하는 서버 진입점(Route Handler)의 설계 기준과 명세를 정의한다. 클라이언트의 요청을 가장 먼저 받아 인증, 인가, 데이터 검증을 수행하고 도메인 로직으로 위임하는 책임을 규정한다.
 
 ## 2. Route Handler 설계 원칙
 **표 1. Route Handler 설계 원칙**

@@ -1,7 +1,7 @@
-# [F1-C-002] Audit Report Generation 처리 명세서
+﻿# [F1-C-002] Audit Report Generation 처리 명세서
 
 ## 1. 문서 목적
-이 문서는 PRO ILI SMART 프로젝트의 F1 Smart Audit 도메인에서, 감사가 완료된 세션(Audit Session) 데이터를 기반으로 **공식 감사 리포트(Audit Report)**를 생성하고 관리하는 제반 처리(Command) 로직을 표준화하기 위해 작성되었다.
+이 문서는 PRO ALI SMART 프로젝트의 F1 Smart Audit 도메인에서, 감사가 완료된 세션(Audit Session) 데이터를 기반으로 **공식 감사 리포트(Audit Report)**를 생성하고 관리하는 제반 처리(Command) 로직을 표준화하기 위해 작성되었다.
 
 - **문서 필요성**: 세션이 '현장의 땀방울(작업)'이라면 리포트는 '최종 결론(얼굴)'이다. 어떤 조건에서 리포트가 만들어지고 갱신되는지 엄격히 정의해야 한다.
 - **Sprint 1 중요성**: 핵심 KPI인 "10분 내 리포트 산출"을 달성하기 위한 최소 기능 요건을 명확히 하고 오버스펙을 차단한다.

@@ -1,6 +1,6 @@
-You are a senior product designer and frontend engineer.
+﻿You are a senior product designer and frontend engineer.
 
-Create a commercialization landing page for “PRO ILI SMART,” a B2B SaaS product for manufacturing quality teams.
+Create a commercialization landing page for “PRO ALI SMART,” a B2B SaaS product for manufacturing quality teams.
 
 [Primary Goal]
 This is not just a product introduction page. It is a go-to-market landing page designed to generate interest, demo requests, and pilot inquiries.
@@ -13,7 +13,7 @@ A visitor should immediately understand:
 5. What action they should take next
 
 [Product Definition]
-Product name: PRO ILI SMART
+Product name: PRO ALI SMART
 
 Category:
 AI-powered quality operations SaaS for manufacturing teams
@@ -26,7 +26,7 @@ Primary users:
 - Decision-makers who need visibility into cost of poor quality and ROI
 
 [Core Value Proposition]
-PRO ILI SMART helps manufacturing quality teams run quality operations as a connected workflow, not as disconnected documents and manual follow-ups.
+PRO ALI SMART helps manufacturing quality teams run quality operations as a connected workflow, not as disconnected documents and manual follow-ups.
 
 The product should be positioned around these five core capabilities:
 1. Smart Audit
@@ -108,7 +108,7 @@ The landing page must include the following sections.
 - Use operational, specific language rather than generic marketing copy
 
 3. Solution
-- Explain how PRO ILI SMART solves these issues
+- Explain how PRO ALI SMART solves these issues
 - Present it as an operating flow, not a feature list
 - Example logic:
   field capture → audit structuring → non-conformance action → cost analysis → management visibility
@@ -225,6 +225,6 @@ Create:
 - Prioritize clarity over decoration
 - Make the page feel credible enough for a real enterprise sales conversation
 - Maintain a consistent product position throughout the page:
-  PRO ILI SMART is a quality operations system for manufacturing teams
+  PRO ALI SMART is a quality operations system for manufacturing teams
 - Avoid generic SaaS starter-template patterns
 - Show how the product connects field activity, audit work, corrective action, analytics, and admin control in one operating model

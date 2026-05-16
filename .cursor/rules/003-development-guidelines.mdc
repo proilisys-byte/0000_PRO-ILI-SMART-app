@@ -1,0 +1,24 @@
+---
+description: Development workflow, quality, compliance hooks for PRO ILI SMART
+globs: "**/*"
+alwaysApply: false
+---
+# Development guidelines
+
+## Before finishing a change
+- Run **`pnpm lint`** and **`pnpm typecheck`** from repo root.
+- **Cursor Hooks** (`.cursor/hooks.json`) may run **`next lint --file`** after each agent **Write**, and **`typecheck` + full `lint`** when an agent run ends with status **`completed`** — check the **Hooks** output channel if results differ from manual runs.
+- If DB schema changes: **`pnpm db:generate`** (Prisma client) and commit migrations / schema updates per team practice.
+
+## Implementation habits
+- Prefer **small PRs** mapped to **REQ-** IDs; avoid mixing unrelated REF/REQ.
+- **RBAC**: keep **Admin/User** semantics consistent with `REQ-FUNC-026` / SRS §4.2.4.2.
+- **Audit**: append-only / hash / submission patterns per SRS — never “quietly” delete audit-bearing rows without product/legal alignment.
+- **PII / voice / vision**: follow SRS **§4.2.10**; do not log raw biometrics in application logs.
+
+## Docs & AI
+- Do not spawn unsolicited markdown files; update `Docs/` only when the user asks.
+- For task breakdown from SRS, use workflow **`.agents/workflows/generate-tasks-from-srs.md`** or skill **`generate-tasks-from-srs`**.
+
+## Git
+- **Do not** commit unless the user explicitly asks. Never commit `.env` or secrets.

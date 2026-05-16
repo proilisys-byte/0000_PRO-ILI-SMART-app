@@ -1,4 +1,4 @@
-# Firebase Studio 용 PRO ILI SMART 랜딩페이지 프롬프트
+﻿# Firebase Studio 용 PRO ALI SMART 랜딩페이지 프롬프트
 
 아래의 프롬프트를 복사하여 Firebase Studio(또는 v0, Project IDX, Cursor 등 AI UI 생성 도구)에 입력하십시오. PRD와 SRS, 그리고 구체적인 UI 기획 문서(UI-000 ~ UI-061)의 핵심 가치가 모두 반영된 고해상도(High-fidelity) 프롬프트입니다.
 
@@ -8,11 +8,11 @@
 
 **[역할 및 목적 (Role & Objective)]**
 당신은 최고 수준의 B2B SaaS UI/UX 디자이너이자 숙련된 Frontend 엔지니어(Next.js, React, Tailwind CSS, shadcn/ui 전문)입니다. 
-제공된 프로젝트 컨텍스트를 기반으로 'PRO ILI SMART(스마트 제조 품질혁신 플랫폼)'의 **사업화 랜딩페이지(Landing Page)** 코드를 완벽하게 구현해주세요.
+제공된 프로젝트 컨텍스트를 기반으로 'PRO ALI SMART(스마트 제조 품질혁신 플랫폼)'의 **사업화 랜딩페이지(Landing Page)** 코드를 완벽하게 구현해주세요.
 잠재 고객(중소·중견 제조기업 대표 및 품질팀장)이 보았을 때 압도적인 신뢰감과 혁신성을 느낄 수 있도록, **현대적이고 프리미엄하며 동적인(Dynamic) 인터랙티브 디자인**을 적용해야 합니다. 단순한 MVP 템플릿 느낌이 나면 안 됩니다.
 
 **[프로젝트 핵심 요약 (Context)]**
-- **제품명:** PRO ILI SMART
+- **제품명:** PRO ALI SMART
 - **타겟 고객:** 반도체 소부장 등 중소/중견 제조기업
 - **해결하고자 하는 문제 (Pain Point):** 현장 수기 데이터 기록의 마찰, 원청 Audit 심사 준비 시 120시간 이상의 문서 매핑 수작업, 부적합(NC) 대응 지연으로 인한 품질 비용(COPQ) 낭비.
 - **핵심 가치 (Value Proposition):** 
@@ -40,7 +40,7 @@
 - **Visual Element:** 단순 이미지가 아닌, 현장의 음성 파형(STT) 코드가 클라우드를 거쳐 대시보드 리포트로 변환되는 과정을 보여주는 세련된 **추상적 UI Mockup** (CSS와 아이콘을 활용하여 구현).
 
 **2. Before & After (Pain Points vs Solution)**
-- 기존의 방식 (종이 기록, 야근을 통한 엑셀 매핑, 데이터 분실)과 PRO ILI SMART 방식 (실시간 동기화, AI 자동 매핑)을 대비하여 직관적으로 보여주는 비교 컨테이너.
+- 기존의 방식 (종이 기록, 야근을 통한 엑셀 매핑, 데이터 분실)과 PRO ALI SMART 방식 (실시간 동기화, AI 자동 매핑)을 대비하여 직관적으로 보여주는 비교 컨테이너.
 
 **3. Core Features (4대 핵심 기능)** - 반응형 카드 그리드
 - **🎙️ Zero-UI 수집기:** "기록을 위해 장갑을 벗지 마십시오." 소음 및 오염 환경에서도 작동하는 실시간 음성(STT) 및 비전 AI 수집.

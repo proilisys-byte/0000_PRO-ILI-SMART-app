@@ -1,4 +1,4 @@
-# Figma & AI UI 생성용 PRO ILI SMART 통합 프롬프트 (v0.5)
+﻿# Figma & AI UI 생성용 PRO ALI SMART 통합 프롬프트 (v0.5)
 
 아래의 프롬프트를 복사하여 Figma(Make designs), Firebase Studio, v0, Cursor 등에 입력하십시오. v0.4의 탄탄한 B2B 논리를 유지하면서, **'Crystal & Tech' (Bright Glassmorphism)** 스타일을 적용하여 매우 밝고 진취적인 분위기로 업그레이드된 최종 버전입니다.
 
@@ -7,7 +7,7 @@
 ## 📋 프롬프트 복사 영역: [Master Prompt - Landing Page]
 
 **[역할 및 목적 (Role & Objective)]**
-당신은 세계 최고 수준의 B2B SaaS UI/UX 디자이너입니다. 스마트 제조 품질혁신 플랫폼 'PRO ILI SMART'의 **밝고 진취적인(Bright & Progressive) 랜딩페이지** 디자인을 완벽하게 구현해주세요.
+당신은 세계 최고 수준의 B2B SaaS UI/UX 디자이너입니다. 스마트 제조 품질혁신 플랫폼 'PRO ALI SMART'의 **밝고 진취적인(Bright & Progressive) 랜딩페이지** 디자인을 완벽하게 구현해주세요.
 
 ### 🌟 1. 디자인 시스템: "Crystal & Tech" (Core Principles)
 1.  **테마 및 분위기 (Bright & Professional):**
@@ -52,7 +52,7 @@
 > "Hero 버튼 연결용: 밝고 깨끗한 신뢰감 조성"
 ```text
 [Role: B2B SaaS UI/UX Designer]
-PRO ILI SMART의 '컨설팅 신청 전용 페이지'를 디자인해줘. 
+PRO ALI SMART의 '컨설팅 신청 전용 페이지'를 디자인해줘. 
 Crystal & Tech 테마를 유지하며, 우측엔 세련된 신청 폼(글라스 카드), 좌측엔 도입 시 기대 효과(ROI)를 보여주는 3D 아이콘과 텍스트를 배치해줘. 입력 필드는 포커스 시 Electric Blue 광채가 나는 고급스러운 스타일이어야 함.
 ```
 
@@ -60,7 +60,7 @@ Crystal & Tech 테마를 유지하며, 우측엔 세련된 신청 폼(글라스 
 > "워크플로우 보기 버튼 연결용: 기술적 진취성 강조"
 ```text
 [Role: Data Visualization Expert]
-PRO ILI SMART의 '품질 통합 대시보드' 화면을 디자인해줘. 
+PRO ALI SMART의 '품질 통합 대시보드' 화면을 디자인해줘. 
 다중 레이어 글라스(Layered Glass) UI를 사용하여 입체감을 살리고, 실시간 AI 분석 상태와 Lean COPQ 감소 추이 그래프를 매우 세련된 Electric Blue/Cyan 그라데이션으로 표현해줘. 가독성이 매우 높고 전문적인 느낌이어야 함.
 ```
 
@@ -68,7 +68,7 @@ PRO ILI SMART의 '품질 통합 대시보드' 화면을 디자인해줘.
 > "사용자 경험의 시작: 투명하고 열린 느낌"
 ```text
 [Role: Lead Designer]
-PRO ILI SMART의 '로그인 페이지'를 디자인해줘. 
+PRO ALI SMART의 '로그인 페이지'를 디자인해줘. 
 화면 중앙에 블러가 깊게 들어간 초대형 글라스 카드를 배치하고, B2B 소셜 로그인(Google, Azure) 버튼을 포함해줘. 배경은 빛이 산란되는 밝고 미래지향적인 효과를 적용해줘.
 ```
 

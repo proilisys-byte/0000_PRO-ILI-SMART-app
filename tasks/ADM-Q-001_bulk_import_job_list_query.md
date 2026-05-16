@@ -1,7 +1,7 @@
-# [ADM-Q-001] Bulk Import Job List Query
+﻿# [ADM-Q-001] Bulk Import Job List Query
 
 ## 1. 문서 목적
-본 문서는 **PRO ILI SMART** 프로젝트의 Bulk Import 운영 과정에서 관리자가 대량 업로드된 Job의 상태와 결과를 조회(Query)하고 탐색하는 기준을 정의하는 공식 명세서이다.
+본 문서는 **PRO ALI SMART** 프로젝트의 Bulk Import 운영 과정에서 관리자가 대량 업로드된 Job의 상태와 결과를 조회(Query)하고 탐색하는 기준을 정의하는 공식 명세서이다.
 
 단순한 데이터 나열이 아닌 "운영자의 빠른 상황 판단과 문제 식별"을 목적으로 설계되었다. 관리자가 여러 Job 중에서 어떤 것이 성공, 실패, 또는 부분 성공(PARTIAL_SUCCESS) 상태인지 빠르게 확인하고, 오류 발생 시 실패 원인을 심층 분석(Drill-down)할 수 있도록 목록 조회, 검색/필터, 정렬, 상세 조회 진입 기준을 명확히 한다. 이 기준은 후속 UI, 테스트, 라우트 핸들러 설계의 기반이 된다.
 

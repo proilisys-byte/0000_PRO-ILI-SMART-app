@@ -1,8 +1,8 @@
-# NFR-MON-004_smart_audit_alerting.md
+﻿# NFR-MON-004_smart_audit_alerting.md
 # NFR-MON-004: Smart Audit Alerting Specification
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼 Smart Audit 환경에서 발생하는 모니터링 이벤트 중, 운영진의 개입이 필요한 이상 징후를 식별하고 이를 적절한 수신자에게 신속하고 정확하게 경보(Alert)하기 위한 기준을 정의한다. 오탐(False Positive)을 최소화하고 조치 가능한(Actionable) 알림 체계를 구축하는 것을 목표로 한다.
+본 문서는 PRO ALI SMART 플랫폼 Smart Audit 환경에서 발생하는 모니터링 이벤트 중, 운영진의 개입이 필요한 이상 징후를 식별하고 이를 적절한 수신자에게 신속하고 정확하게 경보(Alert)하기 위한 기준을 정의한다. 오탐(False Positive)을 최소화하고 조치 가능한(Actionable) 알림 체계를 구축하는 것을 목표로 한다.
 
 ## 2. Alerting 설계 원칙
 | 원칙 | 설명 |

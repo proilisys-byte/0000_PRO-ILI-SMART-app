@@ -1,4 +1,4 @@
-// Sections.tsx
+﻿// Sections.tsx
 /**
  * @file src/components/landing/Sections.tsx
  * @description 랜딩 페이지 중 동적인 상호작용(State, Animation)이 필요한 섹션들을 정의합니다.
@@ -92,7 +92,7 @@ export const HeroSection = () => {
                 "rounded-xl font-bold text-lg border-slate-700"
               )}
             >
-              <Link href="/Trae_PROILISMART_landing">
+              <Link href="/Trae_PROALISMART_landing">
                 Trae v0.4 버전 보기
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Link>

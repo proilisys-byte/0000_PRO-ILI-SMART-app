@@ -1,7 +1,7 @@
-# 데이터 스키마 명세서 (DATA SCHEMA) v1.0
+﻿# 데이터 스키마 명세서 (DATA SCHEMA) v1.0
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 프로젝트의 핵심 데이터 구조를 정의하는 상위 설계 문서다. 이 문서는 `06_TASK_DEPENDENCY_DIAGRAM_v1.md`에 명시된 선후행 관계 중 가장 첫 번째 선행 조건인 DB 설계를 구체화한다. 특히 멀티테넌시(Multi-tenancy), 역할 기반 접근 통제(RBAC), 데이터 위변조 방지(Insert-only Audit Log)를 보장하며, 향후 Prisma 및 Supabase(PostgreSQL) 상에서 물리적 스키마로 즉각 변환될 수 있는 논리적 기준을 제시한다.
+본 문서는 PRO ALI SMART 프로젝트의 핵심 데이터 구조를 정의하는 상위 설계 문서다. 이 문서는 `06_TASK_DEPENDENCY_DIAGRAM_v1.md`에 명시된 선후행 관계 중 가장 첫 번째 선행 조건인 DB 설계를 구체화한다. 특히 멀티테넌시(Multi-tenancy), 역할 기반 접근 통제(RBAC), 데이터 위변조 방지(Insert-only Audit Log)를 보장하며, 향후 Prisma 및 Supabase(PostgreSQL) 상에서 물리적 스키마로 즉각 변환될 수 있는 논리적 기준을 제시한다.
 
 ---
 

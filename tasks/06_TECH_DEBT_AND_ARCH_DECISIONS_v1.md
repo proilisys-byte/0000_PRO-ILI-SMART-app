@@ -1,7 +1,7 @@
-# 06. 기술 부채 및 아키텍처 설계 결정 (Tech Debt & Arch Decisions)
+﻿# 06. 기술 부채 및 아키텍처 설계 결정 (Tech Debt & Arch Decisions)
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 프로젝트가 Sprint 2에 진입하기 전에 반드시 해결하거나 명확한 정책을 수립해야 할 **기술 부채(Tech Debt)** 및 **아키텍처 결정 사항(Architecture Decisions)**을 식별하고 관리하기 위해 작성되었습니다. 코드 구현 전 발생할 수 있는 치명적 장애와 재작업을 선제적으로 방지하는 것이 목표입니다.
+본 문서는 PRO ALI SMART 프로젝트가 Sprint 2에 진입하기 전에 반드시 해결하거나 명확한 정책을 수립해야 할 **기술 부채(Tech Debt)** 및 **아키텍처 결정 사항(Architecture Decisions)**을 식별하고 관리하기 위해 작성되었습니다. 코드 구현 전 발생할 수 있는 치명적 장애와 재작업을 선제적으로 방지하는 것이 목표입니다.
 
 ## 2. 기술 부채와 설계 결정의 범위
 - **범위:** 시스템의 확장성, 안정성, 보안, 배포에 직접적인 영향을 미치는 백엔드/인프라 이슈 중심 (Vercel, Supabase, Prisma, Gemini 연동).

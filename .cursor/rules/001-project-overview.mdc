@@ -1,0 +1,26 @@
+---
+description: PRO ILI SMART product context, Slice-1 scope, documentation authority — always apply
+globs:
+alwaysApply: true
+---
+# PRO ILI SMART — Project overview
+
+## Product
+B2B SaaS for semiconductor supply-chain SMEs: **Smart Audit** (ISO/evidence PDF), **NC corrective action**, **Zero-UI** (voice/vision) capture, **Lean / COPQ** dashboards. North-star: Audit report generation **≤10 min p95**; field data alignment **≥95%** (see PRD).
+
+## Authority & traceability
+- **Technical SSOT:** `Docs/05_SRS_v1.md` (REQ-*, NFR, APIs, compliance).
+- **Business / experiments:** `Docs/PRD_SMART_v0.1.md`, `Docs/00_PRD_v1.md`.
+- If PRD and SRS disagree on architecture (e.g. offline vs online), **follow SRS**.
+
+## Slice-1 (implement first)
+`Docs/05_SRS_v1.md` §1.2.1: REQ-FUNC-001, 002, 011, 025, 026, 030.
+
+## Agent conduct
+- Tag work with **REQ-** IDs in PRs/commits when applicable.
+- No secrets or real PII/voice in the repo.
+- Stay within scope; Phase 2 / `Won't` items require explicit product approval.
+
+## See also
+- `002-tech-stack.mdc` — stack and file patterns
+- `003-development-guidelines.mdc` — workflow and quality gate

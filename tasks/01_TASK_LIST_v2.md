@@ -1,7 +1,7 @@
-# 작업 목록 (TASK LIST) v2.0 - 운영 최적화 버전
+﻿# 작업 목록 (TASK LIST) v2.0 - 운영 최적화 버전
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 프로젝트의 기존 TASK LIST(v1.0)를 바탕으로, 개발, QA, 운영팀이 즉각적이고 투명하게 시스템을 검증할 수 있도록 **"실제 운영 가능한 수준(Implementation-ready)"**으로 재구성한 버전이다. 모든 Task는 정량적 완료 기준을 가지며, AI 품질 검증, 실패 대응, Observability(관측 가능성) 및 규제 대응을 완벽히 포괄한다.
+본 문서는 PRO ALI SMART 프로젝트의 기존 TASK LIST(v1.0)를 바탕으로, 개발, QA, 운영팀이 즉각적이고 투명하게 시스템을 검증할 수 있도록 **"실제 운영 가능한 수준(Implementation-ready)"**으로 재구성한 버전이다. 모든 Task는 정량적 완료 기준을 가지며, AI 품질 검증, 실패 대응, Observability(관측 가능성) 및 규제 대응을 완벽히 포괄한다.
 
 ---
 

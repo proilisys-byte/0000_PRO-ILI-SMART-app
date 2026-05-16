@@ -1,4 +1,4 @@
----
+﻿---
 name: Feature Task
 about: PRD&SRS 기반의 구체적인 개발 태스크 명세
 title: "[UI] UI-000: App Shell & Common Layout"
@@ -40,7 +40,7 @@ assignees: ''
 ## 📄 Detailed Architecture Specification
 
 ### 1. 레이아웃 구조 (컴포넌트 구성 요소)
-PRO ILI SMART 플랫폼은 단일 테넌트 B2B SaaS에 최적화된 레이아웃을 사용합니다. Tailwind CSS와 shadcn/ui 기반의 컴포넌트로 구성하여 빠르고 일관된 디자인 시스템을 구축합니다.
+PRO ALI SMART 플랫폼은 단일 테넌트 B2B SaaS에 최적화된 레이아웃을 사용합니다. Tailwind CSS와 shadcn/ui 기반의 컴포넌트로 구성하여 빠르고 일관된 디자인 시스템을 구축합니다.
 
 * **GNB (Global Navigation Bar)** 
   * 화면 상단 고정 (Sticky Header 적용)

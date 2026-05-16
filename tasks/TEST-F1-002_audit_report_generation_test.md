@@ -1,7 +1,7 @@
-# TEST-F1-002_audit_report_generation_test.md
+﻿# TEST-F1-002_audit_report_generation_test.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼의 Smart Audit F1 라인 중 '감사 리포트(Audit Report)'의 생성 규칙, 중복 방지, 이력(버전) 처리 및 예외 상황에 대한 검증 기준을 정의한다. 이를 통해 리포트가 허용된 상태의 세션에서만 생성되고, 데이터 무결성이 보장되며, Reopen 등 변경 발생 시 올바르게 상태가 전이되는지(Superseded 처리) 확인한다.
+본 문서는 PRO ALI SMART 플랫폼의 Smart Audit F1 라인 중 '감사 리포트(Audit Report)'의 생성 규칙, 중복 방지, 이력(버전) 처리 및 예외 상황에 대한 검증 기준을 정의한다. 이를 통해 리포트가 허용된 상태의 세션에서만 생성되고, 데이터 무결성이 보장되며, Reopen 등 변경 발생 시 올바르게 상태가 전이되는지(Superseded 처리) 확인한다.
 
 ## 2. 테스트 설계 원칙
 **표 1. 테스트 설계 원칙**

@@ -1,7 +1,7 @@
-# [F1-C-001] Audit Session Management 처리 명세서
+﻿# [F1-C-001] Audit Session Management 처리 명세서
 
 ## 1. 문서 목적
-이 문서는 PRO ILI SMART 프로젝트의 핵심 도메인인 F1 Smart Audit 영역에서, 실제 현장 감사 행위의 실행 단위가 되는 **Audit Session(감사 세션)**의 생명주기 및 처리 규칙을 표준화하는 공식 Command 명세서이다.
+이 문서는 PRO ALI SMART 프로젝트의 핵심 도메인인 F1 Smart Audit 영역에서, 실제 현장 감사 행위의 실행 단위가 되는 **Audit Session(감사 세션)**의 생명주기 및 처리 규칙을 표준화하는 공식 Command 명세서이다.
 
 - **문서 필요성**: Smart Audit은 단순한 폼 입력이 아니라 오프라인 감사 현장의 흐름을 시스템으로 옮긴 것이다. 따라서 상태 통제, 권한 제어, 임시저장, STT 연계 등이 엄격하게 정의되어야 한다.
 - **Sprint 1 중요성**: Sprint 1의 핵심 목표는 "감사 세션이 생성되어 현장에서 기록되고 제출되는 최소 폐쇄 루프"의 완성이다.

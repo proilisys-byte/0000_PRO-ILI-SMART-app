@@ -1,7 +1,7 @@
-# TEST-F1-001_audit_session_flow_test.md
+﻿# TEST-F1-001_audit_session_flow_test.md
 
 ## 1. 문서 목적
-본 문서는 PRO ILI SMART 플랫폼의 Smart Audit F1 라인 중 '감사 세션(Audit Session)'의 전체 수명 주기(Lifecycle) 및 상태 전이 흐름을 검증하기 위한 QA 인수 테스트(Acceptance Test) 기준을 정의한다. 이를 통해 권한 제어, 상태 불일치 방지, 데이터 무결성 및 공통 에러 처리가 의도대로 작동하는지 검증한다.
+본 문서는 PRO ALI SMART 플랫폼의 Smart Audit F1 라인 중 '감사 세션(Audit Session)'의 전체 수명 주기(Lifecycle) 및 상태 전이 흐름을 검증하기 위한 QA 인수 테스트(Acceptance Test) 기준을 정의한다. 이를 통해 권한 제어, 상태 불일치 방지, 데이터 무결성 및 공통 에러 처리가 의도대로 작동하는지 검증한다.
 
 ## 2. 테스트 설계 원칙
 **표 1. 테스트 설계 원칙**

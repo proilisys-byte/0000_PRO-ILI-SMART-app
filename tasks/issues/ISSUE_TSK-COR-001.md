@@ -1,4 +1,4 @@
----
+﻿---
 name: Feature Task
 about: SRS 기반의 구체적인 개발 태스크 명세
 title: "[Feature] TSK-COR-001: 코어 DB 스키마 설계"
@@ -8,7 +8,7 @@ assignees: ''
 
 ## :dart: Summary
 - 기능명: [TSK-COR-001] 시스템 공통 및 코어 DB 스키마 설계
-- 목적: PRO ILI SMART 시스템의 근간이 되는 `SITE` 및 `USER` 테이블을 구성하여, 향후 생성되는 도메인 데이터(Audit, NC 등)가 올바르게 참조될 수 있는 데이터베이스 기반을 마련한다.
+- 목적: PRO ALI SMART 시스템의 근간이 되는 `SITE` 및 `USER` 테이블을 구성하여, 향후 생성되는 도메인 데이터(Audit, NC 등)가 올바르게 참조될 수 있는 데이터베이스 기반을 마련한다.
 
 ## :link: References (Spec & Context)
 > :bulb: AI Agent & Dev Note: 작업 시작 전 아래 문서를 반드시 먼저 Read/Evaluate 할 것.

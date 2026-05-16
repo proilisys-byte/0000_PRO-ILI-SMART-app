@@ -1,0 +1,28 @@
+---
+description: Next.js + Prisma + Supabase + Gemini/Genkit stack rules for PRO ILI SMART
+globs: "**/*.{ts,tsx,js,jsx,mjs,cjs}", "**/prisma/**", "**/src/**", "package.json", "next.config.*"
+alwaysApply: false
+---
+# Technical stack (enforced)
+
+## Runtime
+- **Next.js 15** App Router, **React 19**, **TypeScript**.
+- **Server Actions** and **Route Handlers** for data mutations and HTTP — no separate Spring/Express backend.
+
+## Data
+- **Prisma** ORM; local **SQLite**, production **PostgreSQL (Supabase)** per SRS C-TEC-003.
+- Use **JSON field patterns** compatible with SQLite + Postgres (Prisma extensions / serialization as project already does).
+
+## UI
+- **Tailwind CSS** + **shadcn/ui** (Radix) patterns only for new components.
+
+## AI
+- **Genkit** + **`@genkit-ai/google-genai`** / Gemini multimodal for STT/Vision/text per SRS.
+- Respect **inference logging / model governance** fields in SRS when touching AI paths (`REQ-FUNC-AI-*`, `REQ-NF-031~033`).
+
+## Deploy / limits
+- **Vercel** deployment; **60s** serverless ceiling on Hobby — long jobs use **streaming** (`streamText` / UI streaming) and **client-side PDF** for heavy reports per **REQ-NF-001**.
+- Large uploads: **direct-to-Supabase Storage** from client when payloads exceed server limits (SRS §3.6.2 pattern).
+
+## Out of scope suggestions
+- Do **not** introduce Java/Spring, Kafka workers, or Flutter **unless** SRS changes — this repo is the Next.js app (`pro-ili-smart-app`).

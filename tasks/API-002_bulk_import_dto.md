@@ -1,7 +1,7 @@
-# [API-002] Bulk Import DTO & Contract Definition
+﻿# [API-002] Bulk Import DTO & Contract Definition
 
 ## 1. 문서 목적
-본 문서는 **PRO ILI SMART** 프로젝트의 핵심 기능인 Bulk Import(대량 업로드) 처리 과정에서 사용되는 데이터 전송 객체(DTO, Data Transfer Object)와 API 계약(Contract)을 정의한다. 
+본 문서는 **PRO ALI SMART** 프로젝트의 핵심 기능인 Bulk Import(대량 업로드) 처리 과정에서 사용되는 데이터 전송 객체(DTO, Data Transfer Object)와 API 계약(Contract)을 정의한다. 
 
 Bulk Import 도메인에서 DTO가 먼저 정의되어야 하는 이유는 다음과 같다.
 - **일관된 기준 제공**: 관리자 처리(ADM-C), 관리자 조회(ADM-Q), UI(UI), 테스트(TEST) 로직이 동일한 데이터 구조를 바라보아야만 "부분 성공", "실패 내역 확인" 등 복잡한 상태를 오차 없이 처리할 수 있다.

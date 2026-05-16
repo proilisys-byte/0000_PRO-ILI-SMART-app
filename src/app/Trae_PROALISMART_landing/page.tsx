@@ -702,7 +702,7 @@ const Footer = () => {
 };
 
 // --- Main Page Component ---
-export default function TraePROILISMARTLanding() {
+export default function TraePROALISMARTLanding() {
   return (
     <div className="min-h-screen bg-[#0F172A] text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
       <Nav />
