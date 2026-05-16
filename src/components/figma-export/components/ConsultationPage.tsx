@@ -1,4 +1,5 @@
-﻿import { ArrowRight, Building2, Mail, Phone, User, Briefcase, Calendar, CheckCircle2, Sparkles } from 'lucide-react';
+"use client";
+import { ArrowRight, Building2, Mail, Phone, User, Briefcase, Calendar, CheckCircle2, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
 interface ConsultationPageProps {

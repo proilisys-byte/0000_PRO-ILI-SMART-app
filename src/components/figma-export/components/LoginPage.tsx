@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { Mail, Lock, Building2, User, ArrowRight, Eye, EyeOff } from 'lucide-react';
 
@@ -45,7 +46,7 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          홈으로
+          뒤로가기
         </button>
       )}
 
@@ -57,7 +58,7 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
             <div className="inline-flex items-center gap-3 mb-6">
               <img
                 src="/imports/그림2.png"
-                alt="PRO-ILI Logo"
+                alt="PRO-ALI Logo"
                 className="h-20 w-auto"
               />
               <div className="text-left">
@@ -70,7 +71,7 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
 
             <div className="inline-block px-6 py-3 rounded-full bg-white/50 backdrop-blur-xl border border-white/60 shadow-lg shadow-blue-100/50 mb-8">
               <p className="text-lg font-medium bg-gradient-to-r from-blue-800 to-cyan-600 bg-clip-text text-transparent">
-                스마트 제조의 새로운 표준
+                스마트 제조의 새로운 시작
               </p>
             </div>
           </div>
@@ -374,7 +375,7 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
           {/* Footer text */}
           <div className="mt-12 text-center">
             <p className="text-sm text-gray-600">
-              계정 보안은 엔터프라이즈급 암호화로 보호됩니다
+              계정 보안은 엔터프라이즈급 암호화로 보호됩니다.
             </p>
           </div>
         </div>

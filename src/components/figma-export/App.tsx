@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
+import { PersonaSolutionSection } from './components/PersonaSolutionSection';
+import { InteractiveProofSection } from './components/InteractiveProofSection';
 import { CapabilitiesSection } from './components/CapabilitiesSection';
 import { OutcomesSection } from './components/OutcomesSection';
 import { CTASection } from './components/CTASection';
@@ -41,7 +43,9 @@ export default function App() {
         <Header onConsultationClick={() => setCurrentPage('consultation')} onLoginClick={() => setCurrentPage('login')} />
         <HeroSection onConsultationClick={() => setCurrentPage('consultation')} onDashboardClick={() => setCurrentPage('dashboard')} />
         <ProblemSection />
+        <PersonaSolutionSection />
         <CapabilitiesSection />
+        <InteractiveProofSection />
         <OutcomesSection />
         <CTASection onConsultationClick={() => setCurrentPage('consultation')} />
         <Footer />

@@ -8,7 +8,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src="/imports/그림2.png"
-                alt="PRO-ILI Logo"
+                alt="PRO-ALI Logo"
                 className="h-12 w-auto"
               />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-900 to-cyan-700 bg-clip-text text-transparent">
@@ -16,7 +16,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-700">
-              제조 품질혁신을 위한<br />투명한 워크플로우 플랫폼
+              제조 품질 혁신을 위한<br />투명한 워크플로우 플랫폼
             </p>
           </div>
 

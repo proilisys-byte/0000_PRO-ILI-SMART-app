@@ -1,8 +1,8 @@
-// StaticSections.tsx
+﻿// StaticSections.tsx
 /**
  * @file src/components/landing/StaticSections.tsx
- * @description 랜딩 페이지 중 상태 관리(State)나 복잡한 애니메이션이 필요 없는 정적인 섹션들을 정의합니다.
- * React Server Component(RSC)로 동작하여 초기 JavaScript 번들 사이즈를 줄이고 렌더링 성능을 최적화합니다.
+ * @description ?쒕뵫 ?섏씠吏 以??곹깭 愿由?State)??蹂듭옟???좊땲硫붿씠?섏씠 ?꾩슂 ?녿뒗 ?뺤쟻???뱀뀡?ㅼ쓣 ?뺤쓽?⑸땲??
+ * React Server Component(RSC)濡??숈옉?섏뿬 珥덇린 JavaScript 踰덈뱾 ?ъ씠利덈? 以꾩씠怨??뚮뜑留??깅뒫??理쒖쟻?뷀빀?덈떎.
  */
 
 import React from "react";
@@ -16,20 +16,20 @@ import {
 } from "@/data/landing";
 
 // ---------------------------------------------------------------------------
-// ProblemSection – Server Component (static content, no animations needed)
+// ProblemSection ??Server Component (static content, no animations needed)
 // ---------------------------------------------------------------------------
 
 /**
  * @component ProblemSection
- * @description 기존 품질 관리 방식의 한계점을 나열하는 페인포인트 섹션입니다.
- * data.ts의 problems 데이터를 매핑하여 FeatureCard들을 렌더링합니다.
+ * @description 湲곗〈 ?덉쭏 愿由?諛⑹떇???쒓퀎?먯쓣 ?섏뿴?섎뒗 ?섏씤?ъ씤???뱀뀡?낅땲??
+ * data.ts??problems ?곗씠?곕? 留ㅽ븨?섏뿬 FeatureCard?ㅼ쓣 ?뚮뜑留곹빀?덈떎.
  */
 export const ProblemSection = () => (
   <section id="problem" className="py-24 px-4 bg-slate-900/50">
     <div className="max-w-7xl mx-auto">
       <SectionHeader
-        title="품질 팀의 현실적 한계"
-        subtitle="전통적인 방식으로는 더 이상 복잡해지는 품질 요구사항을 감당할 수 없습니다."
+        title="?덉쭏 ????꾩떎???쒓퀎"
+        subtitle="?꾪넻?곸씤 諛⑹떇?쇰줈?????댁긽 蹂듭옟?댁????덉쭏 ?붽뎄?ы빆??媛먮떦?????놁뒿?덈떎."
       />
       <div className="grid md:grid-cols-3 gap-6">
         {problems.map((item, i) => (
@@ -41,13 +41,13 @@ export const ProblemSection = () => (
 );
 
 // ---------------------------------------------------------------------------
-// SecuritySection – Server Component (rotating rings moved to client wrapper)
+// SecuritySection ??Server Component (rotating rings moved to client wrapper)
 // ---------------------------------------------------------------------------
 
 /**
  * @component SecuritySection
- * @description B2B 엔터프라이즈 레벨의 보안 및 무결성 기능 목록을 렌더링합니다.
- * 내부적으로 SecurityCard를 사용하여 개별 기능을 나열합니다.
+ * @description B2B ?뷀꽣?꾨씪?댁쫰 ?덈꺼??蹂댁븞 諛?臾닿껐??湲곕뒫 紐⑸줉???뚮뜑留곹빀?덈떎.
+ * ?대??곸쑝濡?SecurityCard瑜??ъ슜?섏뿬 媛쒕퀎 湲곕뒫???섏뿴?⑸땲??
  */
 export const SecuritySection = () => (
   <section id="security" className="py-32 px-4 relative">
@@ -63,7 +63,7 @@ export const SecuritySection = () => (
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">
-              타협 없는 데이터 무결성 <br /> B2B 신뢰의 핵심입니다.
+              ????녿뒗 ?곗씠??臾닿껐??<br /> B2B ?좊ː???듭떖?낅땲??
             </h2>
             <div className="grid grid-cols-2 gap-6">
               {securityFeatures.map((item, i) => (
@@ -90,21 +90,21 @@ export const SecuritySection = () => (
 );
 
 // ---------------------------------------------------------------------------
-// OutcomesSection – Server Component (static content)
+// OutcomesSection ??Server Component (static content)
 // ---------------------------------------------------------------------------
 
 /**
  * @component OutcomesSection
- * @description 도입 전/후의 압도적인 성과 지표(ROI)를 보여주는 섹션입니다.
- * data.ts의 outcomes 데이터를 매핑하여 StatCard들을 렌더링합니다.
+ * @description ?꾩엯 ???꾩쓽 ?뺣룄?곸씤 ?깃낵 吏??ROI)瑜?蹂댁뿬二쇰뒗 ?뱀뀡?낅땲??
+ * data.ts??outcomes ?곗씠?곕? 留ㅽ븨?섏뿬 StatCard?ㅼ쓣 ?뚮뜑留곹빀?덈떎.
  */
 export const OutcomesSection = () => (
   <section className="py-24 px-4 bg-[#0F172A]">
     <div className="max-w-7xl mx-auto text-center">
       <SectionHeader
         centered
-        title="압도적인 도입 성과"
-        subtitle="PRO ILI SMART는 숫자로 증명합니다."
+        title="?뺣룄?곸씤 ?꾩엯 ?깃낵"
+        subtitle="PRO ALI SMART???レ옄濡?利앸챸?⑸땲??"
       />
       <div className="grid md:grid-cols-3 gap-12 mt-16">
         {outcomes.map((item, i) => (

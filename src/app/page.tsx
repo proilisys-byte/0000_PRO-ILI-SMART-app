@@ -1,8 +1,8 @@
-// page.tsx
+﻿// page.tsx
 /**
  * @file src/app/page.tsx
- * @description PRO ILI SMART 랜딩 페이지의 메인 엔트리(Entry) 페이지입니다.
- * 정적 컴포넌트(Server)와 동적 애니메이션 컴포넌트(Client)를 하나의 레이아웃 안에서 조립합니다.
+ * @description PRO ALI SMART ?쒕뵫 ?섏씠吏??硫붿씤 ?뷀듃由?Entry) ?섏씠吏?낅땲??
+ * ?뺤쟻 而댄룷?뚰듃(Server)? ?숈쟻 ?좊땲硫붿씠??而댄룷?뚰듃(Client)瑜??섎굹???덉씠?꾩썐 ?덉뿉??議곕┰?⑸땲??
  */
 
 import React from "react";

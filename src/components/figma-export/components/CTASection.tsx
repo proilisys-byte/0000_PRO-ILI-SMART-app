@@ -1,4 +1,5 @@
-﻿import { ArrowRight, Calendar, Mail, Play } from 'lucide-react';
+"use client";
+import { ArrowRight, Calendar, Mail, Play } from 'lucide-react';
 import { useEffect } from 'react';
 
 interface CTASectionProps {

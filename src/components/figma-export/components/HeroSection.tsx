@@ -8,14 +8,20 @@ interface HeroSectionProps {
 export function HeroSection({ onConsultationClick, onDashboardClick }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Enhanced gradient background with stronger contrast */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900" />
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-blue-500/5 to-cyan-500/10" />
+      {/* Background Image: Abstract Smart Workflow */}
+      <div className="absolute inset-0 bg-slate-900">
+        <img 
+          src="/hero-bg.png" 
+          alt="Abstract Smart Workflow" 
+          className="w-full h-full object-cover opacity-80"
+        />
+        {/* Dark overlay gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/70" />
+      </div>
 
-      {/* Stronger animated aurora blur effects */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/40 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-cyan-400/30 rounded-full blur-3xl animate-pulse delay-700" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-3xl" />
+      {/* Ambient glowing effects */}
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">

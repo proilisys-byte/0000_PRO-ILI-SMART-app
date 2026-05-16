@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'PRO ILI SMART | 스마트 제조 품질 혁신 플랫폼',
-  description: '품질 운영을 하나의 연결된 워크플로우로 통합하세요. 제조 팀을 위한 스마트 제조 품질 혁신 플랫폼.',
+  title: 'PRO ALI SMART | 스마트 제조 품질 혁신 플랫폼',
+  description: '품질 운영의 하나로 연결된 워크플로우로 통합하세요. 제조 DX를 위한 스마트 제조 품질 혁신 플랫폼',
 };
 
 export default function RootLayout({

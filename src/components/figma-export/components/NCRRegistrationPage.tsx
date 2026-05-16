@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { ArrowLeft, Upload, Camera, FileText, Sparkles, CheckCircle2 } from 'lucide-react';
 

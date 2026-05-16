@@ -1,8 +1,8 @@
-// LandingLayout.tsx
+﻿// LandingLayout.tsx
 /**
  * @file src/components/landing/LandingLayout.tsx
- * @description 랜딩 페이지 전체를 감싸는 네비게이션 헤더(Nav)와 푸터(Footer)를 제공합니다.
- * 반응형 모바일 메뉴 동작을 위해 클라이언트 사이드 상태(useState)를 관리합니다.
+ * @description ?쒕뵫 ?섏씠吏 ?꾩껜瑜?媛먯떥???ㅻ퉬寃뚯씠???ㅻ뜑(Nav)? ?명꽣(Footer)瑜??쒓났?⑸땲??
+ * 諛섏쓳??紐⑤컮??硫붾돱 ?숈옉???꾪빐 ?대씪?댁뼵???ъ씠???곹깭(useState)瑜?愿由ы빀?덈떎.
  */
 
 "use client";
@@ -19,15 +19,15 @@ import { Button } from "@/components/ui/button";
 // ---------------------------------------------------------------------------
 
 const NAV_LINKS = [
-  { href: "/#problem", label: "페인포인트" },
-  { href: "/#workflow", label: "워크플로우" },
-  { href: "/#capabilities", label: "핵심기능" },
-  { href: "/#security", label: "보안" },
+  { href: "/#problem", label: "?섏씤?ъ씤?? },
+  { href: "/#workflow", label: "?뚰겕?뚮줈?? },
+  { href: "/#capabilities", label: "?듭떖湲곕뒫" },
+  { href: "/#security", label: "蹂댁븞" },
   { href: "/Trae_PROILISMART_landing", label: "Trae v0.4" },
 ] as const;
 
 // ---------------------------------------------------------------------------
-// Nav – Client Component (requires useState for mobile menu)
+// Nav ??Client Component (requires useState for mobile menu)
 // ---------------------------------------------------------------------------
 
 export const Nav = () => {
@@ -43,7 +43,7 @@ export const Nav = () => {
               <Zap className="text-slate-900 w-5 h-5 fill-current" />
             </div>
             <span className="text-white font-bold text-xl tracking-tight">
-              PRO ILI SMART
+              PRO ALI SMART
             </span>
           </div>
 
@@ -64,8 +64,7 @@ export const Nav = () => {
               rel="noopener noreferrer"
               className="text-cyan-400 font-bold hover:text-cyan-300 transition-colors"
             >
-              Figma Prototype →
-            </a>
+              Figma Prototype ??            </a>
           </div>
 
           {/* Desktop CTA */}
@@ -77,8 +76,7 @@ export const Nav = () => {
                 "font-semibold shadow-[0_0_15px_rgba(8,145,178,0.3)]"
               )}
             >
-              도입 컨설팅
-            </Button>
+              ?꾩엯 而⑥꽕??            </Button>
           </div>
 
           {/* Mobile Toggle */}
@@ -88,7 +86,7 @@ export const Nav = () => {
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-300"
-              aria-label="메뉴 열기"
+              aria-label="硫붾돱 ?닿린"
             >
               {isOpen ? <X /> : <Menu />}
             </Button>
@@ -114,7 +112,7 @@ export const Nav = () => {
             </Link>
           ))}
           <Button className="bg-cyan-600 text-white rounded-xl font-semibold">
-            무료 도입 컨설팅 신청
+            臾대즺 ?꾩엯 而⑥꽕???좎껌
           </Button>
         </motion.div>
       )}
@@ -123,14 +121,14 @@ export const Nav = () => {
 };
 
 // ---------------------------------------------------------------------------
-// Footer – Server-safe (no hooks), but kept in same file for layout grouping
+// Footer ??Server-safe (no hooks), but kept in same file for layout grouping
 // ---------------------------------------------------------------------------
 
 const FOOTER_LINKS = [
   { href: "/Trae_PROILISMART_landing", label: "Trae v0.4" },
-  { href: "#", label: "개인정보처리방침" },
-  { href: "#", label: "이용약관" },
-  { href: "#", label: "문의하기" },
+  { href: "#", label: "媛쒖씤?뺣낫泥섎━諛⑹묠" },
+  { href: "#", label: "?댁슜?쎄?" },
+  { href: "#", label: "臾몄쓽?섍린" },
 ] as const;
 
 export const Footer = () => (
@@ -139,7 +137,7 @@ export const Footer = () => (
       <div className="flex items-center gap-2">
         <Zap className="text-cyan-500 w-5 h-5 fill-current" />
         <span className="text-white font-bold text-lg tracking-tight uppercase">
-          PRO ILI SMART
+          PRO ALI SMART
         </span>
       </div>
 
@@ -156,7 +154,7 @@ export const Footer = () => (
       </div>
 
       <div className="text-sm text-slate-600">
-        © 2026 PRO ILI SMART. All rights reserved.
+        짤 2026 PRO ALI SMART. All rights reserved.
       </div>
     </div>
   </footer>

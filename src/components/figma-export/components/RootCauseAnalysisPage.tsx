@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { ArrowLeft, Sparkles, AlertTriangle, CheckCircle2, GitBranch } from 'lucide-react';
 

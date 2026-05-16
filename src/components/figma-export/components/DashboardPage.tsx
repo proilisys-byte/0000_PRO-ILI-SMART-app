@@ -1,3 +1,4 @@
+"use client";
 import { TrendingDown, Activity, AlertCircle, CheckCircle2, Zap, Radio, BarChart3, Users, Clock, Target, FileText, GitBranch, ListChecks, BookOpen, TrendingUp } from 'lucide-react';
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
