@@ -49,3 +49,7 @@ Docs/
 proilismart_Landing_v0.2/
 proilismart_prototype_v0.1/
 UI_proto plan/
+
+# SQLite
+*.db
+*.db-journal
