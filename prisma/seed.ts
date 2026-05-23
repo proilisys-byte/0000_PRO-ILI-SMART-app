@@ -2,13 +2,118 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+async function disableTriggers() {
+  console.log("🔓 기존 트리거 일시 비활성화 중...");
+  try {
+    const dbTypeResult = await prisma.$queryRawUnsafe<any[]>(`SELECT sqlite_version()`).catch(() => null);
+    const isSQLite = !!dbTypeResult;
+    
+    if (isSQLite) {
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_audit_log_update`);
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_audit_log_delete`);
+      console.log("✅ SQLite 기존 트리거 해제 완료.");
+    } else {
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS trg_prevent_audit_log_update_delete ON audit_log;`);
+      console.log("✅ PostgreSQL 기존 트리거 해제 완료.");
+    }
+  } catch (error) {
+    console.warn("⚠️ 트리거 비활성화 중 경고:", error);
+  }
+}
+
+async function applyTriggers() {
+  console.log("🔒 감사로그 위변조 방지 트리거 및 RLS 설정 중...");
+  try {
+    const dbTypeResult = await prisma.$queryRawUnsafe<any[]>(`SELECT sqlite_version()`).catch(() => null);
+    const isSQLite = !!dbTypeResult;
+    
+    if (isSQLite) {
+      console.log("ℹ️ SQLite 데이터베이스 감지. SQLite 트리거 적용...");
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER IF NOT EXISTS prevent_audit_log_update
+        BEFORE UPDATE ON audit_log
+        BEGIN
+          SELECT RAISE(FAIL, 'COMPLIANCE LOCKUP: Modification or deletion of audit_log records is strictly prohibited.');
+        END;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER IF NOT EXISTS prevent_audit_log_delete
+        BEFORE DELETE ON audit_log
+        BEGIN
+          SELECT RAISE(FAIL, 'COMPLIANCE LOCKUP: Modification or deletion of audit_log records is strictly prohibited.');
+        END;
+      `);
+      console.log("✅ SQLite 트리거 적용 완료!");
+    } else {
+      console.log("ℹ️ PostgreSQL 데이터베이스 감지. PostgreSQL 트리거 및 RLS 적용...");
+      
+      // 1. 트리거 함수 생성
+      await prisma.$executeRawUnsafe(`
+        CREATE OR REPLACE FUNCTION prevent_audit_log_modification()
+        RETURNS TRIGGER AS $$
+        BEGIN
+          RAISE EXCEPTION 'COMPLIANCE LOCKUP: Modification or deletion of audit_log records is strictly prohibited.';
+        END;
+        $$ LANGUAGE plpgsql;
+      `);
+      
+      // 2. 트리거 생성
+      await prisma.$executeRawUnsafe(`
+        DROP TRIGGER IF EXISTS trg_prevent_audit_log_update_delete ON audit_log;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER trg_prevent_audit_log_update_delete
+        BEFORE UPDATE OR DELETE ON audit_log
+        FOR EACH ROW
+        EXECUTE FUNCTION prevent_audit_log_modification();
+      `);
+      
+      // 3. RLS 활성화
+      await prisma.$executeRawUnsafe(`
+        ALTER TABLE audit_log ENABLE ROW LEVEL SECURITY;
+      `);
+      
+      // 4. RLS 정책 생성 (INSERT)
+      await prisma.$executeRawUnsafe(`
+        DROP POLICY IF EXISTS "Allow insert for authenticated users" ON audit_log;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE POLICY "Allow insert for authenticated users" 
+        ON audit_log 
+        FOR INSERT TO authenticated 
+        WITH CHECK (true);
+      `);
+      
+      // 5. RLS 정책 생성 (SELECT - 동일 테넌트만)
+      await prisma.$executeRawUnsafe(`
+        DROP POLICY IF EXISTS "Allow select for users of the same tenant" ON audit_log;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE POLICY "Allow select for users of the same tenant" 
+        ON audit_log 
+        FOR SELECT TO authenticated 
+        USING (
+          tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid())
+        );
+      `);
+      console.log("✅ PostgreSQL 트리거 및 RLS 적용 완료!");
+    }
+  } catch (error) {
+    console.error("❌ 트리거 설정 중 오류 발생:", error);
+    throw error;
+  }
+}
+
 async function main() {
   const isLocal = process.env.NODE_ENV !== 'production';
 
   if (isLocal) {
     console.log("🌱 로컬/테스트 환경 Seed 데이터 삽입 시작...");
 
-    // 0. 기존 더미 데이터 정리 (멱등성 보장)
+    // 0. 기존 트리거 비활성화 (데이터 정리를 위해 선행)
+    await disableTriggers();
+
+    // 1. 기존 더미 데이터 정리 (멱등성 보장)
     console.log("🧹 기존 데이터 정리 중...");
     await prisma.auditDataEntry.deleteMany({});
     await prisma.auditLog.deleteMany({});
@@ -16,19 +121,19 @@ async function main() {
     await prisma.bulkImportBatch.deleteMany({});
     await prisma.auditSession.deleteMany({});
     
-    // many-to-many relationship implicit join table is automatically cleaned when users are deleted.
+    // 다대다 관계 테이블은 user 삭제 시 자동 정리됨
     await prisma.site.deleteMany({});
     await prisma.user.deleteMany({});
     await prisma.rbacRole.deleteMany({});
     await prisma.tenant.deleteMany({});
 
-    // 1. 테넌트 생성
+    // 2. 테넌트 생성
     console.log("🏢 테넌트(고객사) 생성 중...");
     const tenant = await prisma.tenant.create({
       data: { name: '미래정밀', status: 'ACTIVE' }
     });
 
-    // 2. RBAC 역할 생성
+    // 3. RBAC 역할 생성
     console.log("🔑 RBAC 역할 생성 중...");
     const adminRole = await prisma.rbacRole.create({
       data: { id: 'admin', description: 'System Administrator (관리자)' }
@@ -37,7 +142,7 @@ async function main() {
       data: { id: 'user', description: 'Standard User / Inspector (현장 작업자)' }
     });
 
-    // 3. 사용자 생성
+    // 4. 사용자 생성
     console.log("👤 테스트 사용자 생성 중...");
     const adminUser = await prisma.user.create({
       data: {
@@ -67,7 +172,7 @@ async function main() {
       }
     });
 
-    // 4. 현장(Site) 생성 및 다대다 관계 연결
+    // 5. 현장(Site) 생성 및 다대다 관계 연결
     console.log("🏭 현장(Site) 생성 및 관계 설정 중...");
     const site = await prisma.site.create({
       data: {
@@ -81,7 +186,7 @@ async function main() {
       }
     });
 
-    // 5. PIPA 수집 동의 이력 생성
+    // 6. PIPA 수집 동의 이력 생성
     console.log("📝 PIPA 개인정보 수집 동의 내역 기록 중...");
     await prisma.consentRecord.create({
       data: {
@@ -99,7 +204,7 @@ async function main() {
       }
     });
 
-    // 6. 가상 Audit 세션 생성
+    // 7. 가상 Audit 세션 생성
     console.log("🕒 가상 Audit 세션 및 데이터 적재 중...");
     
     // 완료된 세션 1
@@ -139,7 +244,7 @@ async function main() {
       }
     });
 
-    // 진행 중 세션용 샘플 발화문 적재 (20개 이상의 테스트용 세션 구성 목적)
+    // 진행 중 세션용 샘플 발화문 적재
     const dummyUtterances = [
       "기어 조립 공정, 작업 수량 백 개, 스크래치 불량 두 개 발생",
       "샤프트 연마 끝났고 정상 수량 오십 개",
@@ -163,11 +268,57 @@ async function main() {
       });
     }
 
-    console.log("✅ 로컬/테스트 환경 Seed 데이터 삽입 완료!");
+    console.log("🌱 로컬/테스트 환경 Seed 데이터 삽입 완료!");
+
+    // 8. 트리거 재부착 및 보안 정책 활성화
+    await applyTriggers();
+
+    // 9. 감사로그 트리거 작동 자가진단 (Self-test)
+    console.log("🛡️ 감사로그 위변조 방지 트리거 자가진단 시작...");
+    const testLog = await prisma.auditLog.create({
+      data: {
+        tableName: 'test_table',
+        recordId: 'c4b1a1a1-0000-0000-0000-000000000001',
+        action: 'INSERT',
+        newData: { test: true }
+      }
+    });
+    
+    // 9.1. UPDATE 시도 및 예외 발생 확인
+    let updateFailed = false;
+    try {
+      await prisma.auditLog.update({
+        where: { id: testLog.id },
+        data: { action: 'UPDATE' }
+      });
+    } catch (e: any) {
+      updateFailed = true;
+      console.log("✅ UPDATE 차단 자가진단 성공! (기대된 DB 예외 차단 성공)");
+    }
+    
+    if (!updateFailed) {
+      throw new Error("🚨 위변조 방지 실패: AuditLog UPDATE가 차단되지 않고 성공했습니다!");
+    }
+    
+    // 9.2. DELETE 시도 및 예외 발생 확인
+    let deleteFailed = false;
+    try {
+      await prisma.auditLog.delete({
+        where: { id: testLog.id }
+      });
+    } catch (e: any) {
+      deleteFailed = true;
+      console.log("✅ DELETE 차단 자가진단 성공! (기대된 DB 예외 차단 성공)");
+    }
+    
+    if (!deleteFailed) {
+      throw new Error("🚨 위변조 방지 실패: AuditLog DELETE가 차단되지 않고 성공했습니다!");
+    }
+    
+    console.log("🎉 감사로그 위변조 방지 트리거 자가진단 100% 통과!");
   } else {
     console.log("⚠️ 운영/스테이징 환경용 최소 기본 역할만 정의합니다.");
     
-    // 운영 환경에서는 rbac 역할만 멱등성을 보장하며 생성
     await prisma.rbacRole.upsert({
       where: { id: 'admin' },
       update: {},
