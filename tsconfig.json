@@ -25,10 +25,10 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": [
     "node_modules",
-    "src/app/pro-ali-smart",
-    "src/app/Trae_PROALISMART_landing",
-    "src/components/landing",
-    "proilismart_Landing_v0.2",
-    "proilismart_prototype_v0.1"
+    "src/app/pro-ali-smart/**/*",
+    "src/app/Trae_PROALISMART_landing/**/*",
+    "src/components/landing/**/*",
+    "proilismart_Landing_v0.2/**/*",
+    "proilismart_prototype_v0.1/**/*"
   ]
 }

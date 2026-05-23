@@ -3,13 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("DATABASE_URL")
+  provider = "sqlite"
+  url = "file:./dev.db"
 }
 
 // 1. Tenants (고객사 격리 단위)
 model Tenant {
-  id        String   @id @default(uuid()) @db.Uuid
+  id        String   @id @default(uuid())
   name      String
   status    String   @default("ACTIVE")
   createdAt DateTime @default(now()) @map("created_at")
@@ -20,6 +20,10 @@ model Tenant {
   auditSessions      AuditSession[]
   bulkImportBatches  BulkImportBatch[]
   auditLogs          AuditLog[]
+  products           Product[]
+  processes          Process[]
+  boms               Bom[]
+  defects            Defect[]
 
   @@map("tenants")
 }
@@ -35,8 +39,8 @@ model RbacRole {
 
 // 3. Users (사용자)
 model User {
-  id             String   @id @default(uuid()) @db.Uuid
-  tenantId       String   @map("tenant_id") @db.Uuid
+  id             String   @id @default(uuid())
+  tenantId       String   @map("tenant_id")
   roleId         String   @map("role_id")
   email          String   @unique
   name           String?
@@ -57,14 +61,14 @@ model User {
 
 // 4. Sites (공장/현장 단위)
 model Site {
-  id          String   @id @default(uuid()) @db.Uuid
+  id          String   @id @default(uuid())
   name        String
   description String?
   location    String?
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
-  tenantId    String?  @map("tenant_id") @db.Uuid
+  tenantId    String?  @map("tenant_id")
   tenant      Tenant?  @relation(fields: [tenantId], references: [id])
   users       User[]   @relation("UserSites")
 
@@ -73,9 +77,9 @@ model Site {
 
 // 5. Audit Sessions (음성 수집 세션)
 model AuditSession {
-  id        String    @id @default(uuid()) @db.Uuid
-  tenantId  String    @map("tenant_id") @db.Uuid
-  userId    String    @map("user_id") @db.Uuid
+  id        String    @id @default(uuid())
+  tenantId  String    @map("tenant_id")
+  userId    String    @map("user_id")
   status    String    @default("IN_PROGRESS")
   startTime DateTime  @default(now()) @map("start_time")
   endTime   DateTime? @map("end_time")
@@ -89,8 +93,8 @@ model AuditSession {
 
 // 6. Audit Data Entries (수집 데이터 및 매핑 데이터)
 model AuditDataEntry {
-  id         String   @id @default(uuid()) @db.Uuid
-  sessionId  String   @map("session_id") @db.Uuid
+  id         String   @id @default(uuid())
+  sessionId  String   @map("session_id")
   rawData    Json     @map("raw_data")
   mappedData Json?    @map("mapped_data")
   createdAt  DateTime @default(now()) @map("created_at")
@@ -102,14 +106,14 @@ model AuditDataEntry {
 
 // 7. Audit Log (Insert-only 변경 이력 로그)
 model AuditLog {
-  id         String   @id @default(uuid()) @db.Uuid
-  tenantId   String?  @map("tenant_id") @db.Uuid
+  id         String   @id @default(uuid())
+  tenantId   String?  @map("tenant_id")
   tableName  String   @map("table_name")
-  recordId   String   @map("record_id") @db.Uuid
+  recordId   String   @map("record_id")
   action     String
   oldData    Json?    @map("old_data")
   newData    Json?    @map("new_data")
-  changedBy  String?  @map("changed_by") @db.Uuid
+  changedBy  String?  @map("changed_by")
   createdAt  DateTime @default(now()) @map("created_at")
 
   tenant     Tenant?  @relation(fields: [tenantId], references: [id])
@@ -120,13 +124,17 @@ model AuditLog {
 
 // 8. Bulk Import Batches (CSV 일괄 업로드 배치)
 model BulkImportBatch {
-  id            String   @id @default(uuid()) @db.Uuid
-  tenantId      String   @map("tenant_id") @db.Uuid
-  uploadedBy    String   @map("uploaded_by") @db.Uuid
+  id            String   @id @default(uuid())
+  tenantId      String   @map("tenant_id")
+  uploadedBy    String   @map("uploaded_by")
   fileName      String   @map("file_name")
+  importType    String   @default("PRODUCT") @map("import_type")
   status        String   @default("PENDING")
   totalRows     Int      @default(0) @map("total_rows")
   processedRows Int      @default(0) @map("processed_rows")
+  successCount  Int      @default(0) @map("success_count")
+  failedCount   Int      @default(0) @map("failed_count")
+  errors        Json?    @map("errors")
   createdAt     DateTime @default(now()) @map("created_at")
 
   tenant        Tenant   @relation(fields: [tenantId], references: [id])
@@ -137,8 +145,8 @@ model BulkImportBatch {
 
 // 9. Consent Records (PIPA 개인정보 수집 동의 내역)
 model ConsentRecord {
-  id          String   @id @default(uuid()) @db.Uuid
-  userId      String   @map("user_id") @db.Uuid
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
   consentType String   @map("consent_type")
   isAgreed    Boolean  @map("is_agreed")
   agreedAt    DateTime @default(now()) @map("agreed_at")
@@ -146,4 +154,77 @@ model ConsentRecord {
   user        User     @relation(fields: [userId], references: [id])
 
   @@map("consent_records")
+}
+
+// 10. Products (제품 마스터)
+model Product {
+  id          String   @id @default(uuid())
+  tenantId    String   @map("tenant_id")
+  productCode String   @map("product_code")
+  name        String   @map("product_name")
+  spec        String?  @map("specification")
+  unit        String
+  clientCode  String?  @map("client_code")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, productCode])
+  @@map("products")
+}
+
+// 11. Processes (공정 마스터)
+model Process {
+  id           String   @id @default(uuid())
+  tenantId     String   @map("tenant_id")
+  processCode  String   @map("process_code")
+  name         String   @map("process_name")
+  lineCode     String   @map("line_code")
+  cycleTimeSec Int      @map("cycle_time_sec")
+  defectCodes  String?  @map("defect_codes")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  tenant       Tenant   @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, processCode])
+  @@map("processes")
+}
+
+// 12. Boms (BOM 마스터)
+model Bom {
+  id             String    @id @default(uuid())
+  tenantId       String    @map("tenant_id")
+  parentItemCode String    @map("parent_item_code")
+  childItemCode  String    @map("child_item_code")
+  quantity       Float
+  unit           String
+  validFrom      DateTime  @map("valid_from")
+  validTo        DateTime? @map("valid_to")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  tenant         Tenant    @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, parentItemCode, childItemCode])
+  @@map("boms")
+}
+
+// 13. Defects (불량 마스터)
+model Defect {
+  id         String   @id @default(uuid())
+  tenantId   String   @map("tenant_id")
+  defectCode String   @map("defect_code")
+  name       String   @map("defect_name")
+  category   String
+  severity   String
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  tenant     Tenant   @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, defectCode])
+  @@map("defects")
 }
