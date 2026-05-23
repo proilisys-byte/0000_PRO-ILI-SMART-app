@@ -4,53 +4,146 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
-enum Role {
-  USER
-  ADMIN
-}
-
-// Phase 2 Multi-tenancy 대응 뼈대
+// 1. Tenants (고객사 격리 단위)
 model Tenant {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @db.Uuid
   name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
-  users User[]
-  sites Site[]
+  users              User[]
+  sites              Site[]
+  auditSessions      AuditSession[]
+  bulkImportBatches  BulkImportBatch[]
+  auditLogs          AuditLog[]
+
+  @@map("tenants")
 }
 
+// 2. RBAC Roles
+model RbacRole {
+  id          String  @id
+  description String?
+  users       User[]
+
+  @@map("rbac_roles")
+}
+
+// 3. Users (사용자)
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  role      Role     @default(USER)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id             String   @id @default(uuid()) @db.Uuid
+  tenantId       String   @map("tenant_id") @db.Uuid
+  roleId         String   @map("role_id")
+  email          String   @unique
+  name           String?
+  isMfaEnabled   Boolean  @default(false) @map("is_mfa_enabled")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
 
-  // Tenant (SaaS 고객사)
-  tenantId String?
-  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+  tenant             Tenant              @relation(fields: [tenantId], references: [id])
+  role               RbacRole            @relation(fields: [roleId], references: [id])
+  sites              Site[]              @relation("UserSites")
+  auditSessions      AuditSession[]
+  auditLogs          AuditLog[]
+  bulkImportBatches  BulkImportBatch[]
+  consentRecords     ConsentRecord[]
 
-  // 사용자가 접근 가능한 현장(Site) 목록 - 다대다 관계
-  sites Site[] @relation("UserSites")
+  @@map("users")
 }
 
+// 4. Sites (공장/현장 단위)
 model Site {
-  id          String   @id @default(uuid())
+  id          String   @id @default(uuid()) @db.Uuid
   name        String
   description String?
   location    String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
 
-  // Tenant (SaaS 고객사)
-  tenantId String?
-  tenant   Tenant? @relation(fields: [tenantId], references: [id])
+  tenantId    String?  @map("tenant_id") @db.Uuid
+  tenant      Tenant?  @relation(fields: [tenantId], references: [id])
+  users       User[]   @relation("UserSites")
 
-  // 현장에 소속되거나 접근 가능한 사용자 목록
-  users User[] @relation("UserSites")
+  @@map("sites")
+}
+
+// 5. Audit Sessions (음성 수집 세션)
+model AuditSession {
+  id        String    @id @default(uuid()) @db.Uuid
+  tenantId  String    @map("tenant_id") @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  status    String    @default("IN_PROGRESS")
+  startTime DateTime  @default(now()) @map("start_time")
+  endTime   DateTime? @map("end_time")
+
+  tenant       Tenant            @relation(fields: [tenantId], references: [id])
+  user         User              @relation(fields: [userId], references: [id])
+  dataEntries  AuditDataEntry[]
+
+  @@map("audit_sessions")
+}
+
+// 6. Audit Data Entries (수집 데이터 및 매핑 데이터)
+model AuditDataEntry {
+  id         String   @id @default(uuid()) @db.Uuid
+  sessionId  String   @map("session_id") @db.Uuid
+  rawData    Json     @map("raw_data")
+  mappedData Json?    @map("mapped_data")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  session    AuditSession @relation(fields: [sessionId], references: [id])
+
+  @@map("audit_data_entries")
+}
+
+// 7. Audit Log (Insert-only 변경 이력 로그)
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  tenantId   String?  @map("tenant_id") @db.Uuid
+  tableName  String   @map("table_name")
+  recordId   String   @map("record_id") @db.Uuid
+  action     String
+  oldData    Json?    @map("old_data")
+  newData    Json?    @map("new_data")
+  changedBy  String?  @map("changed_by") @db.Uuid
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  tenant     Tenant?  @relation(fields: [tenantId], references: [id])
+  user       User?    @relation(fields: [changedBy], references: [id])
+
+  @@map("audit_log")
+}
+
+// 8. Bulk Import Batches (CSV 일괄 업로드 배치)
+model BulkImportBatch {
+  id            String   @id @default(uuid()) @db.Uuid
+  tenantId      String   @map("tenant_id") @db.Uuid
+  uploadedBy    String   @map("uploaded_by") @db.Uuid
+  fileName      String   @map("file_name")
+  status        String   @default("PENDING")
+  totalRows     Int      @default(0) @map("total_rows")
+  processedRows Int      @default(0) @map("processed_rows")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  tenant        Tenant   @relation(fields: [tenantId], references: [id])
+  user          User     @relation(fields: [uploadedBy], references: [id])
+
+  @@map("bulk_import_batches")
+}
+
+// 9. Consent Records (PIPA 개인정보 수집 동의 내역)
+model ConsentRecord {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @map("user_id") @db.Uuid
+  consentType String   @map("consent_type")
+  isAgreed    Boolean  @map("is_agreed")
+  agreedAt    DateTime @default(now()) @map("agreed_at")
+
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@map("consent_records")
 }

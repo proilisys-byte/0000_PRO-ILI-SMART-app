@@ -1,4 +1,4 @@
-﻿# 작업 목록 (TASK LIST) v2.0 - 운영 최적화 버전
+# 작업 목록 (TASK LIST) v2.0 - 운영 최적화 버전
 
 ## 1. 문서 목적
 본 문서는 PRO ALI SMART 프로젝트의 기존 TASK LIST(v1.0)를 바탕으로, 개발, QA, 운영팀이 즉각적이고 투명하게 시스템을 검증할 수 있도록 **"실제 운영 가능한 수준(Implementation-ready)"**으로 재구성한 버전이다. 모든 Task는 정량적 완료 기준을 가지며, AI 품질 검증, 실패 대응, Observability(관측 가능성) 및 규제 대응을 완벽히 포괄한다.
@@ -102,3 +102,102 @@
 5.  **T1-014 (데이터 수집 동의 이력 로그)**
     *   **목적**: 민감 정보 수집에 대한 법적 분쟁을 방어하기 위해 동의 여부를 변경 불가능한 DB에 영구 기록한다.
     *   **완료 기준**: 가입 시 PIPA 동의 내역을 DB에 적재, 동의 거부 시 앱 사용 원천 차단 로직(E2E) 완료.
+
+---
+
+## 4) TASK 간 의존성 다이어그램
+
+본 다이어그램은 각 Task 간의 선행조건(Prerequisites)을 기반으로 실행 순서와 의존성을 시각화한 것입니다. 각 스프린트별 태스크의 실행 순서와 병목 지점을 파악하는 데 활용됩니다.
+
+```mermaid
+flowchart TD
+    %% 스타일 정의
+    classDef infra_db fill:#e1f5fe,stroke:#01579b,stroke-width:1px;
+    classDef ai fill:#f3e5f5,stroke:#4a148c,stroke-width:1px;
+    classDef ui fill:#e8f5e9,stroke:#1b5e20,stroke-width:1px;
+    classDef qa fill:#fff3e0,stroke:#e65100,stroke-width:1px;
+    
+    %% Sprint 1
+    subgraph Sprint1 [Sprint 1: 기반 공사 및 최소 시연 E2E]
+        T1_001["T1-001<br/>Infra/DB 설계"]:::infra_db
+        T1_002["T1-002<br/>Audit Log 정책"]:::infra_db
+        T1_003["T1-003<br/>Auth/RBAC 보호"]:::infra_db
+        T1_004["T1-004<br/>Bulk Import 로직"]:::infra_db
+        T1_005["T1-005<br/>Bulk Error UI"]:::ui
+        T1_006["T1-006<br/>STT 프롬프트 연동"]:::ai
+        T1_007["T1-007<br/>Zero-UI 모바일 화면"]:::ui
+        T1_008["T1-008<br/>Smart Audit 매핑 엔진"]:::ai
+        T1_009["T1-009<br/>Audit PDF 생성"]:::ui
+        T1_010["T1-010<br/>Golden Dataset 구축"]:::ai
+        T1_011["T1-011<br/>AI 품질 검증 파이프라인"]:::ai
+        T1_012["T1-012<br/>Observability 스키마"]:::infra_db
+        T1_013["T1-013<br/>STT Fallback UX"]:::ui
+        T1_014["T1-014<br/>동의 로그 DB 체계화"]:::infra_db
+        
+        T1_001 --> T1_002
+        T1_001 --> T1_003
+        T1_001 --> T1_012
+        T1_001 --> T1_014
+        T1_002 --> T1_004
+        T1_006 --> T1_008
+        T1_008 --> T1_009
+        T1_010 --> T1_011
+        T1_007 --> T1_013
+    end
+
+    %% Sprint 2
+    subgraph Sprint2 [Sprint 2: NC 시정 파이프라인 및 Vision 확장]
+        T2_001["T2-001<br/>Vision AI 프롬프트 설계"]:::ai
+        T2_002["T2-002<br/>현장 촬영 UI"]:::ui
+        T2_003["T2-003<br/>NC 사유 파싱 로직"]:::ai
+        T2_004["T2-004<br/>NC 트래킹 UI"]:::ui
+        T2_005["T2-005<br/>조치 무결성 비교 API"]:::infra_db
+        
+        T1_006 -.-> T2_001
+        T1_008 -.-> T2_003
+        T2_003 --> T2_005
+    end
+
+    %% Sprint 3
+    subgraph Sprint3 [Sprint 3: Lean 진단 및 AI 거버넌스]
+        T3_001["T3-001<br/>COPQ 산식 쿼리"]:::infra_db
+        T3_002["T3-002<br/>Lean 대시보드 연동"]:::ui
+        T3_003["T3-003<br/>경영진 요약 PDF 생성"]:::ui
+        T3_004["T3-004<br/>AI Model Card 검증"]:::ai
+        T3_005["T3-005<br/>편향/Drift 경고 시스템"]:::ai
+        T3_006["T3-006<br/>XAI 매핑 뷰어 UI"]:::ai
+        
+        T1_004 -.-> T3_001
+        T3_002 --> T3_003
+        T1_006 -.-> T3_004
+        T3_004 --> T3_005
+        T1_008 -.-> T3_006
+    end
+
+    %% Sprint 4
+    subgraph Sprint4 [Sprint 4: 안정화 및 성능/규제 최적화]
+        T4_001["T4-001<br/>모니터링/SLI"]:::infra_db
+        T4_002["T4-002<br/>PIPA 다국어 동의 폼"]:::ui
+        T4_003["T4-003<br/>관리자 MFA 적용"]:::infra_db
+        T4_004["T4-004<br/>AI Streaming 타임아웃 방어"]:::ai
+        T4_005["T4-005<br/>E2E 성능 부하/침투 테스트"]:::qa
+        
+        T1_014 -.-> T4_002
+        T1_003 -.-> T4_003
+        T1_008 -.-> T4_004
+        
+        T4_001 --> T4_005
+        T4_002 --> T4_005
+        T4_003 --> T4_005
+        T4_004 --> T4_005
+    end
+```
+
+### 다이어그램 범례 (Legend)
+
+*   **파란색 (Infra/DB):** 기반 시스템, 데이터베이스 스키마 및 보안 권한 (Core)
+*   **보라색 (AI/API):** AI 파이프라인, 프롬프트 엔지니어링, 품질 검증 로직
+*   **초록색 (UI/FE):** 사용자 인터페이스, 모바일 화면 및 대시보드 연동
+*   **주황색 (QA):** 종단간(E2E) 부하 테스트 및 보안/품질 검증
+*   **실선 화살표 (`-->`):** 동일 스프린트 내의 명시적 선행/후행 조건
+*   **점선 화살표 (`-.->`):** 이전 스프린트에서 넘어오는 암묵적/교차 선행 조건
