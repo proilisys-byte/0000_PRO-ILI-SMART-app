@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Audit Mapping Golden Dataset Schema",
+  "description": "Schema for validating the Audit Mapping Golden Dataset",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "input", "expected", "metadata"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^mapping-\\d{3}$"
+      },
+      "input": {
+        "type": "array",
+        "description": "수집된 현장 데이터 레코드 배열",
+        "items": {
+          "type": "object",
+          "required": ["process_name", "quantity"],
+          "properties": {
+            "process_name": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "defect_code": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "expected": {
+        "type": "object",
+        "required": ["sections"],
+        "properties": {
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["clause", "summary", "confidence_score"],
+              "properties": {
+                "clause": {
+                  "type": "string",
+                  "pattern": "^\\d+(\\.\\d+)*$",
+                  "description": "ISO 9001 조항 번호 (예: 8.5.1, 8.7)"
+                },
+                "summary": {
+                  "type": "string",
+                  "description": "매핑된 품질 심사 요약 텍스트"
+                },
+                "confidence_score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "매핑 신뢰도 점수"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "metadata": {
+        "type": "object",
+        "required": ["template_type", "org_name", "complexity"],
+        "properties": {
+          "template_type": {
+            "type": "string",
+            "enum": ["ISO9001"],
+            "description": "심사 기준 유형"
+          },
+          "org_name": {
+            "type": "string",
+            "description": "대상 원청 기관명 (예: Samsung, SK, Hyundai, LG, Standard)"
+          },
+          "complexity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "description": "심사 매핑 복잡도 수준"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  }
+}
