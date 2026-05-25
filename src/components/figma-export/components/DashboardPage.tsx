@@ -1,5 +1,5 @@
 "use client";
-import { TrendingDown, Activity, AlertCircle, CheckCircle2, Zap, Radio, BarChart3, Users, Clock, Target, FileText, GitBranch, ListChecks, BookOpen, TrendingUp } from 'lucide-react';
+import { TrendingDown, Activity, AlertCircle, CheckCircle2, Zap, Radio, BarChart3, Users, Clock, Target, FileText, GitBranch, ListChecks, BookOpen, TrendingUp, Database, Mic } from 'lucide-react';
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface DashboardPageProps {
@@ -16,7 +16,9 @@ export function DashboardPage({ onBackClick, onNavigate }: DashboardPageProps) {
     { id: 'eightd', title: '8D Report', icon: FileText, color: 'from-orange-600 to-red-600', description: '대기업 보고서' },
     { id: 'audit', title: 'Audit 체크', icon: ListChecks, color: 'from-purple-600 to-blue-600', description: '심사 대응' },
     { id: 'improvement', title: '개선과제', icon: TrendingUp, color: 'from-blue-600 to-emerald-600', description: '과제 관리' },
-    { id: 'training', title: '교육 이력', icon: BookOpen, color: 'from-cyan-600 to-purple-600', description: '교육 관리' }
+    { id: 'training', title: '교육 이력', icon: BookOpen, color: 'from-cyan-600 to-purple-600', description: '교육 관리' },
+    { id: 'bulk-import', title: '기준정보 업로드', icon: Database, color: 'from-purple-600 to-indigo-500', description: '대량 마스터 등록' },
+    { id: 'zero-ui-mobile', title: 'Zero-UI 모바일', icon: Mic, color: 'from-cyan-500 to-blue-500', description: '현장 음성 입력' }
   ];
   // Mock data for charts
   const copqData = [
