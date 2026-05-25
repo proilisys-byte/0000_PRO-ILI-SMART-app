@@ -1,0 +1,1727 @@
+[
+  {
+    "id": "stt-001",
+    "audio_path": "data/golden/stt/audio/stt_sample_001.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 53,
+      "notes": "작업 완료 수량 53건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-001",
+      "transcript": "압출 공정 현재 작업 완료 수량은 53개입니다."
+    }
+  },
+  {
+    "id": "stt-002",
+    "audio_path": "data/golden/stt/audio/stt_sample_002.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 56,
+      "notes": "작업 완료 수량 56건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-002",
+      "transcript": "조립 공정 현재 작업 완료 수량은 56개입니다."
+    }
+  },
+  {
+    "id": "stt-003",
+    "audio_path": "data/golden/stt/audio/stt_sample_003.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 59,
+      "notes": "작업 완료 수량 59건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-003",
+      "transcript": "도색 공정 현재 작업 완료 수량은 59개입니다."
+    }
+  },
+  {
+    "id": "stt-004",
+    "audio_path": "data/golden/stt/audio/stt_sample_004.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 62,
+      "defect_code": "D-004",
+      "notes": "작업 완료 수량 62건 기록됨. 치수 불량 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-004",
+      "transcript": "연마 공정 현재 작업 완료 수량은 62개입니다. 추가 특이사항으로 치수 불량 불량이 발생하여 코드 D-004로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-005",
+    "audio_path": "data/golden/stt/audio/stt_sample_005.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 65,
+      "notes": "작업 완료 수량 65건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-005",
+      "transcript": "가공 공정 현재 작업 완료 수량은 65개입니다."
+    }
+  },
+  {
+    "id": "stt-006",
+    "audio_path": "data/golden/stt/audio/stt_sample_006.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 68,
+      "notes": "작업 완료 수량 68건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-006",
+      "transcript": "검사 공정 현재 작업 완료 수량은 68개입니다."
+    }
+  },
+  {
+    "id": "stt-007",
+    "audio_path": "data/golden/stt/audio/stt_sample_007.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 71,
+      "notes": "작업 완료 수량 71건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-007",
+      "transcript": "포장 공정 현재 작업 완료 수량은 71개입니다."
+    }
+  },
+  {
+    "id": "stt-008",
+    "audio_path": "data/golden/stt/audio/stt_sample_008.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 74,
+      "defect_code": "D-003",
+      "notes": "작업 완료 수량 74건 기록됨. 찍힘 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-008",
+      "transcript": "압출 공정 현재 작업 완료 수량은 74개입니다. 추가 특이사항으로 찍힘 불량이 발생하여 코드 D-003로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-009",
+    "audio_path": "data/golden/stt/audio/stt_sample_009.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 77,
+      "notes": "작업 완료 수량 77건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-009",
+      "transcript": "조립 공정 현재 작업 완료 수량은 77개입니다."
+    }
+  },
+  {
+    "id": "stt-010",
+    "audio_path": "data/golden/stt/audio/stt_sample_010.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 80,
+      "notes": "작업 완료 수량 80건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "60s",
+      "speaker_id": "spk-010",
+      "transcript": "도색 공정 현재 작업 완료 수량은 80개입니다."
+    }
+  },
+  {
+    "id": "stt-011",
+    "audio_path": "data/golden/stt/audio/stt_sample_011.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 83,
+      "notes": "작업 완료 수량 83건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-011",
+      "transcript": "연마 공정 말임더, 오늘 작업 수량은 총 83개이고예."
+    }
+  },
+  {
+    "id": "stt-012",
+    "audio_path": "data/golden/stt/audio/stt_sample_012.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 86,
+      "defect_code": "D-002",
+      "notes": "작업 완료 수량 86건 기록됨. 크랙 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-012",
+      "transcript": "가공 공정 말임더, 오늘 작업 수량은 총 86개이고예. 근데 고마 크랙 불량이 좀 나와가꼬 코드 D-002로 등록하겠심더."
+    }
+  },
+  {
+    "id": "stt-013",
+    "audio_path": "data/golden/stt/audio/stt_sample_013.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 89,
+      "notes": "작업 완료 수량 89건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-013",
+      "transcript": "검사 공정 말임더, 오늘 작업 수량은 총 89개이고예."
+    }
+  },
+  {
+    "id": "stt-014",
+    "audio_path": "data/golden/stt/audio/stt_sample_014.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 92,
+      "notes": "작업 완료 수량 92건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-014",
+      "transcript": "포장 공정 말임더, 오늘 작업 수량은 총 92개이고예."
+    }
+  },
+  {
+    "id": "stt-015",
+    "audio_path": "data/golden/stt/audio/stt_sample_015.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 95,
+      "notes": "작업 완료 수량 95건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-015",
+      "transcript": "압출 작업 수량 95개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-016",
+    "audio_path": "data/golden/stt/audio/stt_sample_016.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 98,
+      "defect_code": "D-001",
+      "notes": "작업 완료 수량 98건 기록됨. 스크래치 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-016",
+      "transcript": "조립 작업 수량 98개 채웠당께요. 아 참말로 스크래치 한 건 났응게 코드 D-001 적어주쇼잉."
+    }
+  },
+  {
+    "id": "stt-017",
+    "audio_path": "data/golden/stt/audio/stt_sample_017.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 101,
+      "notes": "작업 완료 수량 101건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-017",
+      "transcript": "도색 작업 수량 101개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-018",
+    "audio_path": "data/golden/stt/audio/stt_sample_018.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 104,
+      "notes": "작업 완료 수량 104건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-018",
+      "transcript": "여기 연마 공정인디유, 수량 104개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-019",
+    "audio_path": "data/golden/stt/audio/stt_sample_019.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 107,
+      "notes": "작업 완료 수량 107건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-019",
+      "transcript": "여기 가공 공정인디유, 수량 107개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-020",
+    "audio_path": "data/golden/stt/audio/stt_sample_020.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 110,
+      "defect_code": "D-005",
+      "notes": "작업 완료 수량 110건 기록됨. 이물 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-020",
+      "transcript": "여기 검사 공정인디유, 수량 110개 완료했슈. 근디 이물 불량 있는 것 같은디, 코드 D-005 맞아유?"
+    }
+  },
+  {
+    "id": "stt-021",
+    "audio_path": "data/golden/stt/audio/stt_sample_021.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 113,
+      "notes": "작업 완료 수량 113건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-001",
+      "transcript": "포장 공정 현재 작업 완료 수량은 113개입니다."
+    }
+  },
+  {
+    "id": "stt-022",
+    "audio_path": "data/golden/stt/audio/stt_sample_022.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 116,
+      "notes": "작업 완료 수량 116건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-002",
+      "transcript": "압출 공정 현재 작업 완료 수량은 116개입니다."
+    }
+  },
+  {
+    "id": "stt-023",
+    "audio_path": "data/golden/stt/audio/stt_sample_023.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 119,
+      "notes": "작업 완료 수량 119건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-003",
+      "transcript": "조립 공정 현재 작업 완료 수량은 119개입니다."
+    }
+  },
+  {
+    "id": "stt-024",
+    "audio_path": "data/golden/stt/audio/stt_sample_024.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 122,
+      "defect_code": "D-004",
+      "notes": "작업 완료 수량 122건 기록됨. 치수 불량 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-004",
+      "transcript": "도색 공정 현재 작업 완료 수량은 122개입니다. 추가 특이사항으로 치수 불량 불량이 발생하여 코드 D-004로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-025",
+    "audio_path": "data/golden/stt/audio/stt_sample_025.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 125,
+      "notes": "작업 완료 수량 125건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-005",
+      "transcript": "연마 공정 현재 작업 완료 수량은 125개입니다."
+    }
+  },
+  {
+    "id": "stt-026",
+    "audio_path": "data/golden/stt/audio/stt_sample_026.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 128,
+      "notes": "작업 완료 수량 128건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-006",
+      "transcript": "가공 공정 현재 작업 완료 수량은 128개입니다."
+    }
+  },
+  {
+    "id": "stt-027",
+    "audio_path": "data/golden/stt/audio/stt_sample_027.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 131,
+      "notes": "작업 완료 수량 131건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-007",
+      "transcript": "검사 공정 현재 작업 완료 수량은 131개입니다."
+    }
+  },
+  {
+    "id": "stt-028",
+    "audio_path": "data/golden/stt/audio/stt_sample_028.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 134,
+      "defect_code": "D-003",
+      "notes": "작업 완료 수량 134건 기록됨. 찍힘 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-008",
+      "transcript": "포장 공정 현재 작업 완료 수량은 134개입니다. 추가 특이사항으로 찍힘 불량이 발생하여 코드 D-003로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-029",
+    "audio_path": "data/golden/stt/audio/stt_sample_029.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 137,
+      "notes": "작업 완료 수량 137건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-009",
+      "transcript": "압출 공정 현재 작업 완료 수량은 137개입니다."
+    }
+  },
+  {
+    "id": "stt-030",
+    "audio_path": "data/golden/stt/audio/stt_sample_030.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 140,
+      "notes": "작업 완료 수량 140건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "60s",
+      "speaker_id": "spk-010",
+      "transcript": "조립 공정 현재 작업 완료 수량은 140개입니다."
+    }
+  },
+  {
+    "id": "stt-031",
+    "audio_path": "data/golden/stt/audio/stt_sample_031.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 143,
+      "notes": "작업 완료 수량 143건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-011",
+      "transcript": "도색 공정 말임더, 오늘 작업 수량은 총 143개이고예."
+    }
+  },
+  {
+    "id": "stt-032",
+    "audio_path": "data/golden/stt/audio/stt_sample_032.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 146,
+      "defect_code": "D-002",
+      "notes": "작업 완료 수량 146건 기록됨. 크랙 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-012",
+      "transcript": "연마 공정 말임더, 오늘 작업 수량은 총 146개이고예. 근데 고마 크랙 불량이 좀 나와가꼬 코드 D-002로 등록하겠심더."
+    }
+  },
+  {
+    "id": "stt-033",
+    "audio_path": "data/golden/stt/audio/stt_sample_033.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 149,
+      "notes": "작업 완료 수량 149건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-013",
+      "transcript": "가공 공정 말임더, 오늘 작업 수량은 총 149개이고예."
+    }
+  },
+  {
+    "id": "stt-034",
+    "audio_path": "data/golden/stt/audio/stt_sample_034.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 152,
+      "notes": "작업 완료 수량 152건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-014",
+      "transcript": "검사 공정 말임더, 오늘 작업 수량은 총 152개이고예."
+    }
+  },
+  {
+    "id": "stt-035",
+    "audio_path": "data/golden/stt/audio/stt_sample_035.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 155,
+      "notes": "작업 완료 수량 155건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-015",
+      "transcript": "포장 작업 수량 155개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-036",
+    "audio_path": "data/golden/stt/audio/stt_sample_036.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 158,
+      "defect_code": "D-001",
+      "notes": "작업 완료 수량 158건 기록됨. 스크래치 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-016",
+      "transcript": "압출 작업 수량 158개 채웠당께요. 아 참말로 스크래치 한 건 났응게 코드 D-001 적어주쇼잉."
+    }
+  },
+  {
+    "id": "stt-037",
+    "audio_path": "data/golden/stt/audio/stt_sample_037.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 161,
+      "notes": "작업 완료 수량 161건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-017",
+      "transcript": "조립 작업 수량 161개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-038",
+    "audio_path": "data/golden/stt/audio/stt_sample_038.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 164,
+      "notes": "작업 완료 수량 164건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-018",
+      "transcript": "여기 도색 공정인디유, 수량 164개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-039",
+    "audio_path": "data/golden/stt/audio/stt_sample_039.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 167,
+      "notes": "작업 완료 수량 167건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-019",
+      "transcript": "여기 연마 공정인디유, 수량 167개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-040",
+    "audio_path": "data/golden/stt/audio/stt_sample_040.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 170,
+      "defect_code": "D-005",
+      "notes": "작업 완료 수량 170건 기록됨. 이물 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-020",
+      "transcript": "여기 가공 공정인디유, 수량 170개 완료했슈. 근디 이물 불량 있는 것 같은디, 코드 D-005 맞아유?"
+    }
+  },
+  {
+    "id": "stt-041",
+    "audio_path": "data/golden/stt/audio/stt_sample_041.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 173,
+      "notes": "작업 완료 수량 173건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-001",
+      "transcript": "검사 공정 현재 작업 완료 수량은 173개입니다."
+    }
+  },
+  {
+    "id": "stt-042",
+    "audio_path": "data/golden/stt/audio/stt_sample_042.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 176,
+      "notes": "작업 완료 수량 176건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-002",
+      "transcript": "포장 공정 현재 작업 완료 수량은 176개입니다."
+    }
+  },
+  {
+    "id": "stt-043",
+    "audio_path": "data/golden/stt/audio/stt_sample_043.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 179,
+      "notes": "작업 완료 수량 179건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-003",
+      "transcript": "압출 공정 현재 작업 완료 수량은 179개입니다."
+    }
+  },
+  {
+    "id": "stt-044",
+    "audio_path": "data/golden/stt/audio/stt_sample_044.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 182,
+      "defect_code": "D-004",
+      "notes": "작업 완료 수량 182건 기록됨. 치수 불량 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-004",
+      "transcript": "조립 공정 현재 작업 완료 수량은 182개입니다. 추가 특이사항으로 치수 불량 불량이 발생하여 코드 D-004로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-045",
+    "audio_path": "data/golden/stt/audio/stt_sample_045.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 185,
+      "notes": "작업 완료 수량 185건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-005",
+      "transcript": "도색 공정 현재 작업 완료 수량은 185개입니다."
+    }
+  },
+  {
+    "id": "stt-046",
+    "audio_path": "data/golden/stt/audio/stt_sample_046.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 188,
+      "notes": "작업 완료 수량 188건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-006",
+      "transcript": "연마 공정 현재 작업 완료 수량은 188개입니다."
+    }
+  },
+  {
+    "id": "stt-047",
+    "audio_path": "data/golden/stt/audio/stt_sample_047.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 191,
+      "notes": "작업 완료 수량 191건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-007",
+      "transcript": "가공 공정 현재 작업 완료 수량은 191개입니다."
+    }
+  },
+  {
+    "id": "stt-048",
+    "audio_path": "data/golden/stt/audio/stt_sample_048.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 194,
+      "defect_code": "D-003",
+      "notes": "작업 완료 수량 194건 기록됨. 찍힘 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-008",
+      "transcript": "검사 공정 현재 작업 완료 수량은 194개입니다. 추가 특이사항으로 찍힘 불량이 발생하여 코드 D-003로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-049",
+    "audio_path": "data/golden/stt/audio/stt_sample_049.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 197,
+      "notes": "작업 완료 수량 197건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-009",
+      "transcript": "포장 공정 현재 작업 완료 수량은 197개입니다."
+    }
+  },
+  {
+    "id": "stt-050",
+    "audio_path": "data/golden/stt/audio/stt_sample_050.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 200,
+      "notes": "작업 완료 수량 200건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "60s",
+      "speaker_id": "spk-010",
+      "transcript": "압출 공정 현재 작업 완료 수량은 200개입니다."
+    }
+  },
+  {
+    "id": "stt-051",
+    "audio_path": "data/golden/stt/audio/stt_sample_051.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 203,
+      "notes": "작업 완료 수량 203건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-011",
+      "transcript": "조립 공정 말임더, 오늘 작업 수량은 총 203개이고예."
+    }
+  },
+  {
+    "id": "stt-052",
+    "audio_path": "data/golden/stt/audio/stt_sample_052.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 206,
+      "defect_code": "D-002",
+      "notes": "작업 완료 수량 206건 기록됨. 크랙 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-012",
+      "transcript": "도색 공정 말임더, 오늘 작업 수량은 총 206개이고예. 근데 고마 크랙 불량이 좀 나와가꼬 코드 D-002로 등록하겠심더."
+    }
+  },
+  {
+    "id": "stt-053",
+    "audio_path": "data/golden/stt/audio/stt_sample_053.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 209,
+      "notes": "작업 완료 수량 209건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-013",
+      "transcript": "연마 공정 말임더, 오늘 작업 수량은 총 209개이고예."
+    }
+  },
+  {
+    "id": "stt-054",
+    "audio_path": "data/golden/stt/audio/stt_sample_054.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 212,
+      "notes": "작업 완료 수량 212건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-014",
+      "transcript": "가공 공정 말임더, 오늘 작업 수량은 총 212개이고예."
+    }
+  },
+  {
+    "id": "stt-055",
+    "audio_path": "data/golden/stt/audio/stt_sample_055.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 215,
+      "notes": "작업 완료 수량 215건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-015",
+      "transcript": "검사 작업 수량 215개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-056",
+    "audio_path": "data/golden/stt/audio/stt_sample_056.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 218,
+      "defect_code": "D-001",
+      "notes": "작업 완료 수량 218건 기록됨. 스크래치 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-016",
+      "transcript": "포장 작업 수량 218개 채웠당께요. 아 참말로 스크래치 한 건 났응게 코드 D-001 적어주쇼잉."
+    }
+  },
+  {
+    "id": "stt-057",
+    "audio_path": "data/golden/stt/audio/stt_sample_057.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 221,
+      "notes": "작업 완료 수량 221건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-017",
+      "transcript": "압출 작업 수량 221개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-058",
+    "audio_path": "data/golden/stt/audio/stt_sample_058.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 224,
+      "notes": "작업 완료 수량 224건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-018",
+      "transcript": "여기 조립 공정인디유, 수량 224개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-059",
+    "audio_path": "data/golden/stt/audio/stt_sample_059.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 227,
+      "notes": "작업 완료 수량 227건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-019",
+      "transcript": "여기 도색 공정인디유, 수량 227개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-060",
+    "audio_path": "data/golden/stt/audio/stt_sample_060.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 230,
+      "defect_code": "D-005",
+      "notes": "작업 완료 수량 230건 기록됨. 이물 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-020",
+      "transcript": "여기 연마 공정인디유, 수량 230개 완료했슈. 근디 이물 불량 있는 것 같은디, 코드 D-005 맞아유?"
+    }
+  },
+  {
+    "id": "stt-061",
+    "audio_path": "data/golden/stt/audio/stt_sample_061.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 233,
+      "notes": "작업 완료 수량 233건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-001",
+      "transcript": "가공 공정 현재 작업 완료 수량은 233개입니다."
+    }
+  },
+  {
+    "id": "stt-062",
+    "audio_path": "data/golden/stt/audio/stt_sample_062.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 236,
+      "notes": "작업 완료 수량 236건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-002",
+      "transcript": "검사 공정 현재 작업 완료 수량은 236개입니다."
+    }
+  },
+  {
+    "id": "stt-063",
+    "audio_path": "data/golden/stt/audio/stt_sample_063.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 239,
+      "notes": "작업 완료 수량 239건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-003",
+      "transcript": "포장 공정 현재 작업 완료 수량은 239개입니다."
+    }
+  },
+  {
+    "id": "stt-064",
+    "audio_path": "data/golden/stt/audio/stt_sample_064.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 242,
+      "defect_code": "D-004",
+      "notes": "작업 완료 수량 242건 기록됨. 치수 불량 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-004",
+      "transcript": "압출 공정 현재 작업 완료 수량은 242개입니다. 추가 특이사항으로 치수 불량 불량이 발생하여 코드 D-004로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-065",
+    "audio_path": "data/golden/stt/audio/stt_sample_065.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 245,
+      "notes": "작업 완료 수량 245건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-005",
+      "transcript": "조립 공정 현재 작업 완료 수량은 245개입니다."
+    }
+  },
+  {
+    "id": "stt-066",
+    "audio_path": "data/golden/stt/audio/stt_sample_066.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 248,
+      "notes": "작업 완료 수량 248건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-006",
+      "transcript": "도색 공정 현재 작업 완료 수량은 248개입니다."
+    }
+  },
+  {
+    "id": "stt-067",
+    "audio_path": "data/golden/stt/audio/stt_sample_067.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 251,
+      "notes": "작업 완료 수량 251건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-007",
+      "transcript": "연마 공정 현재 작업 완료 수량은 251개입니다."
+    }
+  },
+  {
+    "id": "stt-068",
+    "audio_path": "data/golden/stt/audio/stt_sample_068.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 254,
+      "defect_code": "D-003",
+      "notes": "작업 완료 수량 254건 기록됨. 찍힘 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-008",
+      "transcript": "가공 공정 현재 작업 완료 수량은 254개입니다. 추가 특이사항으로 찍힘 불량이 발생하여 코드 D-003로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-069",
+    "audio_path": "data/golden/stt/audio/stt_sample_069.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 257,
+      "notes": "작업 완료 수량 257건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-009",
+      "transcript": "검사 공정 현재 작업 완료 수량은 257개입니다."
+    }
+  },
+  {
+    "id": "stt-070",
+    "audio_path": "data/golden/stt/audio/stt_sample_070.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 260,
+      "notes": "작업 완료 수량 260건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "60s",
+      "speaker_id": "spk-010",
+      "transcript": "포장 공정 현재 작업 완료 수량은 260개입니다."
+    }
+  },
+  {
+    "id": "stt-071",
+    "audio_path": "data/golden/stt/audio/stt_sample_071.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 263,
+      "notes": "작업 완료 수량 263건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-011",
+      "transcript": "압출 공정 말임더, 오늘 작업 수량은 총 263개이고예."
+    }
+  },
+  {
+    "id": "stt-072",
+    "audio_path": "data/golden/stt/audio/stt_sample_072.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 266,
+      "defect_code": "D-002",
+      "notes": "작업 완료 수량 266건 기록됨. 크랙 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-012",
+      "transcript": "조립 공정 말임더, 오늘 작업 수량은 총 266개이고예. 근데 고마 크랙 불량이 좀 나와가꼬 코드 D-002로 등록하겠심더."
+    }
+  },
+  {
+    "id": "stt-073",
+    "audio_path": "data/golden/stt/audio/stt_sample_073.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 269,
+      "notes": "작업 완료 수량 269건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-013",
+      "transcript": "도색 공정 말임더, 오늘 작업 수량은 총 269개이고예."
+    }
+  },
+  {
+    "id": "stt-074",
+    "audio_path": "data/golden/stt/audio/stt_sample_074.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 272,
+      "notes": "작업 완료 수량 272건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-014",
+      "transcript": "연마 공정 말임더, 오늘 작업 수량은 총 272개이고예."
+    }
+  },
+  {
+    "id": "stt-075",
+    "audio_path": "data/golden/stt/audio/stt_sample_075.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 275,
+      "notes": "작업 완료 수량 275건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-015",
+      "transcript": "가공 작업 수량 275개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-076",
+    "audio_path": "data/golden/stt/audio/stt_sample_076.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 278,
+      "defect_code": "D-001",
+      "notes": "작업 완료 수량 278건 기록됨. 스크래치 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-016",
+      "transcript": "검사 작업 수량 278개 채웠당께요. 아 참말로 스크래치 한 건 났응게 코드 D-001 적어주쇼잉."
+    }
+  },
+  {
+    "id": "stt-077",
+    "audio_path": "data/golden/stt/audio/stt_sample_077.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 281,
+      "notes": "작업 완료 수량 281건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-017",
+      "transcript": "포장 작업 수량 281개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-078",
+    "audio_path": "data/golden/stt/audio/stt_sample_078.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 284,
+      "notes": "작업 완료 수량 284건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-018",
+      "transcript": "여기 압출 공정인디유, 수량 284개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-079",
+    "audio_path": "data/golden/stt/audio/stt_sample_079.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 287,
+      "notes": "작업 완료 수량 287건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-019",
+      "transcript": "여기 조립 공정인디유, 수량 287개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-080",
+    "audio_path": "data/golden/stt/audio/stt_sample_080.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 290,
+      "defect_code": "D-005",
+      "notes": "작업 완료 수량 290건 기록됨. 이물 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-020",
+      "transcript": "여기 도색 공정인디유, 수량 290개 완료했슈. 근디 이물 불량 있는 것 같은디, 코드 D-005 맞아유?"
+    }
+  },
+  {
+    "id": "stt-081",
+    "audio_path": "data/golden/stt/audio/stt_sample_081.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 293,
+      "notes": "작업 완료 수량 293건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-001",
+      "transcript": "연마 공정 현재 작업 완료 수량은 293개입니다."
+    }
+  },
+  {
+    "id": "stt-082",
+    "audio_path": "data/golden/stt/audio/stt_sample_082.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 296,
+      "notes": "작업 완료 수량 296건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-002",
+      "transcript": "가공 공정 현재 작업 완료 수량은 296개입니다."
+    }
+  },
+  {
+    "id": "stt-083",
+    "audio_path": "data/golden/stt/audio/stt_sample_083.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 299,
+      "notes": "작업 완료 수량 299건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-003",
+      "transcript": "검사 공정 현재 작업 완료 수량은 299개입니다."
+    }
+  },
+  {
+    "id": "stt-084",
+    "audio_path": "data/golden/stt/audio/stt_sample_084.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 302,
+      "defect_code": "D-004",
+      "notes": "작업 완료 수량 302건 기록됨. 치수 불량 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-004",
+      "transcript": "포장 공정 현재 작업 완료 수량은 302개입니다. 추가 특이사항으로 치수 불량 불량이 발생하여 코드 D-004로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-085",
+    "audio_path": "data/golden/stt/audio/stt_sample_085.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 305,
+      "notes": "작업 완료 수량 305건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-005",
+      "transcript": "압출 공정 현재 작업 완료 수량은 305개입니다."
+    }
+  },
+  {
+    "id": "stt-086",
+    "audio_path": "data/golden/stt/audio/stt_sample_086.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 308,
+      "notes": "작업 완료 수량 308건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-006",
+      "transcript": "조립 공정 현재 작업 완료 수량은 308개입니다."
+    }
+  },
+  {
+    "id": "stt-087",
+    "audio_path": "data/golden/stt/audio/stt_sample_087.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 311,
+      "notes": "작업 완료 수량 311건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-007",
+      "transcript": "도색 공정 현재 작업 완료 수량은 311개입니다."
+    }
+  },
+  {
+    "id": "stt-088",
+    "audio_path": "data/golden/stt/audio/stt_sample_088.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 314,
+      "defect_code": "D-003",
+      "notes": "작업 완료 수량 314건 기록됨. 찍힘 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-008",
+      "transcript": "연마 공정 현재 작업 완료 수량은 314개입니다. 추가 특이사항으로 찍힘 불량이 발생하여 코드 D-003로 접수합니다."
+    }
+  },
+  {
+    "id": "stt-089",
+    "audio_path": "data/golden/stt/audio/stt_sample_089.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 317,
+      "notes": "작업 완료 수량 317건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "80dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-009",
+      "transcript": "가공 공정 현재 작업 완료 수량은 317개입니다."
+    }
+  },
+  {
+    "id": "stt-090",
+    "audio_path": "data/golden/stt/audio/stt_sample_090.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 320,
+      "notes": "작업 완료 수량 320건 기록됨."
+    },
+    "metadata": {
+      "dialect": "standard",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "60s",
+      "speaker_id": "spk-010",
+      "transcript": "검사 공정 현재 작업 완료 수량은 320개입니다."
+    }
+  },
+  {
+    "id": "stt-091",
+    "audio_path": "data/golden/stt/audio/stt_sample_091.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 323,
+      "notes": "작업 완료 수량 323건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "M",
+      "age_group": "20s",
+      "speaker_id": "spk-011",
+      "transcript": "포장 공정 말임더, 오늘 작업 수량은 총 323개이고예."
+    }
+  },
+  {
+    "id": "stt-092",
+    "audio_path": "data/golden/stt/audio/stt_sample_092.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 326,
+      "defect_code": "D-002",
+      "notes": "작업 완료 수량 326건 기록됨. 크랙 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "40s",
+      "speaker_id": "spk-012",
+      "transcript": "압출 공정 말임더, 오늘 작업 수량은 총 326개이고예. 근데 고마 크랙 불량이 좀 나와가꼬 코드 D-002로 등록하겠심더."
+    }
+  },
+  {
+    "id": "stt-093",
+    "audio_path": "data/golden/stt/audio/stt_sample_093.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 329,
+      "notes": "작업 완료 수량 329건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-013",
+      "transcript": "조립 공정 말임더, 오늘 작업 수량은 총 329개이고예."
+    }
+  },
+  {
+    "id": "stt-094",
+    "audio_path": "data/golden/stt/audio/stt_sample_094.wav",
+    "expected": {
+      "process_name": "도색",
+      "quantity": 332,
+      "notes": "작업 완료 수량 332건 기록됨."
+    },
+    "metadata": {
+      "dialect": "gyeongsang",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "50s",
+      "speaker_id": "spk-014",
+      "transcript": "도색 공정 말임더, 오늘 작업 수량은 총 332개이고예."
+    }
+  },
+  {
+    "id": "stt-095",
+    "audio_path": "data/golden/stt/audio/stt_sample_095.wav",
+    "expected": {
+      "process_name": "연마",
+      "quantity": 335,
+      "notes": "작업 완료 수량 335건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "30s",
+      "speaker_id": "spk-015",
+      "transcript": "연마 작업 수량 335개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-096",
+    "audio_path": "data/golden/stt/audio/stt_sample_096.wav",
+    "expected": {
+      "process_name": "가공",
+      "quantity": 338,
+      "defect_code": "D-001",
+      "notes": "작업 완료 수량 338건 기록됨. 스크래치 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "85dB",
+      "gender": "F",
+      "age_group": "20s",
+      "speaker_id": "spk-016",
+      "transcript": "가공 작업 수량 338개 채웠당께요. 아 참말로 스크래치 한 건 났응게 코드 D-001 적어주쇼잉."
+    }
+  },
+  {
+    "id": "stt-097",
+    "audio_path": "data/golden/stt/audio/stt_sample_097.wav",
+    "expected": {
+      "process_name": "검사",
+      "quantity": 341,
+      "notes": "작업 완료 수량 341건 기록됨."
+    },
+    "metadata": {
+      "dialect": "jeolla",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "40s",
+      "speaker_id": "spk-017",
+      "transcript": "검사 작업 수량 341개 채웠당께요."
+    }
+  },
+  {
+    "id": "stt-098",
+    "audio_path": "data/golden/stt/audio/stt_sample_098.wav",
+    "expected": {
+      "process_name": "포장",
+      "quantity": 344,
+      "notes": "작업 완료 수량 344건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "80dB",
+      "gender": "M",
+      "age_group": "50s",
+      "speaker_id": "spk-018",
+      "transcript": "여기 포장 공정인디유, 수량 344개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-099",
+    "audio_path": "data/golden/stt/audio/stt_sample_099.wav",
+    "expected": {
+      "process_name": "압출",
+      "quantity": 347,
+      "notes": "작업 완료 수량 347건 기록됨."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "85dB",
+      "gender": "M",
+      "age_group": "60s",
+      "speaker_id": "spk-019",
+      "transcript": "여기 압출 공정인디유, 수량 347개 완료했슈."
+    }
+  },
+  {
+    "id": "stt-100",
+    "audio_path": "data/golden/stt/audio/stt_sample_100.wav",
+    "expected": {
+      "process_name": "조립",
+      "quantity": 350,
+      "defect_code": "D-005",
+      "notes": "작업 완료 수량 350건 기록됨. 이물 불량 건 기록."
+    },
+    "metadata": {
+      "dialect": "chungcheong",
+      "noise_level": "75dB",
+      "gender": "F",
+      "age_group": "30s",
+      "speaker_id": "spk-020",
+      "transcript": "여기 조립 공정인디유, 수량 350개 완료했슈. 근디 이물 불량 있는 것 같은디, 코드 D-005 맞아유?"
+    }
+  }
+]

@@ -1,0 +1,2076 @@
+[
+  {
+    "id": "mapping-001",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 87,
+        "notes": "연마 공정에서 총 87건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 100,
+        "notes": "가공 공정에서 총 100건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 연마 공정의 정상 생산 수량 87건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-002",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 94,
+        "notes": "포장 공정에서 총 94건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 107,
+        "defect_code": "D-004",
+        "notes": "압출 공정에서 총 107건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 120,
+        "notes": "조립 공정에서 총 120건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 포장 공정의 정상 생산 수량 94건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 압출 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-003",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 101,
+        "defect_code": "D-004",
+        "notes": "도색 공정에서 총 101건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 114,
+        "notes": "연마 공정에서 총 114건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 127,
+        "notes": "가공 공정에서 총 127건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 140,
+        "defect_code": "D-002",
+        "notes": "검사 공정에서 총 140건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 연마 공정의 정상 생산 수량 114건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 도색 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-004",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 108,
+        "notes": "검사 공정에서 총 108건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 121,
+        "notes": "포장 공정에서 총 121건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 검사 공정의 정상 생산 수량 108건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-005",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 115,
+        "notes": "조립 공정에서 총 115건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 128,
+        "defect_code": "D-002",
+        "notes": "도색 공정에서 총 128건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 141,
+        "notes": "연마 공정에서 총 141건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 조립 공정의 정상 생산 수량 115건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 도색 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-006",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 122,
+        "defect_code": "D-002",
+        "notes": "가공 공정에서 총 122건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 135,
+        "notes": "검사 공정에서 총 135건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 148,
+        "notes": "포장 공정에서 총 148건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 161,
+        "defect_code": "D-005",
+        "notes": "압출 공정에서 총 161건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 검사 공정의 정상 생산 수량 135건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 가공 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-007",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 129,
+        "notes": "압출 공정에서 총 129건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 142,
+        "notes": "조립 공정에서 총 142건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 압출 공정의 정상 생산 수량 129건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-008",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 136,
+        "notes": "연마 공정에서 총 136건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 149,
+        "defect_code": "D-005",
+        "notes": "가공 공정에서 총 149건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 162,
+        "notes": "검사 공정에서 총 162건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 연마 공정의 정상 생산 수량 136건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 가공 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-009",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 143,
+        "defect_code": "D-005",
+        "notes": "포장 공정에서 총 143건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 156,
+        "notes": "압출 공정에서 총 156건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 169,
+        "notes": "조립 공정에서 총 169건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 182,
+        "defect_code": "D-003",
+        "notes": "도색 공정에서 총 182건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 압출 공정의 정상 생산 수량 156건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 포장 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-010",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 150,
+        "notes": "도색 공정에서 총 150건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 163,
+        "notes": "연마 공정에서 총 163건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 도색 공정의 정상 생산 수량 150건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-011",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 157,
+        "notes": "검사 공정에서 총 157건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 170,
+        "defect_code": "D-003",
+        "notes": "포장 공정에서 총 170건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 183,
+        "notes": "압출 공정에서 총 183건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 검사 공정의 정상 생산 수량 157건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 포장 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-012",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 164,
+        "defect_code": "D-003",
+        "notes": "조립 공정에서 총 164건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 177,
+        "notes": "도색 공정에서 총 177건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 190,
+        "notes": "연마 공정에서 총 190건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 203,
+        "defect_code": "D-001",
+        "notes": "가공 공정에서 총 203건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 도색 공정의 정상 생산 수량 177건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 조립 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-013",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 171,
+        "notes": "가공 공정에서 총 171건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 184,
+        "notes": "검사 공정에서 총 184건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 가공 공정의 정상 생산 수량 171건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-014",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 178,
+        "notes": "압출 공정에서 총 178건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 191,
+        "defect_code": "D-001",
+        "notes": "조립 공정에서 총 191건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 204,
+        "notes": "도색 공정에서 총 204건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 압출 공정의 정상 생산 수량 178건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 조립 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-015",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 185,
+        "defect_code": "D-001",
+        "notes": "연마 공정에서 총 185건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 198,
+        "notes": "가공 공정에서 총 198건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 211,
+        "notes": "검사 공정에서 총 211건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 224,
+        "defect_code": "D-004",
+        "notes": "포장 공정에서 총 224건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 가공 공정의 정상 생산 수량 198건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 연마 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-016",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 192,
+        "notes": "포장 공정에서 총 192건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 205,
+        "notes": "압출 공정에서 총 205건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 포장 공정의 정상 생산 수량 192건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-017",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 199,
+        "notes": "도색 공정에서 총 199건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 212,
+        "defect_code": "D-004",
+        "notes": "연마 공정에서 총 212건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 225,
+        "notes": "가공 공정에서 총 225건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 도색 공정의 정상 생산 수량 199건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 연마 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-018",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 206,
+        "defect_code": "D-004",
+        "notes": "검사 공정에서 총 206건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 219,
+        "notes": "포장 공정에서 총 219건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 232,
+        "notes": "압출 공정에서 총 232건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 245,
+        "defect_code": "D-002",
+        "notes": "조립 공정에서 총 245건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 포장 공정의 정상 생산 수량 219건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 검사 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-019",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 213,
+        "notes": "조립 공정에서 총 213건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 226,
+        "notes": "도색 공정에서 총 226건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 조립 공정의 정상 생산 수량 213건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-020",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 220,
+        "notes": "가공 공정에서 총 220건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 233,
+        "defect_code": "D-002",
+        "notes": "검사 공정에서 총 233건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 246,
+        "notes": "포장 공정에서 총 246건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 가공 공정의 정상 생산 수량 220건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 검사 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-021",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 227,
+        "defect_code": "D-002",
+        "notes": "압출 공정에서 총 227건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 240,
+        "notes": "조립 공정에서 총 240건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 253,
+        "notes": "도색 공정에서 총 253건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 266,
+        "defect_code": "D-005",
+        "notes": "연마 공정에서 총 266건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 조립 공정의 정상 생산 수량 240건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 압출 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-022",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 234,
+        "notes": "연마 공정에서 총 234건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 247,
+        "notes": "가공 공정에서 총 247건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 연마 공정의 정상 생산 수량 234건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-023",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 241,
+        "notes": "포장 공정에서 총 241건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 254,
+        "defect_code": "D-005",
+        "notes": "압출 공정에서 총 254건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 267,
+        "notes": "조립 공정에서 총 267건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 포장 공정의 정상 생산 수량 241건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 압출 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-024",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 248,
+        "defect_code": "D-005",
+        "notes": "도색 공정에서 총 248건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 261,
+        "notes": "연마 공정에서 총 261건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 274,
+        "notes": "가공 공정에서 총 274건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 287,
+        "defect_code": "D-003",
+        "notes": "검사 공정에서 총 287건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 연마 공정의 정상 생산 수량 261건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 도색 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-025",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 255,
+        "notes": "검사 공정에서 총 255건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 268,
+        "notes": "포장 공정에서 총 268건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 검사 공정의 정상 생산 수량 255건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-026",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 262,
+        "notes": "조립 공정에서 총 262건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 275,
+        "defect_code": "D-003",
+        "notes": "도색 공정에서 총 275건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 288,
+        "notes": "연마 공정에서 총 288건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 조립 공정의 정상 생산 수량 262건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 도색 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-027",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 269,
+        "defect_code": "D-003",
+        "notes": "가공 공정에서 총 269건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 282,
+        "notes": "검사 공정에서 총 282건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 295,
+        "notes": "포장 공정에서 총 295건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 308,
+        "defect_code": "D-001",
+        "notes": "압출 공정에서 총 308건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 검사 공정의 정상 생산 수량 282건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 가공 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-028",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 276,
+        "notes": "압출 공정에서 총 276건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 289,
+        "notes": "조립 공정에서 총 289건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 압출 공정의 정상 생산 수량 276건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-029",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 283,
+        "notes": "연마 공정에서 총 283건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 296,
+        "defect_code": "D-001",
+        "notes": "가공 공정에서 총 296건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 309,
+        "notes": "검사 공정에서 총 309건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 연마 공정의 정상 생산 수량 283건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 가공 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-030",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 290,
+        "defect_code": "D-001",
+        "notes": "포장 공정에서 총 290건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 303,
+        "notes": "압출 공정에서 총 303건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 316,
+        "notes": "조립 공정에서 총 316건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 329,
+        "defect_code": "D-004",
+        "notes": "도색 공정에서 총 329건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 압출 공정의 정상 생산 수량 303건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 포장 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-031",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 297,
+        "notes": "도색 공정에서 총 297건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 310,
+        "notes": "연마 공정에서 총 310건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 도색 공정의 정상 생산 수량 297건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-032",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 304,
+        "notes": "검사 공정에서 총 304건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 317,
+        "defect_code": "D-004",
+        "notes": "포장 공정에서 총 317건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 80,
+        "notes": "압출 공정에서 총 80건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 검사 공정의 정상 생산 수량 304건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 포장 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-033",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 311,
+        "defect_code": "D-004",
+        "notes": "조립 공정에서 총 311건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 324,
+        "notes": "도색 공정에서 총 324건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 87,
+        "notes": "연마 공정에서 총 87건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 100,
+        "defect_code": "D-002",
+        "notes": "가공 공정에서 총 100건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 도색 공정의 정상 생산 수량 324건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 조립 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-034",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 318,
+        "notes": "가공 공정에서 총 318건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 81,
+        "notes": "검사 공정에서 총 81건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 가공 공정의 정상 생산 수량 318건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-035",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 325,
+        "notes": "압출 공정에서 총 325건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 88,
+        "defect_code": "D-002",
+        "notes": "조립 공정에서 총 88건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 101,
+        "notes": "도색 공정에서 총 101건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 압출 공정의 정상 생산 수량 325건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 조립 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-036",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 82,
+        "defect_code": "D-002",
+        "notes": "연마 공정에서 총 82건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 95,
+        "notes": "가공 공정에서 총 95건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 108,
+        "notes": "검사 공정에서 총 108건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 121,
+        "defect_code": "D-005",
+        "notes": "포장 공정에서 총 121건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 가공 공정의 정상 생산 수량 95건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 연마 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-037",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 89,
+        "notes": "포장 공정에서 총 89건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 102,
+        "notes": "압출 공정에서 총 102건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 포장 공정의 정상 생산 수량 89건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-038",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 96,
+        "notes": "도색 공정에서 총 96건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 109,
+        "defect_code": "D-005",
+        "notes": "연마 공정에서 총 109건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 122,
+        "notes": "가공 공정에서 총 122건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 도색 공정의 정상 생산 수량 96건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 연마 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-039",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 103,
+        "defect_code": "D-005",
+        "notes": "검사 공정에서 총 103건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 116,
+        "notes": "포장 공정에서 총 116건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 129,
+        "notes": "압출 공정에서 총 129건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 142,
+        "defect_code": "D-003",
+        "notes": "조립 공정에서 총 142건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 포장 공정의 정상 생산 수량 116건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 검사 공정에서 발생한 이물 불량(D-005) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 이물 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-040",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 110,
+        "notes": "조립 공정에서 총 110건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 123,
+        "notes": "도색 공정에서 총 123건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 조립 공정의 정상 생산 수량 110건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-041",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 117,
+        "notes": "가공 공정에서 총 117건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 130,
+        "defect_code": "D-003",
+        "notes": "검사 공정에서 총 130건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 143,
+        "notes": "포장 공정에서 총 143건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 가공 공정의 정상 생산 수량 117건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Samsung 템플릿 기준 검사 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-042",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 124,
+        "defect_code": "D-003",
+        "notes": "압출 공정에서 총 124건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 137,
+        "notes": "조립 공정에서 총 137건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 150,
+        "notes": "도색 공정에서 총 150건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 163,
+        "defect_code": "D-001",
+        "notes": "연마 공정에서 총 163건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 조립 공정의 정상 생산 수량 137건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 압출 공정에서 발생한 찍힘 불량(D-003) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 찍힘 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-043",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 131,
+        "notes": "연마 공정에서 총 131건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 144,
+        "notes": "가공 공정에서 총 144건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 연마 공정의 정상 생산 수량 131건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-044",
+    "input": [
+      {
+        "process_name": "포장",
+        "quantity": 138,
+        "notes": "포장 공정에서 총 138건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 151,
+        "defect_code": "D-001",
+        "notes": "압출 공정에서 총 151건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 164,
+        "notes": "조립 공정에서 총 164건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 포장 공정의 정상 생산 수량 138건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "LG 템플릿 기준 압출 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-045",
+    "input": [
+      {
+        "process_name": "도색",
+        "quantity": 145,
+        "defect_code": "D-001",
+        "notes": "도색 공정에서 총 145건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 158,
+        "notes": "연마 공정에서 총 158건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 171,
+        "notes": "가공 공정에서 총 171건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 184,
+        "defect_code": "D-004",
+        "notes": "검사 공정에서 총 184건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 연마 공정의 정상 생산 수량 158건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 도색 공정에서 발생한 스크래치 불량(D-001) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 스크래치 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-046",
+    "input": [
+      {
+        "process_name": "검사",
+        "quantity": 152,
+        "notes": "검사 공정에서 총 152건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 165,
+        "notes": "포장 공정에서 총 165건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Samsung 템플릿 기준 검사 공정의 정상 생산 수량 152건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Samsung",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-047",
+    "input": [
+      {
+        "process_name": "조립",
+        "quantity": 159,
+        "notes": "조립 공정에서 총 159건의 데이터 수집."
+      },
+      {
+        "process_name": "도색",
+        "quantity": 172,
+        "defect_code": "D-004",
+        "notes": "도색 공정에서 총 172건의 데이터 수집."
+      },
+      {
+        "process_name": "연마",
+        "quantity": 185,
+        "notes": "연마 공정에서 총 185건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "SK 템플릿 기준 조립 공정의 정상 생산 수량 159건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "SK 템플릿 기준 도색 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "SK",
+      "complexity": "medium"
+    }
+  },
+  {
+    "id": "mapping-048",
+    "input": [
+      {
+        "process_name": "가공",
+        "quantity": 166,
+        "defect_code": "D-004",
+        "notes": "가공 공정에서 총 166건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 179,
+        "notes": "검사 공정에서 총 179건의 데이터 수집."
+      },
+      {
+        "process_name": "포장",
+        "quantity": 192,
+        "notes": "포장 공정에서 총 192건의 데이터 수집."
+      },
+      {
+        "process_name": "압출",
+        "quantity": 205,
+        "defect_code": "D-002",
+        "notes": "압출 공정에서 총 205건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Hyundai 템플릿 기준 검사 공정의 정상 생산 수량 179건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Hyundai 템플릿 기준 가공 공정에서 발생한 치수 불량 불량(D-004) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 치수 불량 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Hyundai",
+      "complexity": "high"
+    }
+  },
+  {
+    "id": "mapping-049",
+    "input": [
+      {
+        "process_name": "압출",
+        "quantity": 173,
+        "notes": "압출 공정에서 총 173건의 데이터 수집."
+      },
+      {
+        "process_name": "조립",
+        "quantity": 186,
+        "notes": "조립 공정에서 총 186건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "LG 템플릿 기준 압출 공정의 정상 생산 수량 173건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "LG",
+      "complexity": "low"
+    }
+  },
+  {
+    "id": "mapping-050",
+    "input": [
+      {
+        "process_name": "연마",
+        "quantity": 180,
+        "notes": "연마 공정에서 총 180건의 데이터 수집."
+      },
+      {
+        "process_name": "가공",
+        "quantity": 193,
+        "defect_code": "D-002",
+        "notes": "가공 공정에서 총 193건의 데이터 수집."
+      },
+      {
+        "process_name": "검사",
+        "quantity": 206,
+        "notes": "검사 공정에서 총 206건의 데이터 수집."
+      }
+    ],
+    "expected": {
+      "sections": [
+        {
+          "clause": "8.5.1",
+          "summary": "Standard 템플릿 기준 연마 공정의 정상 생산 수량 180건에 대한 적합성 관리 승인.",
+          "confidence_score": 98
+        },
+        {
+          "clause": "8.7",
+          "summary": "Standard 템플릿 기준 가공 공정에서 발생한 크랙 불량(D-002) 건에 대한 통제 조치 대상 식별.",
+          "confidence_score": 95
+        },
+        {
+          "clause": "10.2",
+          "summary": "불량 원인 규명 및 크랙 재발 방지를 위한 시정 조치 프로세스 개시 필요.",
+          "confidence_score": 90
+        }
+      ]
+    },
+    "metadata": {
+      "template_type": "ISO9001",
+      "org_name": "Standard",
+      "complexity": "medium"
+    }
+  }
+]

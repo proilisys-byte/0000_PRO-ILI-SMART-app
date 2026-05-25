@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "STT Golden Dataset Schema",
+  "description": "Schema for validating the STT Golden Dataset",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "audio_path", "expected", "metadata"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^stt-\\d{3}$"
+      },
+      "audio_path": {
+        "type": "string",
+        "pattern": "^data/golden/stt/audio/stt_sample_\\d{3}\\.wav$"
+      },
+      "expected": {
+        "type": "object",
+        "required": ["process_name", "quantity"],
+        "properties": {
+          "process_name": {
+            "type": "string",
+            "description": "공정명 (예: 압출, 조립, 도색)"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "작업 수량 또는 불량 수량"
+          },
+          "defect_code": {
+            "type": "string",
+            "description": "불량 발생 시 코드명 (예: D-001)"
+          },
+          "notes": {
+            "type": "string",
+            "description": "기타 현장 작업자 특이사항 메모"
+          }
+        },
+        "additionalProperties": false
+      },
+      "metadata": {
+        "type": "object",
+        "required": ["dialect", "noise_level", "gender", "age_group", "speaker_id", "transcript"],
+        "properties": {
+          "dialect": {
+            "type": "string",
+            "enum": ["standard", "gyeongsang", "jeolla", "chungcheong"],
+            "description": "발화자 방언 유형"
+          },
+          "noise_level": {
+            "type": "string",
+            "enum": ["75dB", "80dB", "85dB"],
+            "description": "소음 환경 수준"
+          },
+          "gender": {
+            "type": "string",
+            "enum": ["M", "F"],
+            "description": "발화자 성별"
+          },
+          "age_group": {
+            "type": "string",
+            "enum": ["20s", "30s", "40s", "50s", "60s"],
+            "description": "발화자 연령대"
+          },
+          "speaker_id": {
+            "type": "string",
+            "pattern": "^spk-\\d{3}$",
+            "description": "발화자 식별 ID"
+          },
+          "transcript": {
+            "type": "string",
+            "description": "실제 발화 음성 스크립트 정답"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  }
+}
