@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -43,7 +43,8 @@ const PIPA_CONSENT_KEY = "pipa_consent";
 const MAX_RECORDING_MS = 15_000;
 const STT_TIMEOUT_MS = 5_000;
 const MIC_ACTIVATION_TARGET_MS = 500;
-const FALLBACK_TRANSITION_MS = 500;
+const FALLBACK_TRANSITION_MS = 300;
+
 
 const MIME_CANDIDATES = [
   "audio/webm;codecs=opus",
@@ -336,6 +337,12 @@ export function ZeroUiMobilePage({ onBackClick }: ZeroUiMobilePageProps) {
 
   const submitSttAudio = useCallback(
     async (audioFile: File) => {
+      // 오프라인 연결 상태 즉시 확인 및 Fallback 대응
+      if (typeof window !== "undefined" && typeof navigator !== "undefined" && !navigator.onLine) {
+        transitionToManual("네트워크 연결이 끊겼습니다. (오프라인 모드) 수동 입력으로 전환합니다.");
+        return;
+      }
+
       setVoiceState("processing");
       abortControllerRef.current?.abort();
       const controller = new AbortController();
@@ -694,6 +701,16 @@ export function ZeroUiMobilePage({ onBackClick }: ZeroUiMobilePageProps) {
                   </div>
 
                   {voiceState === "listening" && <WaveformBars />}
+
+                  {voiceState !== "result" && (
+                    <Button
+                      variant="ghost"
+                      onClick={() => transitionToManual("사용자에 의해 수동 입력으로 전환되었습니다.")}
+                      className="mt-8 border border-slate-600/30 text-cyan-400 hover:bg-slate-700/30 hover:text-white text-xs px-4 py-2 rounded-xl transition-all"
+                    >
+                      수동 입력으로 전환
+                    </Button>
+                  )}
                 </div>
               )}
             </div>
@@ -701,7 +718,7 @@ export function ZeroUiMobilePage({ onBackClick }: ZeroUiMobilePageProps) {
         </div>
       </div>
 
-      <Toaster richColors position="top-center" />
+      {typeof process !== 'undefined' && process.env.NODE_ENV !== 'test' && <Toaster richColors position="top-center" />}
     </div>
   );
 }
