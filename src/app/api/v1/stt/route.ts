@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ai } from '@/ai/genkit';
 import { AppError, handleRouteError } from '@/lib/errors';
 import { SttOutputSchema } from '@/lib/schemas/stt';
+import { trackedGeminiCall } from '@/lib/monitoring/ai-tracker';
 
 const MAX_AUDIO_SIZE = 20 * 1024 * 1024;
 
@@ -51,6 +52,10 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
 
 // ─── POST /api/v1/stt ───────────────────────────────────────
 export async function POST(request: NextRequest) {
+  let sessionId = 'sess_unknown';
+  let userId: string | undefined;
+  const traceId = request.headers.get('x-trace-id') || crypto.randomUUID();
+
   try {
     const mockUserCookie = request.cookies.get('mock-user');
     if (!mockUserCookie?.value) {
@@ -61,8 +66,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const userContext = JSON.parse(decodeURIComponent(mockUserCookie.value));
+    userId = userContext?.id;
+
+    // query parameter에서 session_id 우선 추출 시도
+    const querySessionId = request.nextUrl.searchParams.get('sessionId') || request.nextUrl.searchParams.get('session_id');
+    if (querySessionId) {
+      sessionId = querySessionId;
+    }
+
     const formData = await request.formData();
     const audioFile = formData.get('audio');
+
+    // FormData에 sessionId가 지정된 경우 덮어쓰기
+    const formSessionId = formData.get('sessionId') || formData.get('session_id');
+    if (formSessionId && typeof formSessionId === 'string') {
+      sessionId = formSessionId;
+    }
 
     if (!(audioFile instanceof File)) {
       throw new AppError(
@@ -100,20 +120,28 @@ export async function POST(request: NextRequest) {
     const audioBuffer = await audioFile.arrayBuffer();
     const audioBase64 = arrayBufferToBase64(audioBuffer);
 
-    const startedAt = Date.now();
-    const { output } = await ai.generate({
-      prompt: [
-        { text: STT_PROMPT },
-        {
-          media: {
-            url: `data:${mimeType};base64,${audioBase64}`,
-          },
-        },
-      ],
-      output: { schema: SttOutputSchema },
-    });
-    const latencyMs = Date.now() - startedAt;
-    console.log(`STT API latency: ${latencyMs} ms`);
+    // trackedGeminiCall을 사용하여 Gemini 호출 성능/결과 로깅
+    const { output } = await trackedGeminiCall(
+      () =>
+        ai.generate({
+          prompt: [
+            { text: STT_PROMPT },
+            {
+              media: {
+                url: `data:${mimeType};base64,${audioBase64}`,
+              },
+            },
+          ],
+          output: { schema: SttOutputSchema },
+        }),
+      {
+        type: 'stt',
+        session_id: sessionId,
+        user_id: userId,
+        trace_id: traceId,
+        audio_length_sec: Math.round(audioFile.size / 32000), // 임의 근사 계산 또는 메타데이터
+      }
+    );
 
     if (!output) {
       throw new AppError(
@@ -128,6 +156,12 @@ export async function POST(request: NextRequest) {
       data: output,
     });
   } catch (error) {
-    return handleRouteError(error);
+    return handleRouteError(error, {
+      sessionId,
+      userId,
+      traceId,
+      service: 'stt-service',
+    });
   }
 }
+

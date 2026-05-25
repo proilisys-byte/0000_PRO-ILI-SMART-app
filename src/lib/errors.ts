@@ -5,6 +5,7 @@
  */
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
+import { logger } from '@/lib/monitoring/logger';
 
 // ─── AppError: 커스텀 에러 클래스 ───────────────────────
 export class AppError extends Error {
@@ -48,9 +49,45 @@ function createErrorResponse(
 }
 
 // ─── Route Handler용 에러 핸들러 ─────────────────────────
-export function handleRouteError(error: unknown): NextResponse {
+export function handleRouteError(
+  error: unknown,
+  context?: {
+    sessionId?: string;
+    userId?: string;
+    traceId?: string;
+    service?: string;
+  }
+): NextResponse {
+  const sessionId = context?.sessionId || 'sess_unknown';
+  const traceId = context?.traceId;
+  const userId = context?.userId;
+  const service = context?.service || 'api-gateway';
+  const timestamp = new Date().toISOString();
+
   // 1. AppError: 의도된 비즈니스 에러
   if (error instanceof AppError) {
+    const isServerError = error.status >= 500;
+    const logPayload = {
+      timestamp,
+      service,
+      session_id: sessionId,
+      trace_id: traceId,
+      user_id: userId,
+      event: isServerError ? 'api_server_error' : 'api_client_warning',
+      metadata: {
+        errorCode: error.code,
+        errorMessage: error.message,
+        statusCode: error.status,
+        ...(error.details ? { details: error.details } : {}),
+      },
+    };
+
+    if (isServerError) {
+      logger.error(logPayload);
+    } else {
+      logger.warn(logPayload);
+    }
+
     return createErrorResponse(
       error.code,
       error.message,
@@ -61,20 +98,49 @@ export function handleRouteError(error: unknown): NextResponse {
 
   // 2. ZodError: 요청 형식 검증 실패
   if (error instanceof ZodError) {
+    const issues = error.issues.map((issue) => ({
+      path: issue.path.join('.'),
+      message: issue.message,
+    }));
+
+    logger.warn({
+      timestamp,
+      service,
+      session_id: sessionId,
+      trace_id: traceId,
+      user_id: userId,
+      event: 'api_validation_warning',
+      metadata: {
+        errorMessage: '요청 형식 검증 실패',
+        issues,
+      },
+    });
+
     return createErrorResponse(
       'VAL_400_VALIDATION_FAILED',
       '요청 형식이 올바르지 않습니다.',
       400,
-      {
-        issues: error.issues.map((issue) => ({
-          path: issue.path.join('.'),
-          message: issue.message,
-        })),
-      }
+      { issues }
     );
   }
 
   // 3. 기타 알 수 없는 에러
+  const errorMsg = error instanceof Error ? error.message : String(error);
+  const errorStack = error instanceof Error ? error.stack : undefined;
+
+  logger.error({
+    timestamp,
+    service,
+    session_id: sessionId,
+    trace_id: traceId,
+    user_id: userId,
+    event: 'api_unhandled_error',
+    metadata: {
+      errorMessage: errorMsg,
+      errorStack,
+    },
+  });
+
   console.error('[Unhandled API Error]', error);
   return createErrorResponse(
     'SYS_500_INTERNAL_SERVER_ERROR',
@@ -82,3 +148,4 @@ export function handleRouteError(error: unknown): NextResponse {
     500
   );
 }
+
