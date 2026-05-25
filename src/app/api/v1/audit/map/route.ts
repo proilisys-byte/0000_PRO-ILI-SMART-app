@@ -2,11 +2,16 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { AppError, handleRouteError } from '@/lib/errors';
 import { mapSessionDataToISO9001 } from '@/lib/audit/mapping-engine';
+import { trackedGeminiCall } from '@/lib/monitoring/ai-tracker';
 
 const prisma = new PrismaClient();
 
 // ─── POST /api/v1/audit/map ──────────────────────────────────
 export async function POST(request: NextRequest) {
+  let userId: string | undefined;
+  let auditRecordId = 'sess_unknown';
+  const traceId = request.headers.get('x-trace-id') || crypto.randomUUID();
+
   try {
     // 1. 인증 확인 (mock-user 쿠키 파싱)
     const mockUserCookie = request.cookies.get('mock-user');
@@ -20,14 +25,14 @@ export async function POST(request: NextRequest) {
 
     const userContext = JSON.parse(decodeURIComponent(mockUserCookie.value));
     const tenantId = userContext.tenant_id;
-    const userId = userContext.id;
+    userId = userContext.id;
 
     // 2. 요청 Body 파싱
     const body = await request.json().catch(() => ({}));
     const { sessionId, entries } = body;
 
     let targetEntries: any[] = [];
-    let auditRecordId = '';
+
 
     // Case A: sessionId가 주어지는 경우 (DB 연계)
     if (sessionId) {
@@ -120,8 +125,18 @@ export async function POST(request: NextRequest) {
 
     // 3. 매핑 엔진 실행
     const startTime = Date.now();
-    const result = await mapSessionDataToISO9001(targetEntries);
+    const result = await trackedGeminiCall(
+      () => mapSessionDataToISO9001(targetEntries),
+      {
+        type: 'audit',
+        session_id: auditRecordId,
+        user_id: userId,
+        trace_id: traceId,
+        entries_count: targetEntries.length,
+      }
+    );
     const elapsedMs = Date.now() - startTime;
+
 
     // 4. 감사 로그 적재 (Insert-only Audit Log 정책)
     await prisma.auditLog.create({
@@ -147,7 +162,12 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    return handleRouteError(error);
+    return handleRouteError(error, {
+      sessionId: auditRecordId,
+      userId,
+      traceId,
+      service: 'audit-mapping-service',
+    });
   } finally {
     await prisma.$disconnect();
   }
