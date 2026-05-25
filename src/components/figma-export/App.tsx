@@ -20,8 +20,10 @@ import { EightDReportPage } from './components/EightDReportPage';
 import { AuditChecklistPage } from './components/AuditChecklistPage';
 import { ImprovementDashboardPage } from './components/ImprovementDashboardPage';
 import { TrainingManagementPage } from './components/TrainingManagementPage';
+import { BulkImportPage } from './components/BulkImportPage';
+import { ZeroUiMobilePage } from './components/ZeroUiMobilePage';
 
-type PageType = 'home' | 'consultation' | 'dashboard' | 'login' | 'ncr' | 'rootcause' | 'capa' | 'eightd' | 'audit' | 'improvement' | 'training';
+type PageType = 'home' | 'consultation' | 'dashboard' | 'login' | 'ncr' | 'rootcause' | 'capa' | 'eightd' | 'audit' | 'improvement' | 'training' | 'bulk-import' | 'zero-ui-mobile';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -37,6 +39,8 @@ export default function App() {
     if (currentPage === 'audit') return <AuditChecklistPage onBackClick={() => setCurrentPage('dashboard')} />;
     if (currentPage === 'improvement') return <ImprovementDashboardPage onBackClick={() => setCurrentPage('dashboard')} />;
     if (currentPage === 'training') return <TrainingManagementPage onBackClick={() => setCurrentPage('dashboard')} />;
+    if (currentPage === 'bulk-import') return <BulkImportPage onBackClick={() => setCurrentPage('dashboard')} />;
+    if (currentPage === 'zero-ui-mobile') return <ZeroUiMobilePage onBackClick={() => setCurrentPage('dashboard')} />;
 
     return (
       <div className="min-h-screen">
