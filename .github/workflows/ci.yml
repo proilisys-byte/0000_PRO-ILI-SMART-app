@@ -42,3 +42,7 @@ jobs:
       env:
         MOCK_AI: 'true'
       working-directory: 0000_PRO-ALI-SMART-app
+
+    - name: Run Model Card Validation
+      run: npm run validate:model-cards
+      working-directory: 0000_PRO-ALI-SMART-app

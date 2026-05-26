@@ -11,7 +11,8 @@
     "db:generate": "prisma generate",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "evaluate:ai": "npx tsx scripts/evaluate-ai.ts"
+    "evaluate:ai": "npx tsx scripts/evaluate-ai.ts",
+    "validate:model-cards": "npx tsx scripts/validate-model-cards.ts"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.28.0",

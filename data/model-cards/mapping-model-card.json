@@ -1,0 +1,15 @@
+{
+  "model_name": "ISO 9001 Audit Mapping Engine",
+  "version": "0.1.0",
+  "provider": "google",
+  "model_id": "gemini-2.5-flash",
+  "intended_use": "현장 데이터 기반 ISO 9001 조항 추천 및 리포트 요약",
+  "training_data_summary": "50건의 원청 템플릿 복잡도별 맵핑 골든 데이터셋",
+  "performance_metrics": {
+    "stt_accuracy": 0.92,
+    "mapping_f1_score": 1.00,
+    "vision_f1_score": 0.98
+  },
+  "last_evaluated": "2026-05-26T20:00:00Z",
+  "approved_by": "lead_ai_engineer"
+}

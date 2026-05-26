@@ -1,0 +1,15 @@
+{
+  "model_name": "Vision AI Quality Inspection Model",
+  "version": "0.1.0",
+  "provider": "google",
+  "model_id": "gemini-2.5-flash",
+  "intended_use": "현장 조립 상태 품질 이미지 크랙 및 결함 정밀 분석",
+  "training_data_summary": "50건의 조도/역광 조건별 품질 이미지 골든 데이터셋",
+  "performance_metrics": {
+    "stt_accuracy": 0.92,
+    "mapping_f1_score": 1.00,
+    "vision_f1_score": 0.98
+  },
+  "last_evaluated": "2026-05-26T20:00:00Z",
+  "approved_by": "lead_ai_engineer"
+}
