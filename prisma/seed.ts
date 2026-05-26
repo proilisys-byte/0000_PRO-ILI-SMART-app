@@ -192,6 +192,8 @@ async function main() {
       data: {
         userId: worker1.id,
         consentType: 'PIPA_VOICE_COLLECTION',
+        consentVersion: 'v1.0',
+        identifierHash: '0000000000000000000000000000000000000000000000000000000000000000',
         isAgreed: true
       }
     });
@@ -200,6 +202,8 @@ async function main() {
       data: {
         userId: worker2.id,
         consentType: 'PIPA_VOICE_COLLECTION',
+        consentVersion: 'v1.0',
+        identifierHash: '0000000000000000000000000000000000000000000000000000000000000000',
         isAgreed: true
       }
     });
