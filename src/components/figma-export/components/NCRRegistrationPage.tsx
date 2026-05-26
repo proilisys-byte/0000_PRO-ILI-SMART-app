@@ -1,9 +1,18 @@
 "use client";
-import { useState } from 'react';
-import { ArrowLeft, Upload, Camera, FileText, Sparkles, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Upload, Camera, FileText, Sparkles, CheckCircle2, Loader2, X } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface NCRRegistrationPageProps {
   onBackClick?: () => void;
+}
+
+interface UploadedImage {
+  id: string;
+  originalSize: number;
+  compressedSize: number;
+  previewUrl: string;
+  file: File;
 }
 
 export function NCRRegistrationPage({ onBackClick }: NCRRegistrationPageProps) {
@@ -15,11 +24,120 @@ export function NCRRegistrationPage({ onBackClick }: NCRRegistrationPageProps) {
     severity: ''
   });
 
+  const [uploadedImages, setUploadedImages] = useState<UploadedImage[]>([]);
+  const [isCompressing, setIsCompressing] = useState(false);
+
   const [aiSuggestions, setAiSuggestions] = useState([
     '어떤 제품/공정에서 문제가 발생했나요?',
     '불량이 발견된 시점은 언제인가요?',
     '예상되는 불량 수량은 얼마인가요?'
   ]);
+
+  // 클라이언트(Edge) 사이드 Canvas 이미지 리사이징 및 JPEG 압축 로직
+  const compressImage = (file: File): Promise<{ compressedFile: File; originalSize: number; compressedSize: number; previewUrl: string }> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+          const maxDimension = 1920; // 긴 축 최대 1920px 리사이즈 규격
+
+          if (width > height) {
+            if (width > maxDimension) {
+              height = Math.round((height * maxDimension) / width);
+              width = maxDimension;
+            }
+          } else {
+            if (height > maxDimension) {
+              width = Math.round((width * maxDimension) / height);
+              height = maxDimension;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            reject(new Error('Canvas context is null'));
+            return;
+          }
+          ctx.drawImage(img, 0, 0, width, height);
+
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) {
+                reject(new Error('Blob conversion failed'));
+                return;
+              }
+              const compressedFile = new File([blob], file.name, {
+                type: 'image/jpeg',
+                lastModified: Date.now(),
+              });
+              const previewUrl = URL.createObjectURL(compressedFile);
+              resolve({
+                compressedFile,
+                originalSize: file.size,
+                compressedSize: compressedFile.size,
+                previewUrl,
+              });
+            },
+            'image/jpeg',
+            0.8 // JPEG Quality 80% 압축 적용
+          );
+        };
+        img.onerror = () => reject(new Error('Image loading failed'));
+        img.src = event.target?.result as string;
+      };
+      reader.onerror = () => reject(new Error('File reading failed'));
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setIsCompressing(true);
+    try {
+      const newImages: UploadedImage[] = [];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (!file.type.startsWith('image/')) {
+          toast.error('이미지 파일만 업로드할 수 있습니다.');
+          continue;
+        }
+        const result = await compressImage(file);
+        newImages.push({
+          id: Math.random().toString(36).substring(2, 9),
+          originalSize: result.originalSize,
+          compressedSize: result.compressedSize,
+          previewUrl: result.previewUrl,
+          file: result.compressedFile,
+        });
+      }
+      setUploadedImages((prev) => [...prev, ...newImages]);
+      toast.success(`${newImages.length}개의 이미지가 압축 처리 후 정상 업로드되었습니다.`);
+    } catch (err) {
+      console.error(err);
+      toast.error('이미지 리사이징/압축 과정 중 오류가 발생했습니다.');
+    } finally {
+      setIsCompressing(false);
+    }
+  };
+
+  const removeImage = (id: string) => {
+    setUploadedImages((prev) => {
+      const target = prev.find((img) => img.id === id);
+      if (target) {
+        URL.revokeObjectURL(target.previewUrl);
+      }
+      return prev.filter((img) => img.id !== id);
+    });
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -114,18 +232,82 @@ export function NCRRegistrationPage({ onBackClick }: NCRRegistrationPageProps) {
                 <h2 className="text-xl font-bold text-slate-900 mb-6">사진/데이터 첨부</h2>
 
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-6 border-2 border-dashed border-slate-300 rounded-2xl hover:border-blue-500 transition-all cursor-pointer text-center">
-                    <Camera className="w-12 h-12 text-slate-400 mx-auto mb-3" />
-                    <p className="text-sm font-semibold text-slate-700">불량 샘플 사진</p>
-                    <p className="text-xs text-slate-500 mt-1">클릭하여 업로드</p>
+                  {/* Hidden Input for Camera/Gallery */}
+                  <input
+                    type="file"
+                    id="ncr-camera-input"
+                    accept="image/*"
+                    capture="environment"
+                    multiple
+                    className="hidden"
+                    onChange={handleImageChange}
+                  />
+
+                  <div
+                    onClick={() => !isCompressing && document.getElementById('ncr-camera-input')?.click()}
+                    className="p-6 border-2 border-dashed border-slate-300 rounded-2xl hover:border-blue-500 transition-all cursor-pointer text-center relative flex flex-col justify-center items-center"
+                  >
+                    {isCompressing ? (
+                      <>
+                        <Loader2 className="w-12 h-12 text-blue-500 animate-spin mb-3" />
+                        <p className="text-sm font-semibold text-slate-700">이미지 압축 중...</p>
+                        <p className="text-xs text-slate-500 mt-1">대용량 파일 리사이징 중</p>
+                      </>
+                    ) : (
+                      <>
+                        <Camera className="w-12 h-12 text-slate-400 mx-auto mb-3" />
+                        <p className="text-sm font-semibold text-slate-700">불량 샘플 사진</p>
+                        <p className="text-xs text-slate-500 mt-1">촬영 또는 갤러리 선택</p>
+                      </>
+                    )}
                   </div>
 
-                  <div className="p-6 border-2 border-dashed border-slate-300 rounded-2xl hover:border-blue-500 transition-all cursor-pointer text-center">
+                  <div className="p-6 border-2 border-dashed border-slate-300 rounded-2xl hover:border-blue-500 transition-all cursor-pointer text-center flex flex-col justify-center items-center">
                     <Upload className="w-12 h-12 text-slate-400 mx-auto mb-3" />
                     <p className="text-sm font-semibold text-slate-700">검사 데이터</p>
                     <p className="text-xs text-slate-500 mt-1">Excel, PDF 파일</p>
                   </div>
                 </div>
+
+                {/* Uploaded Images Grid with compression feedback */}
+                {uploadedImages.length > 0 && (
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {uploadedImages.map((img) => {
+                      const reduction = Math.round(((img.originalSize - img.compressedSize) / img.originalSize) * 100);
+                      const origMB = (img.originalSize / (1024 * 1024)).toFixed(2);
+                      const compMB = (img.compressedSize / (1024 * 1024)).toFixed(2);
+
+                      return (
+                        <div key={img.id} className="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
+                          <img
+                            src={img.previewUrl}
+                            alt="Preview"
+                            className="w-full h-32 object-cover"
+                          />
+                          <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button
+                              type="button"
+                              onClick={() => removeImage(img.id)}
+                              className="p-2 rounded-full bg-red-600 hover:bg-red-500 text-white transition-colors"
+                            >
+                              <X className="w-5 h-5" />
+                            </button>
+                          </div>
+                          <div className="p-3 bg-slate-50 border-t border-slate-100">
+                            <p className="text-[10px] text-slate-600 font-mono text-center font-semibold">
+                              {origMB}MB ➔ {compMB}MB
+                            </p>
+                            <div className="mt-1 text-center">
+                              <span className="inline-block text-[9px] font-bold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">
+                                {reduction}% 압축 완료
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               {/* AI Generated Preview */}
