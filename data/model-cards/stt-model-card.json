@@ -1,0 +1,15 @@
+{
+  "model_name": "STT Audio Extraction Model",
+  "version": "0.1.0",
+  "provider": "google",
+  "model_id": "gemini-2.5-flash",
+  "intended_use": "제조 현장 음성 데이터 추출 및 보정",
+  "training_data_summary": "100건의 제조 현장 다국어/방언/소음 오디오 골든 데이터셋",
+  "performance_metrics": {
+    "stt_accuracy": 0.92,
+    "mapping_f1_score": 1.00,
+    "vision_f1_score": 0.98
+  },
+  "last_evaluated": "2026-05-26T20:00:00Z",
+  "approved_by": "lead_ai_engineer"
+}

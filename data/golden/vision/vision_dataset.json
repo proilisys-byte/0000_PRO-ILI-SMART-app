@@ -1,0 +1,2419 @@
+[
+  {
+    "id": "vision-001",
+    "image_path": "data/golden/vision/images/vision_sample_001.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-002",
+    "image_path": "data/golden/vision/images/vision_sample_002.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-003",
+    "image_path": "data/golden/vision/images/vision_sample_003.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-004",
+    "image_path": "data/golden/vision/images/vision_sample_004.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-005",
+    "image_path": "data/golden/vision/images/vision_sample_005.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-006",
+    "image_path": "data/golden/vision/images/vision_sample_006.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-007",
+    "image_path": "data/golden/vision/images/vision_sample_007.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-008",
+    "image_path": "data/golden/vision/images/vision_sample_008.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-009",
+    "image_path": "data/golden/vision/images/vision_sample_009.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-010",
+    "image_path": "data/golden/vision/images/vision_sample_010.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-011",
+    "image_path": "data/golden/vision/images/vision_sample_011.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-012",
+    "image_path": "data/golden/vision/images/vision_sample_012.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-013",
+    "image_path": "data/golden/vision/images/vision_sample_013.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-014",
+    "image_path": "data/golden/vision/images/vision_sample_014.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-015",
+    "image_path": "data/golden/vision/images/vision_sample_015.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-016",
+    "image_path": "data/golden/vision/images/vision_sample_016.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-017",
+    "image_path": "data/golden/vision/images/vision_sample_017.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-018",
+    "image_path": "data/golden/vision/images/vision_sample_018.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-019",
+    "image_path": "data/golden/vision/images/vision_sample_019.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-020",
+    "image_path": "data/golden/vision/images/vision_sample_020.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-021",
+    "image_path": "data/golden/vision/images/vision_sample_021.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-022",
+    "image_path": "data/golden/vision/images/vision_sample_022.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-023",
+    "image_path": "data/golden/vision/images/vision_sample_023.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-024",
+    "image_path": "data/golden/vision/images/vision_sample_024.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-025",
+    "image_path": "data/golden/vision/images/vision_sample_025.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-026",
+    "image_path": "data/golden/vision/images/vision_sample_026.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-027",
+    "image_path": "data/golden/vision/images/vision_sample_027.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-028",
+    "image_path": "data/golden/vision/images/vision_sample_028.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-029",
+    "image_path": "data/golden/vision/images/vision_sample_029.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: normal. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-030",
+    "image_path": "data/golden/vision/images/vision_sample_030.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "normal",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: normal. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-031",
+    "image_path": "data/golden/vision/images/vision_sample_031.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-032",
+    "image_path": "data/golden/vision/images/vision_sample_032.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-033",
+    "image_path": "data/golden/vision/images/vision_sample_033.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-034",
+    "image_path": "data/golden/vision/images/vision_sample_034.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-035",
+    "image_path": "data/golden/vision/images/vision_sample_035.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-036",
+    "image_path": "data/golden/vision/images/vision_sample_036.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-037",
+    "image_path": "data/golden/vision/images/vision_sample_037.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-038",
+    "image_path": "data/golden/vision/images/vision_sample_038.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-039",
+    "image_path": "data/golden/vision/images/vision_sample_039.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-040",
+    "image_path": "data/golden/vision/images/vision_sample_040.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-041",
+    "image_path": "data/golden/vision/images/vision_sample_041.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-042",
+    "image_path": "data/golden/vision/images/vision_sample_042.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "low",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "저조도 판정 불가",
+          "location": "전체 화면",
+          "severity": "minor",
+          "confidence_score": 0.5
+        }
+      ],
+      "overall_result": "needs_review",
+      "needs_review": true,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: low. 결과: needs_review."
+    }
+  },
+  {
+    "id": "vision-043",
+    "image_path": "data/golden/vision/images/vision_sample_043.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: backlight. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-044",
+    "image_path": "data/golden/vision/images/vision_sample_044.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: backlight. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-045",
+    "image_path": "data/golden/vision/images/vision_sample_045.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: backlight. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-046",
+    "image_path": "data/golden/vision/images/vision_sample_046.webp",
+    "process_code": "P-ASM-02",
+    "expected_items": [
+      "커플러결합",
+      "오링안착",
+      "핀조립상태"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-ASM-02",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "커플러결합",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "오링안착",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "핀조립상태",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-ASM-02에 대한 시각 검사 요약. 조도 조건: backlight. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-047",
+    "image_path": "data/golden/vision/images/vision_sample_047.webp",
+    "process_code": "P-PNT-03",
+    "expected_items": [
+      "도막두께",
+      "도색균일성",
+      "기포유무"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-PNT-03",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "도막두께",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "도색균일성",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "기포유무",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-PNT-03에 대한 시각 검사 요약. 조도 조건: backlight. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-048",
+    "image_path": "data/golden/vision/images/vision_sample_048.webp",
+    "process_code": "P-GRN-04",
+    "expected_items": [
+      "연마조도",
+      "수평도",
+      "잔류칩제거"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-GRN-04",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "연마조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "수평도",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "잔류칩제거",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-GRN-04에 대한 시각 검사 요약. 조도 조건: backlight. 결과: fail."
+    }
+  },
+  {
+    "id": "vision-049",
+    "image_path": "data/golden/vision/images/vision_sample_049.webp",
+    "process_code": "P-INS-05",
+    "expected_items": [
+      "바코드인식",
+      "외관크랙",
+      "치수확인"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": false
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-INS-05",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "바코드인식",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외관크랙",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "치수확인",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        }
+      ],
+      "overall_result": "pass",
+      "needs_review": false,
+      "raw_description": "공정코드 P-INS-05에 대한 시각 검사 요약. 조도 조건: backlight. 결과: pass."
+    }
+  },
+  {
+    "id": "vision-050",
+    "image_path": "data/golden/vision/images/vision_sample_050.webp",
+    "process_code": "P-EXT-01",
+    "expected_items": [
+      "표면조도",
+      "외경치수",
+      "압출직진성"
+    ],
+    "metadata": {
+      "lighting_condition": "backlight",
+      "defect_present": true
+    },
+    "expected": {
+      "analysis_type": "visual_inspection",
+      "process_code": "P-EXT-01",
+      "detected_items": [
+        {
+          "item_type": "work_status",
+          "label": "표면조도",
+          "location": "상단 중앙 영역",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "외경치수",
+          "location": "우측 결합부",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "work_status",
+          "label": "압출직진성",
+          "location": "전체 표면",
+          "severity": "ok",
+          "confidence_score": 0.95
+        },
+        {
+          "item_type": "defect",
+          "label": "표면 미세 크랙 검출",
+          "location": "중앙 조인트 부근",
+          "severity": "critical",
+          "confidence_score": 0.91
+        }
+      ],
+      "overall_result": "fail",
+      "needs_review": false,
+      "raw_description": "공정코드 P-EXT-01에 대한 시각 검사 요약. 조도 조건: backlight. 결과: fail."
+    }
+  }
+]
