@@ -24,6 +24,7 @@ model Tenant {
   processes          Process[]
   boms               Bom[]
   defects            Defect[]
+  copqMetrics        CopqMetric[]
 
   @@map("tenants")
 }
@@ -227,4 +228,19 @@ model Defect {
 
   @@unique([tenantId, defectCode])
   @@map("defects")
+}
+
+// 14. COPQ Metrics (품질 실패 비용 지표)
+model CopqMetric {
+  id         String   @id @default(uuid())
+  tenantId   String   @map("tenant_id")
+  wasteType  String   @map("waste_type") // "defect" | "rework" | "waiting" | "overproduction"
+  costValue  Decimal  @map("cost_value")
+  measuredAt DateTime @map("measured_at")
+
+  tenant     Tenant   @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, wasteType, measuredAt])
+  @@index([tenantId, wasteType, measuredAt])
+  @@map("copq_metrics")
 }
