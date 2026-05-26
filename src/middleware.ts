@@ -25,6 +25,7 @@ const ADMIN_ONLY_ROUTES = [
 const PUBLIC_ROUTES = [
   '/login',
   '/api/auth/login',
+  '/api/auth/signup',
   '/api/auth/refresh',
   '/',
   '/pro-ali-smart',

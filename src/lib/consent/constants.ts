@@ -1,0 +1,16 @@
+export const CONSENT_TYPES = {
+  PIPA_VOICE: 'PIPA_VOICE',
+  PIPA_LOCATION: 'PIPA_LOCATION',
+  PIPA_WORK_RECORD: 'PIPA_WORK_RECORD',
+} as const;
+
+export type ConsentType = (typeof CONSENT_TYPES)[keyof typeof CONSENT_TYPES];
+
+export const REQUIRED_SIGNUP_CONSENT_TYPES: ConsentType[] = [
+  CONSENT_TYPES.PIPA_VOICE,
+  CONSENT_TYPES.PIPA_WORK_RECORD,
+];
+
+export const ALLOWED_CONSENT_VERSIONS = ['v1.0'] as const;
+
+export const CURRENT_CONSENT_VERSION = ALLOWED_CONSENT_VERSIONS[0];

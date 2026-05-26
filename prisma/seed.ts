@@ -1,4 +1,9 @@
 import { PrismaClient } from '@prisma/client';
+import {
+  CONSENT_TYPES,
+  CURRENT_CONSENT_VERSION,
+} from '../src/lib/consent/constants';
+import { recordConsent } from '../src/lib/consent/record-consent';
 
 const prisma = new PrismaClient();
 
@@ -11,9 +16,12 @@ async function disableTriggers() {
     if (isSQLite) {
       await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_audit_log_update`);
       await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_audit_log_delete`);
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_consent_record_update`);
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS prevent_consent_record_delete`);
       console.log("✅ SQLite 기존 트리거 해제 완료.");
     } else {
       await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS trg_prevent_audit_log_update_delete ON audit_log;`);
+      await prisma.$executeRawUnsafe(`DROP TRIGGER IF EXISTS trg_prevent_consent_record_update_delete ON consent_records;`);
       console.log("✅ PostgreSQL 기존 트리거 해제 완료.");
     }
   } catch (error) {
@@ -43,6 +51,20 @@ async function applyTriggers() {
           SELECT RAISE(FAIL, 'COMPLIANCE LOCKUP: Modification or deletion of audit_log records is strictly prohibited.');
         END;
       `);
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER IF NOT EXISTS prevent_consent_record_update
+        BEFORE UPDATE ON consent_records
+        BEGIN
+          SELECT RAISE(FAIL, 'COMPLIANCE LOCKUP: Modification or deletion of consent_records is strictly prohibited.');
+        END;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER IF NOT EXISTS prevent_consent_record_delete
+        BEFORE DELETE ON consent_records
+        BEGIN
+          SELECT RAISE(FAIL, 'COMPLIANCE LOCKUP: Modification or deletion of consent_records is strictly prohibited.');
+        END;
+      `);
       console.log("✅ SQLite 트리거 적용 완료!");
     } else {
       console.log("ℹ️ PostgreSQL 데이터베이스 감지. PostgreSQL 트리거 및 RLS 적용...");
@@ -66,6 +88,25 @@ async function applyTriggers() {
         BEFORE UPDATE OR DELETE ON audit_log
         FOR EACH ROW
         EXECUTE FUNCTION prevent_audit_log_modification();
+      `);
+
+      await prisma.$executeRawUnsafe(`
+        CREATE OR REPLACE FUNCTION prevent_consent_record_modification()
+        RETURNS TRIGGER AS $$
+        BEGIN
+          RAISE EXCEPTION 'COMPLIANCE LOCKUP: Modification or deletion of consent_records is strictly prohibited.';
+        END;
+        $$ LANGUAGE plpgsql;
+      `);
+
+      await prisma.$executeRawUnsafe(`
+        DROP TRIGGER IF EXISTS trg_prevent_consent_record_update_delete ON consent_records;
+      `);
+      await prisma.$executeRawUnsafe(`
+        CREATE TRIGGER trg_prevent_consent_record_update_delete
+        BEFORE UPDATE OR DELETE ON consent_records
+        FOR EACH ROW
+        EXECUTE FUNCTION prevent_consent_record_modification();
       `);
       
       // 3. RLS 활성화
@@ -188,20 +229,38 @@ async function main() {
 
     // 6. PIPA 수집 동의 이력 생성
     console.log("📝 PIPA 개인정보 수집 동의 내역 기록 중...");
-    await prisma.consentRecord.create({
-      data: {
-        userId: worker1.id,
-        consentType: 'PIPA_VOICE_COLLECTION',
-        isAgreed: true
-      }
+    await recordConsent(prisma, {
+      userId: worker1.id,
+      consentType: CONSENT_TYPES.PIPA_VOICE,
+      consentVersion: CURRENT_CONSENT_VERSION,
+      isAgreed: true,
+      ipAddress: '127.0.0.1',
+      deviceFingerprint: 'seed-device-worker1',
+    });
+    await recordConsent(prisma, {
+      userId: worker1.id,
+      consentType: CONSENT_TYPES.PIPA_WORK_RECORD,
+      consentVersion: CURRENT_CONSENT_VERSION,
+      isAgreed: true,
+      ipAddress: '127.0.0.1',
+      deviceFingerprint: 'seed-device-worker1',
     });
 
-    await prisma.consentRecord.create({
-      data: {
-        userId: worker2.id,
-        consentType: 'PIPA_VOICE_COLLECTION',
-        isAgreed: true
-      }
+    await recordConsent(prisma, {
+      userId: worker2.id,
+      consentType: CONSENT_TYPES.PIPA_VOICE,
+      consentVersion: CURRENT_CONSENT_VERSION,
+      isAgreed: true,
+      ipAddress: '127.0.0.1',
+      deviceFingerprint: 'seed-device-worker2',
+    });
+    await recordConsent(prisma, {
+      userId: worker2.id,
+      consentType: CONSENT_TYPES.PIPA_WORK_RECORD,
+      consentVersion: CURRENT_CONSENT_VERSION,
+      isAgreed: true,
+      ipAddress: '127.0.0.1',
+      deviceFingerprint: 'seed-device-worker2',
     });
 
     // 7. 가상 Audit 세션 생성
@@ -316,6 +375,34 @@ async function main() {
     }
     
     console.log("🎉 감사로그 위변조 방지 트리거 자가진단 100% 통과!");
+
+    // 10. ConsentRecord Insert-only 트리거 자가진단
+    console.log("🔒 ConsentRecord Insert-only 트리거 자가진단 시작...");
+    const testConsent = await recordConsent(prisma, {
+      userId: worker1.id,
+      consentType: CONSENT_TYPES.PIPA_LOCATION,
+      consentVersion: CURRENT_CONSENT_VERSION,
+      isAgreed: false,
+      ipAddress: '127.0.0.1',
+      deviceFingerprint: 'seed-consent-trigger-test',
+    });
+
+    let consentUpdateFailed = false;
+    try {
+      await prisma.consentRecord.update({
+        where: { id: testConsent.id },
+        data: { isAgreed: true },
+      });
+    } catch {
+      consentUpdateFailed = true;
+      console.log("✅ ConsentRecord UPDATE 차단 자가진단 성공!");
+    }
+
+    if (!consentUpdateFailed) {
+      throw new Error('ConsentRecord UPDATE가 차단되지 않았습니다.');
+    }
+
+    console.log("🎉 ConsentRecord Insert-only 트리거 자가진단 100% 통과!");
   } else {
     console.log("⚠️ 운영/스테이징 환경용 최소 기본 역할만 정의합니다.");
     
