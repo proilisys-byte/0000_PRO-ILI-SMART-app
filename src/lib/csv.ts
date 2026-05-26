@@ -114,7 +114,7 @@ export function parseAndValidateCsv<T>(
   const errors: { row: number; column: string; message: string }[] = [];
 
   if (parsed.errors && parsed.errors.length > 0) {
-    parsed.errors.forEach(err => {
+    parsed.errors.forEach((err: any) => {
       errors.push({
         row: (err.row ?? 0) + 2, // 1-indexed 및 헤더 포함
         column: err.code,
@@ -128,7 +128,7 @@ export function parseAndValidateCsv<T>(
   }
 
   // 데이터 검증
-  parsed.data.forEach((row, index) => {
+  parsed.data.forEach((row: any, index: number) => {
     const rowNum = index + 2; // 엑셀/CSV 행 기준 (1-indexed + 헤더 1행)
     const result = schema.safeParse(row);
 

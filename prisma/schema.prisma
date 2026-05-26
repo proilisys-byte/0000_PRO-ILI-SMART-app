@@ -143,13 +143,17 @@ model BulkImportBatch {
   @@map("bulk_import_batches")
 }
 
-// 9. Consent Records (PIPA 개인정보 수집 동의 내역)
+// 9. Consent Records (PIPA 개인정보 수집 동의 내역 – Insert-only)
 model ConsentRecord {
-  id          String   @id @default(uuid())
-  userId      String   @map("user_id")
-  consentType String   @map("consent_type")
-  isAgreed    Boolean  @map("is_agreed")
-  agreedAt    DateTime @default(now()) @map("agreed_at")
+  id                         String   @id @default(uuid())
+  userId                     String   @map("user_id")
+  consentType                String   @map("consent_type")
+  consentVersion             String   @map("consent_version")
+  identifierHash             String   @map("identifier_hash")
+  isAgreed                   Boolean  @map("is_agreed")
+  ipAddressEncrypted         String?  @map("ip_address_encrypted")
+  deviceFingerprintEncrypted String?  @map("device_fingerprint_encrypted")
+  agreedAt                   DateTime @default(now()) @map("agreed_at")
 
   user        User     @relation(fields: [userId], references: [id])
 
