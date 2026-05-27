@@ -4,11 +4,14 @@ import { Mail, Lock, Building2, User, ArrowRight, Eye, EyeOff } from 'lucide-rea
 
 interface LoginPageProps {
   onBackClick?: () => void;
+  onLoginSuccess?: () => void;
 }
 
-export function LoginPage({ onBackClick }: LoginPageProps) {
+export function LoginPage({ onBackClick, onLoginSuccess }: LoginPageProps) {
   const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login');
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -17,9 +20,30 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
     confirmPassword: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    if (activeTab !== 'login') {
+      setErrorMessage('회원가입은 현재 비활성화되어 있습니다. 시스템 관리자에게 문의하세요.');
+      return;
+    }
+    setIsSubmitting(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email, password: formData.password }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.error?.message ?? '로그인에 실패했습니다.');
+      }
+      onLoginSuccess?.();
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : '로그인 중 오류가 발생했습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -154,11 +178,18 @@ export function LoginPage({ onBackClick }: LoginPageProps) {
                   </a>
                 </div>
 
+                {errorMessage && (
+                  <div role="alert" className="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="group w-full px-8 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-semibold shadow-2xl shadow-blue-500/40 hover:shadow-3xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg"
+                  disabled={isSubmitting}
+                  className="group w-full px-8 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-semibold shadow-2xl shadow-blue-500/40 hover:shadow-3xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  로그인
+                  {isSubmitting ? '로그인 중…' : '로그인'}
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
 

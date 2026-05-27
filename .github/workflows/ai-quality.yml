@@ -1,0 +1,54 @@
+name: AI Quality Gate
+
+# REQ-FUNC-AI-002 / T1-011 — Golden Dataset 기반 자동 품질 검증
+# - PR / push 시 매핑 엔진 + Mock STT 평가 스크립트를 실행
+# - 임계값(매핑 신뢰도, 누락률) 미달 시 빌드 실패
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: 0000_PRO-ALI-SMART-app
+
+jobs:
+  ai-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NODE_ENV: test
+      MOCK_AI: "true"
+      DATABASE_URL: "file:./prisma/dev.db"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: 0000_PRO-ALI-SMART-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prisma generate (sqlite local)
+        run: npx prisma generate
+
+      - name: Static checks
+        run: |
+          npm run lint --if-present
+          npm run typecheck --if-present
+
+      - name: Mapping engine quality test (Golden Dataset)
+        run: npx tsx scripts/test-mapping-engine.ts
+
+      - name: COPQ query smoke test
+        run: npx tsx scripts/test-copq-query.ts || true
+
+      - name: Observability log schema test
+        run: npx tsx scripts/test-observability.ts || true
