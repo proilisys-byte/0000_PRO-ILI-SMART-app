@@ -1,14 +1,14 @@
-﻿# Software Requirements Specification (SRS)
+# Software Requirements Specification (SRS)
 
 ## 0. 문서 개요 (Document Overview)
 
 | 항목 | 내용 |
 |:---|:---|
-| **프로젝트명** | PRO ALI SMART — 스마트 제조 품질혁신 플랫폼 |
+| **프로젝트명** | PRO ILI SMART — 스마트 제조 품질혁신 플랫폼 |
 | **기준문서 (Base Document)** | PRD_v0.1.md |
 | **작성일 (Date)** | 2026-04-18 |
 | **작성기준 (Standard)** | ISO/IEC/IEEE 29148:2018 — 시스템 및 소프트웨어 엔지니어링 요구사항 엔지니어링 |
-| **Owner** | PRO ALI 기술팀 (Tech Lead) |
+| **Owner** | PRO ILI 기술팀 (Tech Lead) |
 
 
 -------------------------------------------------
@@ -17,7 +17,7 @@
 
 ### 1.1 Purpose (목적)
 
-본 SRS 문서는 중소·중견 제조기업(반도체 소부장 등)의 품질 관리 및 인증 대응 업무를 혁신하는 **PRO ALI SMART (스마트 제조 품질혁신 플랫폼)** 시스템의 소프트웨어 요구사항을 ISO/IEC/IEEE 29148:2018 표준에 준거하여 정의한다.
+본 SRS 문서는 중소·중견 제조기업(반도체 소부장 등)의 품질 관리 및 인증 대응 업무를 혁신하는 **PRO ILI SMART (스마트 제조 품질혁신 플랫폼)** 시스템의 소프트웨어 요구사항을 ISO/IEC/IEEE 29148:2018 표준에 준거하여 정의한다.
 
 본 시스템의 핵심 목적은 현장의 수기 데이터를 Zero-UI(음성/비전)로 디지털화하고, AI 기반 문서 자동 매핑을 통해 원청 심사(Audit) 및 부적합(NC) 대응에 소요되는 시간과 비용(COPQ)을 획기적으로 감축하는 데 있다. 
 
@@ -262,7 +262,7 @@ usecaseDiagram
     actor "정태식 (대표이사)" as CE
     actor "원청 심사관" as EA
     
-    rectangle "PRO ALI SMART System" {
+    rectangle "PRO ILI SMART System" {
         usecase "음성/비전 데이터 수집" as UC1
         usecase "실시간 클라우드 전송" as UC1_1
         
@@ -2024,6 +2024,6 @@ AI 성능 지표 검증의 기준이 되는 Golden Dataset의 형상 관리, 갱
 
 | ID | 문서명 | 설명 |
 |:---|:---|:---|
-| REF-01 | PRD_v0.1.md | PRO ALI SMART 최종 품질 게이트 검토 보고서 및 원본 PRD 문서 통합본 |
+| REF-01 | PRD_v0.1.md | PRO ILI SMART 최종 품질 게이트 검토 보고서 및 원본 PRD 문서 통합본 |
 
 **— END OF DOCUMENT —**

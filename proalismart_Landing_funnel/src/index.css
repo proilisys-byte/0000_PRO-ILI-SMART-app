@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0066cc;
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;
+  --color-ink: #1d1d1f;
+  --color-body: #1d1d1f;
+  --color-body-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
+  --color-canvas: #ffffff;
+  --color-canvas-parchment: #f5f5f7;
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #272729;
+  --color-surface-tile-2: #2a2a2c;
+  --color-surface-tile-3: #252527;
+  --color-surface-black: #000000;
+  --color-hairline: #e0e0e0;
+  
+  /* Fallbacks for existing component references during refactoring */
+  --color-cyber-blue: #0066cc;
+  --color-cyber-cyan: #2997ff;
+  --color-cyber-purple: #ab47bc;
+  --color-cyber-orange: #f56300;
+  --color-cyber-green: #30d158;
+  --color-cyber-red: #ff3b30;
+  --color-brand-bg: #1d1d1f;
+  --color-brand-card: #f5f5f7;
+  --color-brand-card-border: #e0e0e0;
+  
+  --font-sans: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "SF Pro Display", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Apple Specific Styles */
+
+/* Signature drop shadow under product images only */
+.apple-product-shadow {
+  box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
+}
+
+/* Frosted glass nav bar */
+.apple-subnav-frosted {
+  background-color: rgba(245, 245, 247, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.apple-subnav-frosted-dark {
+  background-color: rgba(29, 29, 31, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Apple Display text scale with negative letter spacing */
+.apple-headline-hero {
+  font-family: "SF Pro Display", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+}
+
+.apple-headline-lg {
+  font-family: "SF Pro Display", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.apple-headline-md {
+  font-family: "SF Pro Display", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.apple-body-large {
+  font-family: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+}
+
+.apple-body {
+  font-family: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+}
+
+.apple-body-strong {
+  font-family: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+}
+
+.apple-caption {
+  font-family: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.01em;
+}
+
+.apple-fine-print {
+  font-family: "SF Pro Text", "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+}
+
+/* Micro-interaction on click */
+.apple-active-scale:active {
+  transform: scale(0.96);
+}
+
+.apple-transition {
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
