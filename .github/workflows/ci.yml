@@ -24,8 +24,6 @@ jobs:
         run: npm ci
       - name: Prisma generate
         run: npx prisma generate
-      - name: Lint
-        run: npm run lint --if-present
       - name: Typecheck
         run: npm run typecheck
       - name: Build

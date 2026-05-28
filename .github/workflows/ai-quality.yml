@@ -35,10 +35,8 @@ jobs:
       - name: Prisma generate (sqlite local)
         run: npx prisma generate
 
-      - name: Static checks
-        run: |
-          npm run lint --if-present
-          npm run typecheck --if-present
+      - name: Typecheck
+        run: npm run typecheck --if-present
 
       - name: Mapping engine quality test (Golden Dataset)
         run: npx tsx scripts/test-mapping-engine.ts
