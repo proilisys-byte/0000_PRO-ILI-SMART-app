@@ -24,6 +24,7 @@ model Tenant {
   processes          Process[]
   boms               Bom[]
   defects            Defect[]
+  copqMetrics        CopqMetric[]
 
   @@map("tenants")
 }
@@ -227,4 +228,106 @@ model Defect {
 
   @@unique([tenantId, defectCode])
   @@map("defects")
+}
+
+// 14. COPQ Metrics (품질 실패 비용 지표)
+model CopqMetric {
+  id         String   @id @default(uuid())
+  tenantId   String   @map("tenant_id")
+  wasteType  String   @map("waste_type") // "defect" | "rework" | "waiting" | "overproduction"
+  costValue  Decimal  @map("cost_value")
+  measuredAt DateTime @map("measured_at")
+
+  tenant     Tenant   @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, wasteType, measuredAt])
+  @@index([tenantId, wasteType, measuredAt])
+  @@map("copq_metrics")
+}
+
+// 15. NC Cases (부적합 사례 — Sprint 2 / REQ-FUNC-006~010)
+model NcCase {
+  id            String   @id @default(uuid())
+  tenantId      String   @map("tenant_id")
+  reportedBy    String   @map("reported_by")
+  title         String
+  severity      String   @default("MEDIUM") // LOW | MEDIUM | HIGH | CRITICAL
+  status        String   @default("OPEN")   // OPEN | IN_REVIEW | CORRECTIVE | CLOSED
+  rawReason     String?  @map("raw_reason")
+  draftPayload  Json?    @map("draft_payload")
+  beforeHash    String?  @map("before_hash")
+  afterHash     String?  @map("after_hash")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  actions       CorrectiveAction[]
+
+  @@index([tenantId, status])
+  @@map("nc_cases")
+}
+
+// 16. Corrective Actions (시정 조치 — REQ-FUNC-007/008)
+model CorrectiveAction {
+  id          String   @id @default(uuid())
+  ncCaseId    String   @map("nc_case_id")
+  description String
+  ownerId     String?  @map("owner_id")
+  status      String   @default("PENDING") // PENDING | IN_PROGRESS | DONE | VERIFIED
+  evidence    Json?
+  dueAt       DateTime? @map("due_at")
+  completedAt DateTime? @map("completed_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  ncCase      NcCase   @relation(fields: [ncCaseId], references: [id], onDelete: Cascade)
+
+  @@index([ncCaseId, status])
+  @@map("corrective_actions")
+}
+
+// 17. Vision Captures (현장 카메라 — REQ-FUNC-012)
+model VisionCapture {
+  id           String   @id @default(uuid())
+  tenantId     String   @map("tenant_id")
+  uploadedBy   String   @map("uploaded_by")
+  imageHash    String   @map("image_hash")
+  storageKey   String   @map("storage_key")
+  ocrText      String?  @map("ocr_text")
+  detection    Json?
+  ncCaseId     String?  @map("nc_case_id")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@index([tenantId, createdAt])
+  @@map("vision_captures")
+}
+
+// 18. Audit Templates (원청 양식 — REQ-FUNC-002)
+model AuditTemplate {
+  id           String   @id @default(uuid())
+  tenantId     String?  @map("tenant_id")
+  name         String
+  vendor       String?
+  isoStandard  String   @default("ISO_9001") @map("iso_standard")
+  schema       Json
+  version      Int      @default(1)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@unique([tenantId, name, version])
+  @@map("audit_templates")
+}
+
+// 19. AI Model Registry (Model Card — REQ-FUNC-AI-001~004 / T3-004 / T3-005)
+model AiModelRegistry {
+  id            String   @id @default(uuid())
+  modelName     String   @map("model_name")
+  version       String
+  signature     String
+  modelCard     Json     @map("model_card")
+  isApproved    Boolean  @default(false) @map("is_approved")
+  driftBaseline Json?    @map("drift_baseline")
+  registeredAt  DateTime @default(now()) @map("registered_at")
+
+  @@unique([modelName, version])
+  @@map("ai_model_registry")
 }

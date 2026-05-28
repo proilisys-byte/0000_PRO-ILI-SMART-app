@@ -29,6 +29,7 @@
     "src/app/Trae_PROALISMART_landing/**/*",
     "src/components/landing/**/*",
     "proilismart_Landing_v0.2/**/*",
-    "proilismart_prototype_v0.1/**/*"
+    "proilismart_prototype_v0.1/**/*",
+    "proalismart_Landing_funnel/**/*"
   ]
 }
